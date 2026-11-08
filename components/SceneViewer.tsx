@@ -408,19 +408,25 @@ export default function SceneViewer({
           </button>
         )}
 
-        {/* 9:16 Phone Device Container */}
+        {/* 16:9 Landscape Cinema Display Container vs 9:16 Phone Device Container */}
         <div
           style={{ transform: `scale(${zoomLevel / 100})`, transformOrigin: "center center" }}
-          className="relative transition-transform duration-200 aspect-[9/16] h-[580px] max-w-[326px] sm:h-[640px] sm:max-w-[360px] rounded-[32px] p-2 bg-[#1A1E27] border-[3px] border-zinc-700/80 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col"
+          className={`relative transition-transform duration-200 ${
+            project.aspectRatio === "16:9"
+              ? "aspect-[16/9] w-full max-w-[820px] lg:max-w-[880px] h-auto rounded-[24px] p-2.5 sm:p-3 bg-[#1A1E27] border-[3px] border-zinc-700/80 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col"
+              : "aspect-[9/16] h-[580px] max-w-[326px] sm:h-[640px] sm:max-w-[360px] rounded-[32px] p-2 bg-[#1A1E27] border-[3px] border-zinc-700/80 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col"
+          }`}
         >
-          {/* Phone Speaker Notch */}
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-[#090A0C] rounded-full z-30 flex items-center justify-center pointer-events-none">
-            <div className="w-8 h-1 bg-zinc-800 rounded-full"></div>
-            <div className="w-2 h-2 ml-2 rounded-full bg-blue-900/40"></div>
-          </div>
+          {/* Phone Speaker Notch - Only for 9:16 Vertical */}
+          {project.aspectRatio !== "16:9" && (
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-[#090A0C] rounded-full z-30 flex items-center justify-center pointer-events-none">
+              <div className="w-8 h-1 bg-zinc-800 rounded-full"></div>
+              <div className="w-2 h-2 ml-2 rounded-full bg-blue-900/40"></div>
+            </div>
+          )}
 
-          {/* Scene Visual Canvas (Inside Phone Screen) */}
-          <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-[#F6F4EB] text-[#155E47] flex flex-col justify-between select-none">
+          {/* Scene Visual Canvas (Inside Screen) */}
+          <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#F6F4EB] text-[#155E47] flex flex-col justify-between select-none">
             
             {/* Video Player or SVG Visual Composition */}
             {viewMode === "video" && scene.videoUrl ? (
@@ -435,6 +441,8 @@ export default function SceneViewer({
                   className="w-full h-full object-cover"
                 />
               </div>
+            ) : project.aspectRatio === "16:9" ? (
+              renderLandscapeVisual(scene)
             ) : (
               renderSceneVisual(scene.id, scene)
             )}
@@ -608,6 +616,66 @@ export default function SceneViewer({
             <span>{annotations.length} Target {annotations.length === 1 ? "Area" : "Areas"} Circled</span>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+// 16:9 Landscape Visual Renderer for Dr Kaka's African Food Storyboard
+function renderLandscapeVisual(scene: Scene) {
+  return (
+    <div className="w-full h-full p-4 sm:p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden bg-[#F6F4EB] text-[#155E47]">
+      {/* Subtle Radial Paper Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.85)_0%,rgba(246,244,235,0.4)_60%,rgba(229,223,201,0.7)_100%)] pointer-events-none" />
+
+      {/* Top Meta Scene Bar */}
+      <div className="relative z-10 flex items-center justify-between border-b border-[rgba(21,94,71,0.12)] pb-2">
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-0.5 rounded-full bg-[#155E47] text-white font-bold text-[10px] sm:text-xs tracking-wider">
+            SCENE {scene.id.toString().padStart(2, "0")}
+          </span>
+          <span className="text-[10px] sm:text-xs font-mono font-semibold text-[rgba(21,94,71,0.65)]">
+            {scene.startTime} — {scene.endTime}
+          </span>
+        </div>
+        <div className="text-[10px] sm:text-xs font-bold text-[#FF7B25] tracking-wide uppercase">
+          {scene.badgeDetail || "Clinical Masterclass"}
+        </div>
+      </div>
+
+      {/* Center 16:9 Split: Left 45% Typography Stack | Right 55% Visual Hero */}
+      <div className="relative z-10 flex-1 grid grid-cols-12 gap-4 items-center py-2">
+        {/* Left Column: Unboxed Typography */}
+        <div className="col-span-5 flex flex-col justify-center">
+          <div className="font-serif italic text-sm sm:text-base lg:text-lg text-[#FF7B25] mb-1 leading-tight">
+            {scene.connectiveText}
+          </div>
+          <h2 className="font-extrabold text-lg sm:text-xl lg:text-2xl text-[#155E47] leading-[1.15] tracking-tight mb-2">
+            {scene.headlineText}
+          </h2>
+          <p className="font-medium text-[11px] sm:text-xs text-[rgba(21,94,71,0.8)] leading-relaxed">
+            {scene.highlightText}
+          </p>
+        </div>
+
+        {/* Right Column: Hero Visual SVG */}
+        <div className="col-span-7 flex items-center justify-center relative min-h-[160px] sm:min-h-[200px]">
+          {scene.svgMarkup ? (
+            <div
+              className="w-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[220px]"
+              dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
+            />
+          ) : (
+            <div className="text-xs text-zinc-400">Visual Hero Graphic</div>
+          )}
+        </div>
+      </div>
+
+      {/* Bottom Spoken Anchor Quote */}
+      <div className="relative z-10 pt-1.5 border-t border-[rgba(21,94,71,0.12)] text-center">
+        <p className="font-serif italic text-[11px] sm:text-xs text-[rgba(21,94,71,0.7)] max-w-xl mx-auto truncate">
+          “{scene.spokenAnchor}”
+        </p>
       </div>
     </div>
   );
