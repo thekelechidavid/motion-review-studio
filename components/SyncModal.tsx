@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Project, SceneFeedback } from "@/lib/types";
-import { X, Copy, Check, Download, Sparkles, Send } from "lucide-react";
+import { X, Copy, Check, Download, Sparkles, Send, Target } from "lucide-react";
 
 interface SyncModalProps {
   isOpen: boolean;
@@ -28,9 +28,9 @@ export default function SyncModal({
     md += `> **Review Date:** ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}\n`;
     md += `> **Total Scenes:** ${project.scenesCount} | **Duration:** ${project.totalDuration}\n\n`;
 
-    md += `## 1. Summary of Scene Approvals\n\n`;
-    md += `| Scene | Title | Status | Quick Tags | Directives & Voice Notes |\n`;
-    md += `|:---|:---|:---|:---|:---|\n`;
+    md += `## 1. Summary of Scene Approvals & Circled Areas\n\n`;
+    md += `| Scene | Title | Status | Circled Areas | Quick Tags | Directives & Voice Notes |\n`;
+    md += `|:---|:---|:---|:---|:---|:---|\n`;
 
     project.scenes.forEach((scene) => {
       const fb = feedbacks[scene.id] || {
@@ -38,6 +38,7 @@ export default function SyncModal({
         textNotes: "",
         tags: [],
         voiceTranscript: "",
+        annotations: [],
       };
 
       const statusBadge =
@@ -47,26 +48,50 @@ export default function SyncModal({
           ? "⚠️ Needs Edits"
           : "⏳ Pending";
 
+      const pinCountStr =
+        fb.annotations && fb.annotations.length > 0
+          ? `📍 ${fb.annotations.length} Pins`
+          : "None";
+
       const tagsStr = fb.tags && fb.tags.length > 0 ? fb.tags.join(", ") : "None";
       const notesClean = fb.textNotes ? fb.textNotes.replace(/\n/g, " ") : "No notes yet";
 
-      md += `| Scene ${scene.id} | ${scene.title} | ${statusBadge} | ${tagsStr} | ${notesClean} |\n`;
+      md += `| Scene ${scene.id} | ${scene.title} | ${statusBadge} | ${pinCountStr} | ${tagsStr} | ${notesClean} |\n`;
     });
 
-    md += `\n## 2. Granular Scene-by-Scene Revisions\n\n`;
+    md += `\n## 2. Granular Scene-by-Scene Revisions & Spatial Pinpoints\n\n`;
 
     project.scenes.forEach((scene) => {
       const fb = feedbacks[scene.id];
-      if (!fb || (fb.status === "pending" && !fb.textNotes && !fb.voiceTranscript)) {
+      const hasAnnotations = fb?.annotations && fb.annotations.length > 0;
+      if (!fb || (fb.status === "pending" && !fb.textNotes && !fb.voiceTranscript && !hasAnnotations)) {
         return;
       }
 
       md += `### Scene ${scene.id}: ${scene.title} (${scene.startTime} - ${scene.endTime})\n`;
       md += `- **Approval Status:** \`${fb.status.toUpperCase()}\`\n`;
       md += `- **Spoken Anchor:** *“${scene.spokenAnchor}”*\n`;
+
       if (fb.tags && fb.tags.length > 0) {
         md += `- **Tags:** \`${fb.tags.join("`, `")}\`\n`;
       }
+
+      // Explicit Circled Pinpoints with exact coordinates
+      if (hasAnnotations) {
+        md += `- **📍 Circled Pinpoints & Targeted Canvas Regions (${fb.annotations!.length} Target Areas):**\n`;
+        fb.annotations!.forEach((ann) => {
+          const coordStr = `X: ${ann.x.toFixed(1)}%, Y: ${ann.y.toFixed(1)}%`;
+          const sizeStr = ann.radius
+            ? `Radius: ${ann.radius.toFixed(1)}%`
+            : ann.width && ann.height
+            ? `W: ${ann.width.toFixed(1)}%, H: ${ann.height.toFixed(1)}%`
+            : "";
+          const noteStr = ann.label ? `"${ann.label}"` : "(Circled for visual correction)";
+
+          md += `  - **Pin #${ann.number} [${ann.regionDescription} | ${coordStr}${sizeStr ? ` | ${sizeStr}` : ""}]:** ${noteStr}\n`;
+        });
+      }
+
       if (fb.voiceTranscript) {
         md += `- **Voice Directive Transcript:**\n  > “${fb.voiceTranscript}”\n`;
       }
@@ -80,7 +105,7 @@ export default function SyncModal({
     md += `- Adhere strictly to Dr Kaka production rules: Warm Clinic Cream (\`#F6F4EB\`), Deep Green (\`#155E47\`), Pure White (\`#FFFFFF\`), Accent Orange (\`#FF7B25\`).\n`;
     md += `- Strictly First-Letter Caps (Title Case) across all headlines and badges. NO ALL CAPS.\n`;
     md += `- Strictly NO "agonist" jargon and NO bottom text pills.\n`;
-    md += `- Apply all zoom, timing, and copy revisions specified above and re-render/update assets.\n`;
+    md += `- Apply all pinpointed corrections (scale, position, wording, contrast) at the specified X/Y canvas coordinates.\n`;
 
     return md;
   };
@@ -118,7 +143,7 @@ export default function SyncModal({
             <div>
               <h2 className="text-base font-bold text-white">Antigravity Agent Sync Matrix</h2>
               <p className="text-xs text-zinc-400">
-                1-click structured review package formatted for immediate agent execution
+                Includes exact circled coordinates, voice transcripts & scene directives
               </p>
             </div>
           </div>
@@ -141,7 +166,7 @@ export default function SyncModal({
         {/* Modal Footer Actions */}
         <div className="p-4 border-t border-white/[0.08] bg-[#14171E] flex flex-wrap items-center justify-between gap-3">
           <div className="text-xs text-zinc-400">
-            Copy and paste this into Antigravity chat to trigger instant bulk scene edits.
+            Paste this directly into chat with Antigravity to pinpoint and execute bulk corrections.
           </div>
 
           <div className="flex items-center gap-2">

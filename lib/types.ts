@@ -15,6 +15,24 @@ export interface FeedbackTag {
   emoji: string;
 }
 
+export type AnnotationTool = "circle" | "freehand" | "box";
+
+export interface VisualAnnotation {
+  id: string;
+  number: number;
+  type: AnnotationTool;
+  x: number; // percentage (0 - 100)
+  y: number; // percentage (0 - 100)
+  width?: number; // percentage
+  height?: number; // percentage
+  radius?: number; // percentage
+  points?: { x: number; y: number }[]; // percentage coordinates (0 - 100)
+  color: string;
+  label?: string;
+  regionDescription: string;
+  createdAt?: string;
+}
+
 export interface SceneFeedback {
   sceneId: number;
   status: ReviewStatus;
@@ -22,6 +40,7 @@ export interface SceneFeedback {
   hasAudio: boolean;
   textNotes: string;
   tags: FeedbackTagId[];
+  annotations?: VisualAnnotation[];
   updatedAt: string;
 }
 

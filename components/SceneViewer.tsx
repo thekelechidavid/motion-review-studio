@@ -1,12 +1,30 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Scene, Project } from "@/lib/types";
-import { ZoomIn, ZoomOut, Maximize2, ChevronLeft, ChevronRight, Play, Pause, RotateCcw } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { Scene, Project, VisualAnnotation, AnnotationTool } from "@/lib/types";
+import { getRegionDescription, ANNOTATION_COLORS } from "@/lib/annotation-utils";
+import {
+  ZoomIn,
+  ZoomOut,
+  ChevronLeft,
+  ChevronRight,
+  RotateCcw,
+  Edit3,
+  Circle,
+  Square,
+  PenTool,
+  Undo2,
+  Trash2,
+  MapPin,
+  Check,
+  X,
+} from "lucide-react";
 
 interface SceneViewerProps {
   scene: Scene;
   project: Project;
+  annotations?: VisualAnnotation[];
+  onAnnotationsChange?: (annotations: VisualAnnotation[]) => void;
   onPrev: () => void;
   onNext: () => void;
   hasPrev: boolean;
@@ -16,6 +34,8 @@ interface SceneViewerProps {
 export default function SceneViewer({
   scene,
   project,
+  annotations = [],
+  onAnnotationsChange,
   onPrev,
   onNext,
   hasPrev,
@@ -23,28 +43,166 @@ export default function SceneViewer({
 }: SceneViewerProps) {
   const [zoomLevel, setZoomLevel] = useState<number>(100);
 
+  // Annotation states
+  const [isAnnotating, setIsAnnotating] = useState<boolean>(false);
+  const [activeTool, setActiveTool] = useState<AnnotationTool>("circle");
+  const [activeColor, setActiveColor] = useState<string>(ANNOTATION_COLORS[0].hex);
+  const [isDrawing, setIsDrawing] = useState<boolean>(false);
+  const [startPoint, setStartPoint] = useState<{ x: number; y: number } | null>(null);
+  const [currentPoint, setCurrentPoint] = useState<{ x: number; y: number } | null>(null);
+  const [freehandPoints, setFreehandPoints] = useState<{ x: number; y: number }[]>([]);
+
+  const overlayRef = useRef<SVGSVGElement | null>(null);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
         return;
       }
-      if (e.key === "ArrowLeft" && hasPrev) onPrev();
-      if (e.key === "ArrowRight" && hasNext) onNext();
+      if (e.key === "ArrowLeft" && hasPrev && !isDrawing) onPrev();
+      if (e.key === "ArrowRight" && hasNext && !isDrawing) onNext();
+      if (e.key === "c" && (e.metaKey || e.ctrlKey)) {
+        setIsAnnotating((prev) => !prev);
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [hasPrev, hasNext, onPrev, onNext]);
+  }, [hasPrev, hasNext, onPrev, onNext, isDrawing]);
 
   const handleZoom = (delta: number) => {
     setZoomLevel((prev) => Math.min(140, Math.max(70, prev + delta)));
+  };
+
+  // Convert mouse/touch event into 0 - 100 percentage coordinates of the canvas
+  const getCoordinates = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!overlayRef.current) return { x: 50, y: 50 };
+    const rect = overlayRef.current.getBoundingClientRect();
+    const clientX = "touches" in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
+    const clientY = "touches" in e ? e.touches[0].clientY : (e as React.MouseEvent).clientY;
+
+    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((clientY - rect.top) / rect.height) * 100));
+    return { x, y };
+  };
+
+  const startDrawing = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isAnnotating) return;
+    const coords = getCoordinates(e);
+    setIsDrawing(true);
+    setStartPoint(coords);
+    setCurrentPoint(coords);
+    if (activeTool === "freehand") {
+      setFreehandPoints([coords]);
+    }
+  };
+
+  const drawMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isDrawing || !startPoint) return;
+    const coords = getCoordinates(e);
+    setCurrentPoint(coords);
+    if (activeTool === "freehand") {
+      setFreehandPoints((prev) => [...prev, coords]);
+    }
+  };
+
+  const finishDrawing = () => {
+    if (!isDrawing || !startPoint) return;
+    setIsDrawing(false);
+
+    const endPoint = currentPoint || startPoint;
+    const nextNumber = (annotations.length || 0) + 1;
+    let newAnnotation: VisualAnnotation | null = null;
+
+    if (activeTool === "circle") {
+      const rx = Math.abs(endPoint.x - startPoint.x);
+      const ry = Math.abs(endPoint.y - startPoint.y);
+      // Minimum radius check to avoid accidental clicks
+      if (rx < 1.5 && ry < 1.5) {
+        // Create a default circular pin if it was a quick click
+        newAnnotation = {
+          id: `pin_${Date.now()}`,
+          number: nextNumber,
+          type: "circle",
+          x: startPoint.x,
+          y: startPoint.y,
+          radius: 12,
+          color: activeColor,
+          regionDescription: getRegionDescription(startPoint.x, startPoint.y),
+        };
+      } else {
+        newAnnotation = {
+          id: `pin_${Date.now()}`,
+          number: nextNumber,
+          type: "circle",
+          x: startPoint.x,
+          y: startPoint.y,
+          width: rx,
+          height: ry,
+          radius: Math.max(rx, ry),
+          color: activeColor,
+          regionDescription: getRegionDescription(startPoint.x, startPoint.y, rx * 2, ry * 2),
+        };
+      }
+    } else if (activeTool === "box") {
+      const minX = Math.min(startPoint.x, endPoint.x);
+      const minY = Math.min(startPoint.y, endPoint.y);
+      const width = Math.abs(endPoint.x - startPoint.x);
+      const height = Math.abs(endPoint.y - startPoint.y);
+      if (width > 2 && height > 2) {
+        newAnnotation = {
+          id: `pin_${Date.now()}`,
+          number: nextNumber,
+          type: "box",
+          x: minX,
+          y: minY,
+          width,
+          height,
+          color: activeColor,
+          regionDescription: getRegionDescription(minX + width / 2, minY + height / 2, width, height),
+        };
+      }
+    } else if (activeTool === "freehand" && freehandPoints.length > 3) {
+      // Calculate center of points
+      const avgX = freehandPoints.reduce((acc, p) => acc + p.x, 0) / freehandPoints.length;
+      const avgY = freehandPoints.reduce((acc, p) => acc + p.y, 0) / freehandPoints.length;
+      newAnnotation = {
+        id: `pin_${Date.now()}`,
+        number: nextNumber,
+        type: "freehand",
+        x: avgX,
+        y: avgY,
+        points: freehandPoints,
+        color: activeColor,
+        regionDescription: getRegionDescription(avgX, avgY),
+      };
+    }
+
+    if (newAnnotation && onAnnotationsChange) {
+      onAnnotationsChange([...annotations, newAnnotation]);
+    }
+
+    setStartPoint(null);
+    setCurrentPoint(null);
+    setFreehandPoints([]);
+  };
+
+  const handleUndo = () => {
+    if (!annotations.length || !onAnnotationsChange) return;
+    onAnnotationsChange(annotations.slice(0, -1));
+  };
+
+  const handleClearAll = () => {
+    if (onAnnotationsChange) {
+      onAnnotationsChange([]);
+    }
   };
 
   return (
     <div className="flex-1 flex flex-col items-center justify-between bg-[#0F1115] border border-white/[0.08] rounded-2xl p-4 lg:p-6 overflow-hidden relative shadow-2xl">
       
       {/* Top Viewport Toolbar */}
-      <div className="w-full flex items-center justify-between mb-4 pb-3 border-b border-white/[0.08]">
+      <div className="w-full flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-white/[0.08]">
         
         {/* Scene Indicator & Timecode */}
         <div className="flex items-center gap-2.5">
@@ -59,34 +217,142 @@ export default function SceneViewer({
           </span>
         </div>
 
-        {/* Zoom Controls */}
-        <div className="flex items-center gap-1.5 bg-[#14171E] border border-white/5 rounded-lg p-1 text-xs">
+        {/* Action Controls: Annotate Mode + Zoom */}
+        <div className="flex items-center gap-2">
+          
+          {/* Circle / Annotate Toggle Button */}
           <button
-            onClick={() => handleZoom(-15)}
-            className="p-1 rounded text-zinc-400 hover:text-white hover:bg-white/5"
-            title="Zoom Out"
+            onClick={() => setIsAnnotating(!isAnnotating)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              isAnnotating
+                ? "bg-[#EF4444] text-white shadow-[0_0_15px_rgba(239,68,68,0.4)] animate-pulse"
+                : "bg-[#14171E] border border-white/10 text-zinc-300 hover:text-white hover:border-[#D4FF00]"
+            }`}
           >
-            <ZoomOut className="w-3.5 h-3.5" />
+            <Circle className="w-3.5 h-3.5 fill-current" />
+            <span>{isAnnotating ? "Drawing Mode ON" : "Circle Area"}</span>
+            {annotations.length > 0 && (
+              <span className="ml-1 px-1.5 py-0.2 rounded-full bg-black/40 text-[10px]">
+                {annotations.length}
+              </span>
+            )}
           </button>
-          <span className="px-1.5 font-mono text-zinc-300 min-w-[42px] text-center">
-            {zoomLevel}%
-          </span>
-          <button
-            onClick={() => handleZoom(15)}
-            className="p-1 rounded text-zinc-400 hover:text-white hover:bg-white/5"
-            title="Zoom In"
-          >
-            <ZoomIn className="w-3.5 h-3.5" />
-          </button>
-          <button
-            onClick={() => setZoomLevel(100)}
-            className="p-1 rounded text-zinc-400 hover:text-white hover:bg-white/5 ml-1"
-            title="Reset Zoom"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-          </button>
+
+          {/* Zoom Controls */}
+          <div className="flex items-center gap-1 bg-[#14171E] border border-white/5 rounded-lg p-1 text-xs">
+            <button
+              onClick={() => handleZoom(-15)}
+              className="p-1 rounded text-zinc-400 hover:text-white hover:bg-white/5"
+              title="Zoom Out"
+            >
+              <ZoomOut className="w-3.5 h-3.5" />
+            </button>
+            <span className="px-1.5 font-mono text-zinc-300 min-w-[38px] text-center">
+              {zoomLevel}%
+            </span>
+            <button
+              onClick={() => handleZoom(15)}
+              className="p-1 rounded text-zinc-400 hover:text-white hover:bg-white/5"
+              title="Zoom In"
+            >
+              <ZoomIn className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => setZoomLevel(100)}
+              className="p-1 rounded text-zinc-400 hover:text-white hover:bg-white/5 ml-0.5"
+              title="Reset Zoom"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Floating Annotation Palette (Visible when Drawing Mode is active) */}
+      {isAnnotating && (
+        <div className="w-full mb-3 p-2.5 rounded-xl bg-[#14171E] border border-[#EF4444]/40 flex flex-wrap items-center justify-between gap-3 text-xs animate-fadeIn">
+          
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">Tool:</span>
+            
+            <button
+              onClick={() => setActiveTool("circle")}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium transition-all ${
+                activeTool === "circle"
+                  ? "bg-[#EF4444] text-white shadow-sm"
+                  : "bg-black/30 text-zinc-400 hover:text-white"
+              }`}
+            >
+              <Circle className="w-3.5 h-3.5" />
+              <span>Circle</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTool("box")}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium transition-all ${
+                activeTool === "box"
+                  ? "bg-[#EF4444] text-white shadow-sm"
+                  : "bg-black/30 text-zinc-400 hover:text-white"
+              }`}
+            >
+              <Square className="w-3.5 h-3.5" />
+              <span>Box</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTool("freehand")}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg font-medium transition-all ${
+                activeTool === "freehand"
+                  ? "bg-[#EF4444] text-white shadow-sm"
+                  : "bg-black/30 text-zinc-400 hover:text-white"
+              }`}
+            >
+              <PenTool className="w-3.5 h-3.5" />
+              <span>Freehand Pen</span>
+            </button>
+          </div>
+
+          {/* Color Swatches */}
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">Color:</span>
+            <div className="flex items-center gap-1.5">
+              {ANNOTATION_COLORS.map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => setActiveColor(c.hex)}
+                  className={`w-5 h-5 rounded-full border-2 transition-transform ${
+                    activeColor === c.hex ? "scale-125 border-white shadow-md" : "border-transparent opacity-80"
+                  }`}
+                  style={{ backgroundColor: c.hex }}
+                  title={c.name}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Undo & Clear */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleUndo}
+              disabled={!annotations.length}
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-black/40 text-zinc-300 hover:text-white disabled:opacity-40"
+              title="Undo Last Annotation"
+            >
+              <Undo2 className="w-3.5 h-3.5" />
+              <span>Undo</span>
+            </button>
+            <button
+              onClick={handleClearAll}
+              disabled={!annotations.length}
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-black/40 text-red-400 hover:bg-red-500/20 disabled:opacity-40"
+              title="Clear All Annotations"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+              <span>Clear</span>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Center 9:16 Mobile Mockup Theater */}
       <div className="relative flex-1 w-full flex items-center justify-center overflow-auto py-2">
@@ -119,7 +385,7 @@ export default function SceneViewer({
           className="relative transition-transform duration-200 aspect-[9/16] h-[580px] max-w-[326px] sm:h-[640px] sm:max-w-[360px] rounded-[32px] p-2 bg-[#1A1E27] border-[3px] border-zinc-700/80 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col"
         >
           {/* Phone Speaker Notch */}
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-[#090A0C] rounded-full z-30 flex items-center justify-center">
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-[#090A0C] rounded-full z-30 flex items-center justify-center pointer-events-none">
             <div className="w-8 h-1 bg-zinc-800 rounded-full"></div>
             <div className="w-2 h-2 ml-2 rounded-full bg-blue-900/40"></div>
           </div>
@@ -130,8 +396,140 @@ export default function SceneViewer({
             {/* SVG Visual Composition based on scene ID */}
             {renderSceneVisual(scene.id, scene)}
 
+            {/* Interactive Annotation Drawing Layer (SVG Overlay) */}
+            <svg
+              ref={overlayRef}
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              onMouseDown={startDrawing}
+              onMouseMove={drawMove}
+              onMouseUp={finishDrawing}
+              onMouseLeave={finishDrawing}
+              onTouchStart={startDrawing}
+              onTouchMove={drawMove}
+              onTouchEnd={finishDrawing}
+              className={`absolute inset-0 w-full h-full z-30 ${
+                isAnnotating ? "cursor-crosshair pointer-events-auto" : "pointer-events-none"
+              }`}
+            >
+              {/* Existing Committed Annotations */}
+              {annotations.map((ann) => {
+                const badgeX = ann.x + (ann.radius ? ann.radius * 0.7 : (ann.width ? ann.width / 2 : 0));
+                const badgeY = Math.max(4, ann.y - (ann.radius ? ann.radius * 0.7 : (ann.height ? ann.height / 2 : 0)));
+
+                return (
+                  <g key={ann.id} className="transition-opacity">
+                    {/* Circle shape */}
+                    {ann.type === "circle" && (
+                      <ellipse
+                        cx={`${ann.x}`}
+                        cy={`${ann.y}`}
+                        rx={`${ann.width || ann.radius || 10}`}
+                        ry={`${ann.height || ann.radius || 10}`}
+                        stroke={ann.color}
+                        strokeWidth="1.2"
+                        strokeDasharray="2.5 1.5"
+                        fill={ann.color}
+                        fillOpacity="0.12"
+                      />
+                    )}
+
+                    {/* Box shape */}
+                    {ann.type === "box" && (
+                      <rect
+                        x={`${ann.x}`}
+                        y={`${ann.y}`}
+                        width={`${ann.width || 20}`}
+                        height={`${ann.height || 20}`}
+                        stroke={ann.color}
+                        strokeWidth="1.2"
+                        strokeDasharray="2.5 1.5"
+                        fill={ann.color}
+                        fillOpacity="0.12"
+                        rx="2"
+                      />
+                    )}
+
+                    {/* Freehand path */}
+                    {ann.type === "freehand" && ann.points && (
+                      <path
+                        d={ann.points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ")}
+                        stroke={ann.color}
+                        strokeWidth="1.2"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    )}
+
+                    {/* Numbered Pin Marker Badge */}
+                    <g transform={`translate(${badgeX}, ${badgeY})`} className="cursor-pointer">
+                      <circle cx="0" cy="0" r="3.6" fill={ann.color} filter="drop-shadow(0 2px 4px rgba(0,0,0,0.5))" />
+                      <circle cx="0" cy="0" r="3.2" fill={ann.color} stroke="#FFFFFF" strokeWidth="0.5" />
+                      <text
+                        x="0"
+                        y="1.1"
+                        textAnchor="middle"
+                        fontFamily="'Poppins', sans-serif"
+                        fontWeight="800"
+                        fontSize="2.4"
+                        fill="#FFFFFF"
+                      >
+                        {ann.number}
+                      </text>
+                    </g>
+                  </g>
+                );
+              })}
+
+              {/* Live In-Progress Drawing Preview */}
+              {isDrawing && startPoint && currentPoint && (
+                <g>
+                  {activeTool === "circle" && (
+                    <ellipse
+                      cx={`${startPoint.x}`}
+                      cy={`${startPoint.y}`}
+                      rx={`${Math.abs(currentPoint.x - startPoint.x)}`}
+                      ry={`${Math.abs(currentPoint.y - startPoint.y)}`}
+                      stroke={activeColor}
+                      strokeWidth="1.4"
+                      strokeDasharray="2 2"
+                      fill={activeColor}
+                      fillOpacity="0.2"
+                    />
+                  )}
+
+                  {activeTool === "box" && (
+                    <rect
+                      x={`${Math.min(startPoint.x, currentPoint.x)}`}
+                      y={`${Math.min(startPoint.y, currentPoint.y)}`}
+                      width={`${Math.abs(currentPoint.x - startPoint.x)}`}
+                      height={`${Math.abs(currentPoint.y - startPoint.y)}`}
+                      stroke={activeColor}
+                      strokeWidth="1.4"
+                      strokeDasharray="2 2"
+                      fill={activeColor}
+                      fillOpacity="0.2"
+                      rx="2"
+                    />
+                  )}
+
+                  {activeTool === "freehand" && freehandPoints.length > 1 && (
+                    <path
+                      d={freehandPoints.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ")}
+                      stroke={activeColor}
+                      strokeWidth="1.4"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  )}
+                </g>
+              )}
+            </svg>
+
             {/* Simulated Live Reel UI Overlay (Bottom Icons) */}
-            <div className="absolute right-3 bottom-12 flex flex-col items-center gap-3 z-20 text-[#155E47]/70">
+            <div className="absolute right-3 bottom-12 flex flex-col items-center gap-3 z-20 text-[#155E47]/70 pointer-events-none">
               <div className="w-8 h-8 rounded-full bg-white/70 backdrop-blur-sm border border-[#155E47]/20 flex items-center justify-center text-xs">❤️</div>
               <div className="w-8 h-8 rounded-full bg-white/70 backdrop-blur-sm border border-[#155E47]/20 flex items-center justify-center text-xs">💬</div>
               <div className="w-8 h-8 rounded-full bg-white/70 backdrop-blur-sm border border-[#155E47]/20 flex items-center justify-center text-xs">✈️</div>
@@ -147,16 +545,26 @@ export default function SceneViewer({
       </div>
 
       {/* Bottom Scene Spoken Anchor Callout */}
-      <div className="w-full mt-4 p-3 rounded-xl bg-[#14171E] border border-white/[0.08] flex items-center gap-3">
-        <div className="w-2 h-2 rounded-full bg-[#FF7B25] shrink-0"></div>
-        <div className="flex-1 text-xs">
-          <span className="font-bold text-[#FF7B25] uppercase tracking-wider text-[10px] mr-2">
-            Spoken Anchor:
-          </span>
-          <span className="text-zinc-200 font-serif italic">
-            “{scene.spokenAnchor}”
-          </span>
+      <div className="w-full mt-4 p-3 rounded-xl bg-[#14171E] border border-white/[0.08] flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3 flex-1">
+          <div className="w-2 h-2 rounded-full bg-[#FF7B25] shrink-0"></div>
+          <div className="text-xs">
+            <span className="font-bold text-[#FF7B25] uppercase tracking-wider text-[10px] mr-2">
+              Spoken Anchor:
+            </span>
+            <span className="text-zinc-200 font-serif italic">
+              “{scene.spokenAnchor}”
+            </span>
+          </div>
         </div>
+
+        {/* Circled count indicator */}
+        {annotations.length > 0 && (
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold shrink-0">
+            <MapPin className="w-3.5 h-3.5" />
+            <span>{annotations.length} Target {annotations.length === 1 ? "Area" : "Areas"} Circled</span>
+          </div>
+        )}
       </div>
     </div>
   );

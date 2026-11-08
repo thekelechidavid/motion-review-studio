@@ -8,8 +8,19 @@ import SceneViewer from "@/components/SceneViewer";
 import FeedbackPanel from "@/components/FeedbackPanel";
 import SyncModal from "@/components/SyncModal";
 import { INITIAL_PROJECTS } from "@/lib/projects-data";
-import { Project, SceneFeedback, ReviewStatus } from "@/lib/types";
-import { ArrowLeft, CheckCircle2, AlertTriangle, Clock, Sparkles, ChevronLeft, ChevronRight, Layers, Check } from "lucide-react";
+import { Project, SceneFeedback, ReviewStatus, VisualAnnotation } from "@/lib/types";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  AlertTriangle,
+  Clock,
+  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  Layers,
+  Check,
+  Target,
+} from "lucide-react";
 
 export default function ProjectReviewPage() {
   const params = useParams();
@@ -41,6 +52,7 @@ export default function ProjectReviewPage() {
             hasAudio: false,
             textNotes: "",
             tags: [],
+            annotations: [],
             updatedAt: "Initialized",
           };
         });
@@ -66,13 +78,14 @@ export default function ProjectReviewPage() {
   };
 
   const currentScene = project.scenes[currentSceneIndex] || project.scenes[0];
-  const currentFeedback = feedbacks[currentScene.id] || {
+  const currentFeedback: SceneFeedback = feedbacks[currentScene.id] || {
     sceneId: currentScene.id,
     status: "pending",
     voiceTranscript: "",
     hasAudio: false,
     textNotes: "",
     tags: [],
+    annotations: [],
     updatedAt: "Initialized",
   };
 
@@ -80,6 +93,10 @@ export default function ProjectReviewPage() {
   const approvedCount = Object.values(feedbacks).filter((f) => f.status === "approved").length;
   const needsEditsCount = Object.values(feedbacks).filter((f) => f.status === "needs_edits").length;
   const pendingCount = project.scenes.length - approvedCount - needsEditsCount;
+  const totalPinsCount = Object.values(feedbacks).reduce(
+    (acc, f) => acc + (f.annotations?.length || 0),
+    0
+  );
 
   return (
     <div className="min-h-screen bg-[#090A0C] text-[#F0F3F7] flex flex-col justify-between">
@@ -117,22 +134,31 @@ export default function ProjectReviewPage() {
 
             {/* Right: Progress Tracker & Agent Sync CTA */}
             <div className="flex items-center gap-3">
-              {/* Progress Counters */}
+              {/* Progress & Pin Counters */}
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#14171E] border border-white/5 text-xs">
-                <span className="flex items-center gap-1 text-emerald-400 font-semibold">
+                <span className="flex items-center gap-1 text-emerald-400 font-semibold" title="Approved scenes">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   {approvedCount}
                 </span>
                 <span className="text-zinc-600">/</span>
-                <span className="flex items-center gap-1 text-amber-400 font-semibold">
+                <span className="flex items-center gap-1 text-amber-400 font-semibold" title="Scenes needing edits">
                   <AlertTriangle className="w-3.5 h-3.5" />
                   {needsEditsCount}
                 </span>
                 <span className="text-zinc-600">/</span>
-                <span className="flex items-center gap-1 text-zinc-400 font-medium">
+                <span className="flex items-center gap-1 text-zinc-400 font-medium" title="Pending review">
                   <Clock className="w-3.5 h-3.5" />
                   {pendingCount}
                 </span>
+                {totalPinsCount > 0 && (
+                  <>
+                    <span className="text-zinc-600">•</span>
+                    <span className="flex items-center gap-1 text-[#EF4444] font-bold" title="Total targeted areas circled">
+                      <Target className="w-3.5 h-3.5" />
+                      {totalPinsCount}
+                    </span>
+                  </>
+                )}
               </div>
 
               {/* 1-Click Sync Button */}
@@ -154,12 +180,13 @@ export default function ProjectReviewPage() {
               const fb = feedbacks[scene.id];
               const isSelected = idx === currentSceneIndex;
               const status = fb?.status || "pending";
+              const pinCount = fb?.annotations?.length || 0;
 
               return (
                 <button
                   key={scene.id}
                   onClick={() => setCurrentSceneIndex(idx)}
-                  className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl border text-xs transition-all duration-200 ${
+                  className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl border text-xs transition-all duration-200 relative ${
                     isSelected
                       ? "bg-[#1A1E27] border-[#D4FF00] text-white shadow-[0_0_12px_rgba(212,255,0,0.2)]"
                       : "bg-[#0F1115] border-white/5 hover:border-white/20 text-zinc-400 hover:text-zinc-200"
@@ -167,14 +194,21 @@ export default function ProjectReviewPage() {
                 >
                   <span className="font-bold">Scene {scene.id}</span>
                   
+                  {/* Circled Pin Indicator */}
+                  {pinCount > 0 && (
+                    <span className="w-4 h-4 rounded-full bg-[#EF4444] text-[9px] font-black text-white flex items-center justify-center">
+                      {pinCount}
+                    </span>
+                  )}
+
                   {/* Status Indicator Dot */}
                   {status === "approved" && (
                     <span className="w-2 h-2 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20" />
                   )}
-                  {status === "needs_edits" && (
+                  {status === "needs_edits" && pinCount === 0 && (
                     <span className="w-2 h-2 rounded-full bg-amber-400 ring-4 ring-amber-400/20" />
                   )}
-                  {status === "pending" && (
+                  {status === "pending" && pinCount === 0 && (
                     <span className="w-2 h-2 rounded-full bg-zinc-600" />
                   )}
                 </button>
@@ -187,17 +221,28 @@ export default function ProjectReviewPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col lg:flex-row gap-6 items-stretch">
             
-            {/* Center: 9:16 Scene Mockup Viewer */}
+            {/* Center: 9:16 Scene Mockup Viewer with Annotation Overlay */}
             <SceneViewer
               scene={currentScene}
               project={project}
+              annotations={currentFeedback.annotations || []}
+              onAnnotationsChange={(newAnnotations: VisualAnnotation[]) => {
+                handleUpdateFeedback({
+                  ...currentFeedback,
+                  annotations: newAnnotations,
+                  status:
+                    newAnnotations.length > 0 && currentFeedback.status === "pending"
+                      ? "needs_edits"
+                      : currentFeedback.status,
+                });
+              }}
               onPrev={() => setCurrentSceneIndex((prev) => Math.max(0, prev - 1))}
               onNext={() => setCurrentSceneIndex((prev) => Math.min(project.scenes.length - 1, prev + 1))}
               hasPrev={currentSceneIndex > 0}
               hasNext={currentSceneIndex < project.scenes.length - 1}
             />
 
-            {/* Right: Feedback & Voice Directive Panel */}
+            {/* Right: Feedback, Voice Directives & Circled Pinpoints Panel */}
             <FeedbackPanel
               scene={currentScene}
               feedback={currentFeedback}
@@ -215,7 +260,7 @@ export default function ProjectReviewPage() {
               Scene {currentSceneIndex + 1} of {project.scenes.length}
             </span>
             <span>•</span>
-            <span>Keyboard: Use Left/Right Arrow keys to navigate</span>
+            <span>Tip: Click <strong>Circle Area</strong> to draw circles around specific elements</span>
             <span>•</span>
             <span className="text-[#D4FF00]">Auto-saves locally</span>
           </div>

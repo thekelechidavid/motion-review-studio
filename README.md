@@ -12,6 +12,7 @@
 
 ### Core Capabilities
 
+- ⭕ **Interactive Canvas Pinpointing & Area Circling**: Toggle the **Circle Area** drawing tool to directly draw circles, freehand loops, or bounding boxes around any graphic, headline, or badge on the 9:16 mobile canvas. Every pin is automatically assigned a sequential number badge (`#1`, `#2`), tagged with its semantic canvas region (e.g. *Central Anatomical Subject*, *Header Headline Area*), and tracked with exact mathematical percentage coordinates (`X: 52%, Y: 48%`) for zero-ambiguity agent handoff.
 - 🎙️ **In-Browser Voice Directive Capture**: Built with native Web Audio & Web Speech APIs (`SpeechRecognition`), enabling 1-click microphone recording that automatically transcribes spoken change requests into clear text notes in real-time.
 - 📱 **9:16 Vertical Phone Simulator**: Pixel-accurate vertical mobile preview viewport with responsive zoom controls (70% – 140%), safe area markers, and social reel UI overlays.
 - 🎨 **Client Brand Enforcement**: Built-in adherence to client visual guidelines (e.g. Dr Kaka's Warm Clinic Cream `#F6F4EB`, Deep Green `#155E47`, Pure White `#FFFFFF`, Accent Orange `#FF7B25`).

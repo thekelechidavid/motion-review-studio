@@ -1,25 +1,39 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Scene, SceneFeedback, FeedbackTagId, ReviewStatus } from "@/lib/types";
+import { Scene, SceneFeedback, FeedbackTagId, ReviewStatus, VisualAnnotation } from "@/lib/types";
 import { FEEDBACK_TAGS } from "@/lib/projects-data";
 import VoiceRecorder from "./VoiceRecorder";
-import { CheckCircle2, AlertTriangle, Clock, Tag, MessageSquare, Sparkles, Check, Save } from "lucide-react";
+import {
+  CheckCircle2,
+  AlertTriangle,
+  Clock,
+  Tag,
+  MessageSquare,
+  Sparkles,
+  MapPin,
+  Trash2,
+  Target,
+  Edit2,
+} from "lucide-react";
 
 interface FeedbackPanelProps {
   scene: Scene;
   feedback: SceneFeedback;
   onUpdateFeedback: (updated: SceneFeedback) => void;
+  onActivateAnnotate?: () => void;
 }
 
 export default function FeedbackPanel({
   scene,
   feedback,
   onUpdateFeedback,
+  onActivateAnnotate,
 }: FeedbackPanelProps) {
   const [textNotes, setTextNotes] = useState(feedback.textNotes || "");
   const [status, setStatus] = useState<ReviewStatus>(feedback.status || "pending");
   const [tags, setTags] = useState<FeedbackTagId[]>(feedback.tags || []);
+  const [annotations, setAnnotations] = useState<VisualAnnotation[]>(feedback.annotations || []);
   const [lastSaved, setLastSaved] = useState<string>("Synced");
 
   // Sync state when scene changes
@@ -27,6 +41,7 @@ export default function FeedbackPanel({
     setTextNotes(feedback.textNotes || "");
     setStatus(feedback.status || "pending");
     setTags(feedback.tags || []);
+    setAnnotations(feedback.annotations || []);
   }, [scene.id, feedback]);
 
   // Update helper
@@ -34,6 +49,7 @@ export default function FeedbackPanel({
     newNotes: string,
     newStatus: ReviewStatus,
     newTags: FeedbackTagId[],
+    newAnnotations?: VisualAnnotation[],
     voiceTrans?: string
   ) => {
     const updated: SceneFeedback = {
@@ -43,6 +59,7 @@ export default function FeedbackPanel({
       voiceTranscript: voiceTrans !== undefined ? voiceTrans : feedback.voiceTranscript,
       hasAudio: feedback.hasAudio || !!voiceTrans,
       tags: newTags,
+      annotations: newAnnotations !== undefined ? newAnnotations : annotations,
       updatedAt: new Date().toLocaleTimeString(),
     };
     onUpdateFeedback(updated);
@@ -51,13 +68,13 @@ export default function FeedbackPanel({
 
   const handleStatusChange = (newStatus: ReviewStatus) => {
     setStatus(newStatus);
-    saveChange(textNotes, newStatus, tags);
+    saveChange(textNotes, newStatus, tags, annotations);
   };
 
   const handleNotesChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = e.target.value;
     setTextNotes(val);
-    saveChange(val, status, tags);
+    saveChange(val, status, tags, annotations);
   };
 
   const handleTagToggle = (tagId: FeedbackTagId) => {
@@ -65,21 +82,35 @@ export default function FeedbackPanel({
       ? tags.filter((t) => t !== tagId)
       : [...tags, tagId];
     setTags(newTags);
-    saveChange(textNotes, status, newTags);
+    saveChange(textNotes, status, newTags, annotations);
   };
 
   const handleVoiceTranscript = (transcript: string) => {
-    // Append or set the transcript into notes
     const combined = textNotes.trim()
       ? `${textNotes}\n\n[Voice Note]: ${transcript}`
       : `[Voice Note]: ${transcript}`;
     setTextNotes(combined);
-    setStatus("needs_edits"); // Voice note usually means feedback/edits requested!
-    saveChange(combined, "needs_edits", tags, transcript);
+    setStatus("needs_edits");
+    saveChange(combined, "needs_edits", tags, annotations, transcript);
+  };
+
+  // Annotation note updates
+  const handleAnnotationNoteChange = (annId: string, label: string) => {
+    const updatedAnns = annotations.map((ann) =>
+      ann.id === annId ? { ...ann, label } : ann
+    );
+    setAnnotations(updatedAnns);
+    saveChange(textNotes, status, tags, updatedAnns);
+  };
+
+  const handleDeleteAnnotation = (annId: string) => {
+    const updatedAnns = annotations.filter((ann) => ann.id !== annId);
+    setAnnotations(updatedAnns);
+    saveChange(textNotes, status, tags, updatedAnns);
   };
 
   return (
-    <div className="w-full lg:w-[420px] bg-[#0F1115] border border-white/[0.08] rounded-2xl p-5 flex flex-col justify-between shadow-xl">
+    <div className="w-full lg:w-[440px] bg-[#0F1115] border border-white/[0.08] rounded-2xl p-5 flex flex-col justify-between shadow-xl">
       
       {/* Top Header & Approval State */}
       <div>
@@ -143,6 +174,62 @@ export default function FeedbackPanel({
           </div>
         </div>
 
+        {/* Circled Areas / Spatial Pinpoints Section */}
+        <div className="mb-4 p-3 rounded-xl bg-[#14171E] border border-white/[0.08]">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[11px] font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+              <Target className="w-3.5 h-3.5 text-[#EF4444]" />
+              <span>Circled Pinpoints ({annotations.length})</span>
+            </span>
+            <span className="text-[10px] text-zinc-400">Exact coordinates sync to agent</span>
+          </div>
+
+          {annotations.length === 0 ? (
+            <div className="p-2.5 rounded-lg bg-black/30 border border-white/5 text-[11px] text-zinc-400 flex items-center justify-between">
+              <span>No areas circled yet. Click <strong>Circle Area</strong> on the preview to pinpoint elements.</span>
+            </div>
+          ) : (
+            <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+              {annotations.map((ann) => (
+                <div
+                  key={ann.id}
+                  className="p-2.5 rounded-lg bg-black/40 border border-white/10 flex flex-col gap-1.5"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white shadow-sm"
+                        style={{ backgroundColor: ann.color }}
+                      >
+                        #{ann.number}
+                      </div>
+                      <span className="text-xs font-semibold text-zinc-200">
+                        {ann.regionDescription}
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => handleDeleteAnnotation(ann.id)}
+                      className="text-zinc-500 hover:text-red-400 transition-colors p-1"
+                      title="Remove this pinpoint"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  <input
+                    type="text"
+                    value={ann.label || ""}
+                    onChange={(e) => handleAnnotationNoteChange(ann.id, e.target.value)}
+                    placeholder="Specific directive for this circle (e.g. 'Make shield 20% bigger')..."
+                    className="w-full bg-[#1A1E27] text-zinc-200 placeholder-zinc-500 text-xs rounded-lg px-2.5 py-1.5 border border-white/5 focus:border-[#EF4444] focus:outline-none"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Voice Directive Recorder (Mic + Speech-To-Text) */}
         <div className="mb-4">
           <VoiceRecorder
@@ -190,7 +277,7 @@ export default function FeedbackPanel({
         <div className="mb-2">
           <div className="flex items-center justify-between mb-1.5">
             <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block">
-              Director Instructions & Notes
+              Overall Director Instructions
             </label>
             <span className="text-[10px] text-zinc-500">Auto-synced</span>
           </div>
@@ -198,8 +285,8 @@ export default function FeedbackPanel({
           <textarea
             value={textNotes}
             onChange={handleNotesChange}
-            placeholder="Type specific adjustments here (or use the voice recorder above to speak directly)... e.g. 'Zoom in 15% more on the clinical shield, slow down the checkmark entry by 0.5s, keep headline first-letter caps'."
-            rows={5}
+            placeholder="Type overall scene instructions here (or use the voice recorder above to speak directly)... e.g. 'Zoom in 15% more on the clinical shield, slow down the checkmark entry by 0.5s, keep headline first-letter caps'."
+            rows={4}
             className="w-full bg-[#14171E] text-zinc-200 placeholder-zinc-500 text-xs rounded-xl p-3 border border-white/10 focus:border-[#D4FF00] focus:outline-none focus:ring-1 focus:ring-[#D4FF00]/50 transition-all resize-none leading-relaxed"
           />
         </div>
