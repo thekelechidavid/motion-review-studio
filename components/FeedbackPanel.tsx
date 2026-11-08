@@ -15,6 +15,8 @@ import {
   Trash2,
   Target,
   Edit2,
+  Film,
+  Download,
 } from "lucide-react";
 
 interface FeedbackPanelProps {
@@ -173,6 +175,29 @@ export default function FeedbackPanel({
             </button>
           </div>
         </div>
+
+        {/* Rendered MP4 Video Action */}
+        {scene.videoUrl && (
+          <div className="mb-4 flex gap-2">
+            <a
+              href={scene.videoUrl}
+              download={`Safe_Scene${scene.id}_Portrait.mp4`}
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#155E47] hover:bg-[#0E4232] text-white text-xs font-bold border border-white/10 transition-all shadow-md active:scale-98"
+            >
+              <Download className="w-3.5 h-3.5 text-[#FF7B25]" />
+              <span>Download Scene {scene.id} MP4</span>
+            </a>
+            <a
+              href="/videos/isglp1safe/Safe_Master_Full_Portrait.mp4"
+              download="Safe_Master_Full_Portrait.mp4"
+              className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#1A1E27] hover:bg-[#252B37] text-zinc-300 hover:text-white text-xs font-bold border border-white/10 transition-all"
+              title="Download Full Master Continuous Video (85s)"
+            >
+              <Film className="w-3.5 h-3.5 text-[#FF7B25]" />
+              <span>Master MP4</span>
+            </a>
+          </div>
+        )}
 
         {/* Circled Areas / Spatial Pinpoints Section */}
         <div className="mb-4 p-3 rounded-xl bg-[#14171E] border border-white/[0.08]">

@@ -15,6 +15,8 @@ import {
   Undo2,
   Trash2,
   MapPin,
+  Film,
+  Play,
 } from "lucide-react";
 
 interface SceneViewerProps {
@@ -39,6 +41,13 @@ export default function SceneViewer({
   hasNext,
 }: SceneViewerProps) {
   const [zoomLevel, setZoomLevel] = useState<number>(100);
+  const [viewMode, setViewMode] = useState<"video" | "mockup">(scene.videoUrl ? "video" : "mockup");
+
+  useEffect(() => {
+    if (scene.videoUrl) {
+      setViewMode("video");
+    }
+  }, [scene.id, scene.videoUrl]);
 
   // Annotation states
   const [isAnnotating, setIsAnnotating] = useState<boolean>(false);
@@ -211,6 +220,35 @@ export default function SceneViewer({
         {/* Action Controls: Annotate Mode + Zoom */}
         <div className="flex items-center gap-2">
           
+          {/* Mode Switcher: Video vs Mockup */}
+          {scene.videoUrl && (
+            <div className="flex items-center gap-1 bg-[#14171E] border border-white/10 rounded-xl p-0.5 text-xs">
+              <button
+                onClick={() => setViewMode("video")}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-semibold transition-all ${
+                  viewMode === "video"
+                    ? "bg-[#155E47] text-white shadow-[0_0_12px_rgba(21,94,71,0.5)]"
+                    : "text-zinc-400 hover:text-white"
+                }`}
+                title="Watch rendered Remotion MP4 video"
+              >
+                <Film className="w-3.5 h-3.5" />
+                <span>Rendered MP4</span>
+              </button>
+              <button
+                onClick={() => setViewMode("mockup")}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-semibold transition-all ${
+                  viewMode === "mockup"
+                    ? "bg-[#155E47] text-white shadow-[0_0_12px_rgba(21,94,71,0.5)]"
+                    : "text-zinc-400 hover:text-white"
+                }`}
+                title="View vector storyboard layout"
+              >
+                <span>Storyboard</span>
+              </button>
+            </div>
+          )}
+
           {/* Circle / Annotate Toggle Button */}
           <button
             onClick={() => setIsAnnotating(!isAnnotating)}
@@ -384,8 +422,22 @@ export default function SceneViewer({
           {/* Scene Visual Canvas (Inside Phone Screen) */}
           <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-[#F6F4EB] text-[#155E47] flex flex-col justify-between select-none">
             
-            {/* SVG Visual Composition based on scene ID */}
-            {renderSceneVisual(scene.id, scene)}
+            {/* Video Player or SVG Visual Composition */}
+            {viewMode === "video" && scene.videoUrl ? (
+              <div className="w-full h-full relative bg-[#F6F4EB] flex items-center justify-center overflow-hidden">
+                <video
+                  key={scene.videoUrl}
+                  src={scene.videoUrl}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              renderSceneVisual(scene.id, scene)
+            )}
 
             {/* Interactive Annotation Drawing Layer (SVG Overlay) */}
             <svg

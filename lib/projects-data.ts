@@ -15,15 +15,15 @@ export const INITIAL_PROJECTS: Project[] = [
     id: "dr-kaka-is-glp1-safe",
     client: "Dr Kaka",
     title: "Is GLP-1 Safe Long Term?",
-    subtitle: "12-Scene Master Visual Storyboard & Motion Blueprint",
-    type: "storyboard",
-    status: "active_review",
+    subtitle: "12-Scene Rendered Vertical Suite & Motion Review Studio",
+    type: "rendered_video",
+    status: "ready_to_render",
     format: "9:16 Vertical",
     aspectRatio: "9:16",
     dimensions: "1080×1920",
     scenesCount: 12,
-    totalDuration: "01:25 (84.7s)",
-    lastUpdated: "Today",
+    totalDuration: "01:25 (85.0s)",
+    lastUpdated: "Rendered & Verified",
     brandColors: [
       { name: "Warm Clinic Cream", hex: "#F6F4EB" },
       { name: "Brand Deep Green", hex: "#155E47" },
@@ -50,6 +50,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Are GLP-1s Safe?",
         highlightText: "Yes, With Nuance",
         badgeDetail: "Nearly 2 Decades of Data",
+        videoUrl: "/videos/isglp1safe/Safe_Scene1_Portrait.mp4",
       },
       {
         id: 2,
@@ -62,6 +63,7 @@ export const INITIAL_PROJECTS: Project[] = [
         connectiveText: "Patient Fears & Rumors",
         headlineText: "The 10-Year Question",
         highlightText: "Fear vs Clinical Facts",
+        videoUrl: "/videos/isglp1safe/Safe_Scene2_Portrait.mp4",
       },
       {
         id: 3,
@@ -74,6 +76,7 @@ export const INITIAL_PROJECTS: Project[] = [
         connectiveText: "Established Clinical History",
         headlineText: "In Use Since 2005",
         highlightText: "20 Years Of Human Experience",
+        videoUrl: "/videos/isglp1safe/Safe_Scene3_Portrait.mp4",
       },
       {
         id: 4,
@@ -87,6 +90,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Dual Action Surveillance",
         highlightText: "Continuous Clinical Monitoring",
         badgeDetail: "Real-World Registry Monitoring",
+        videoUrl: "/videos/isglp1safe/Safe_Scene4_Portrait.mp4",
       },
       {
         id: 5,
@@ -100,6 +104,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Significant Health Gains",
         highlightText: "Far Beyond Weight Loss",
         badgeDetail: "Multisystem Health Optimization",
+        videoUrl: "/videos/isglp1safe/Safe_Scene5_Portrait.mp4",
       },
       {
         id: 6,
@@ -113,6 +118,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Heart Protection",
         highlightText: "Reduced Cardiovascular Events",
         badgeDetail: "20% MACE Risk Reduction (SELECT)",
+        videoUrl: "/videos/isglp1safe/Safe_Scene6_Portrait.mp4",
       },
       {
         id: 7,
@@ -126,6 +132,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Sleep & Blood Sugar",
         highlightText: "Quieter Nights & Stable Glucose",
         badgeDetail: "Airway Patency & Glycemic Control",
+        videoUrl: "/videos/isglp1safe/Safe_Scene7_Portrait.mp4",
       },
       {
         id: 8,
@@ -138,6 +145,7 @@ export const INITIAL_PROJECTS: Project[] = [
         connectiveText: "Mechanical Decompression",
         headlineText: "Joint & Knee Relief",
         highlightText: "Reduced Inflammatory Load",
+        videoUrl: "/videos/isglp1safe/Safe_Scene8_Portrait.mp4",
       },
       {
         id: 9,
@@ -151,6 +159,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Side Effects Improve",
         highlightText: "Temporary & Manageable",
         badgeDetail: "3-Step Adaptation Protocol",
+        videoUrl: "/videos/isglp1safe/Safe_Scene9_Portrait.mp4",
       },
       {
         id: 10,
@@ -163,6 +172,7 @@ export const INITIAL_PROJECTS: Project[] = [
         connectiveText: "Medical Integrity",
         headlineText: "Honest Medicine",
         highlightText: "No Panaceas, Real Science",
+        videoUrl: "/videos/isglp1safe/Safe_Scene10_Portrait.mp4",
       },
       {
         id: 11,
@@ -176,6 +186,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "Obesity Medicine",
         highlightText: "Peer-Reviewed Research",
         badgeDetail: "100+ Peer-Reviewed Trials Evaluated",
+        videoUrl: "/videos/isglp1safe/Safe_Scene11_Portrait.mp4",
       },
       {
         id: 12,
@@ -189,6 +200,7 @@ export const INITIAL_PROJECTS: Project[] = [
         headlineText: "In Conjunction With Your Doctor",
         highlightText: "Personalized & Safe Care",
         badgeDetail: "Dr Kaka · Preventive Medicine",
+        videoUrl: "/videos/isglp1safe/Safe_Scene12_Portrait.mp4",
       },
     ],
   },
