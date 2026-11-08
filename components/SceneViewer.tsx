@@ -9,15 +9,12 @@ import {
   ChevronLeft,
   ChevronRight,
   RotateCcw,
-  Edit3,
   Circle,
   Square,
   PenTool,
   Undo2,
   Trash2,
   MapPin,
-  Check,
-  X,
 } from "lucide-react";
 
 interface SceneViewerProps {
@@ -62,9 +59,6 @@ export default function SceneViewer({
       }
       if (e.key === "ArrowLeft" && hasPrev && !isDrawing) onPrev();
       if (e.key === "ArrowRight" && hasNext && !isDrawing) onNext();
-      if (e.key === "c" && (e.metaKey || e.ctrlKey)) {
-        setIsAnnotating((prev) => !prev);
-      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -117,9 +111,7 @@ export default function SceneViewer({
     if (activeTool === "circle") {
       const rx = Math.abs(endPoint.x - startPoint.x);
       const ry = Math.abs(endPoint.y - startPoint.y);
-      // Minimum radius check to avoid accidental clicks
       if (rx < 1.5 && ry < 1.5) {
-        // Create a default circular pin if it was a quick click
         newAnnotation = {
           id: `pin_${Date.now()}`,
           number: nextNumber,
@@ -163,7 +155,6 @@ export default function SceneViewer({
         };
       }
     } else if (activeTool === "freehand" && freehandPoints.length > 3) {
-      // Calculate center of points
       const avgX = freehandPoints.reduce((acc, p) => acc + p.x, 0) / freehandPoints.length;
       const avgY = freehandPoints.reduce((acc, p) => acc + p.y, 0) / freehandPoints.length;
       newAnnotation = {
@@ -570,7 +561,7 @@ export default function SceneViewer({
   );
 }
 
-// Custom SVG Visual Renderers for Dr Kaka's Scenes
+// Custom SVG Visual Renderers for Dr Kaka's Scenes with Precision Director Revisions
 function renderSceneVisual(sceneId: number, scene: Scene) {
   return (
     <svg viewBox="0 0 360 640" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -610,86 +601,36 @@ function renderSceneVisual(sceneId: number, scene: Scene) {
         {scene.startTime}
       </text>
 
-      {/* Top Header Typography Stack */}
-      <g transform="translate(180, 85)">
+      {/* Top Header Typography Stack - Clean, Unboxed & Breathing */}
+      <g transform="translate(180, 92)">
         <text
           x="0"
           y="0"
           textAnchor="middle"
           fontFamily="'Poppins', sans-serif"
-          fontWeight="300"
-          fontSize="11"
-          fill="#155E47"
-          letterSpacing="1.5"
+          fontWeight="400"
+          fontSize="11.5"
+          fill="#FF7B25"
+          letterSpacing="1.2"
         >
-          {scene.connectiveText.toUpperCase()}
+          {scene.connectiveText}
         </text>
         <text
           x="0"
-          y="28"
+          y="32"
           textAnchor="middle"
           fontFamily="'Poppins', sans-serif"
           fontWeight="800"
-          fontSize="21"
+          fontSize="24"
           fill="#155E47"
           letterSpacing="-0.5"
         >
           {scene.headlineText}
         </text>
-        <g transform="translate(0, 42)">
-          <rect
-            x="-100"
-            y="0"
-            width="200"
-            height="28"
-            rx="14"
-            fill="#155E47"
-            filter="drop-shadow(0 6px 14px rgba(21,94,71,0.2))"
-          />
-          <text
-            x="0"
-            y="19"
-            textAnchor="middle"
-            fontFamily="'Playfair Display', serif"
-            fontStyle="italic"
-            fontWeight="600"
-            fontSize="12.5"
-            fill="#FFFFFF"
-          >
-            {scene.highlightText}
-          </text>
-        </g>
       </g>
 
-      {/* Scene-Specific Vector Graphics */}
+      {/* Scene-Specific Vector Graphics with Director Pinpoint Revisions */}
       {renderSceneGraphic(sceneId, scene)}
-
-      {/* Badge Pill Above Safe Zone */}
-      {scene.badgeDetail && (
-        <g transform="translate(180, 520)">
-          <rect
-            x="-115"
-            y="-16"
-            width="230"
-            height="32"
-            rx="16"
-            fill="#FFFFFF"
-            stroke="rgba(21,94,71,0.2)"
-            filter="drop-shadow(0 4px 12px rgba(21,94,71,0.08))"
-          />
-          <text
-            x="0"
-            y="5"
-            textAnchor="middle"
-            fontFamily="'Poppins', sans-serif"
-            fontWeight="700"
-            fontSize="10"
-            fill="#155E47"
-          >
-            {scene.badgeDetail}
-          </text>
-        </g>
-      )}
     </svg>
   );
 }
@@ -697,203 +638,318 @@ function renderSceneVisual(sceneId: number, scene: Scene) {
 function renderSceneGraphic(sceneId: number, scene: Scene) {
   switch (sceneId) {
     case 1:
+      // Clean high-authority clinical shield - centered & prominent
       return (
-        <g transform="translate(180, 310)">
+        <g transform="translate(180, 320)">
           <path
-            d="M0 -60 C40 -60 70 -40 70 0 C70 50 30 80 0 100 C-30 80 -70 50 -70 0 C-70 -40 -40 -60 0 -60 Z"
+            d="M0 -75 C50 -75 88 -50 88 0 C88 62 38 100 0 125 C-38 100 -88 62 -88 0 C-88 -50 -50 -75 0 -75 Z"
             fill="#155E47"
-            filter="drop-shadow(0 12px 24px rgba(21,94,71,0.25))"
+            filter="drop-shadow(0 16px 32px rgba(21,94,71,0.25))"
           />
           <path
-            d="M0 -50 C32 -50 56 -34 56 0 C56 40 24 66 0 82 C-24 66 -56 40 -56 0 C-56 -34 -32 -50 0 -50 Z"
+            d="M0 -62 C40 -62 70 -42 70 0 C70 50 30 82 0 102 C-30 82 -70 50 -70 0 C-70 -42 -40 -62 0 -62 Z"
             fill="#FFFFFF"
             opacity="0.15"
           />
           <path
-            d="M-22 2 L-6 18 L24 -14"
+            d="M-28 2 L-8 22 L32 -18"
             stroke="#FF7B25"
-            strokeWidth="8"
+            strokeWidth="10"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
           />
-          <circle cx="0" cy="10" r="85" stroke="#155E47" strokeWidth="2" strokeDasharray="6 6" fill="none" opacity="0.4" />
+          <circle cx="0" cy="12" r="105" stroke="#155E47" strokeWidth="2" strokeDasharray="6 6" fill="none" opacity="0.3" />
         </g>
       );
     case 2:
+      // Debunking the 10-Year Myth - Clean head profile, neural aura & clean strikethrough (box removed)
       return (
-        <g transform="translate(180, 270)">
+        <g transform="translate(180, 310)">
           <path
-            d="M-40 40 C-40 0 -20 -40 10 -40 C40 -40 50 -20 50 0 C50 15 45 25 40 35 C35 45 40 60 45 70 L-40 70 Z"
+            d="M-45 50 C-45 0 -22 -48 12 -48 C46 -48 58 -24 58 0 C58 18 52 30 46 42 C40 54 46 72 52 84 L-45 84 Z"
             fill="none"
             stroke="#155E47"
-            strokeWidth="3.5"
+            strokeWidth="4"
             strokeLinecap="round"
           />
-          <circle cx="15" cy="0" r="14" fill="#FF7B25" opacity="0.25" />
-          <circle cx="15" cy="0" r="6" fill="#FF7B25" />
-          <g transform="translate(0, 95)">
-            <rect x="-130" y="0" width="260" height="38" rx="12" fill="#FFFFFF" stroke="rgba(255,123,37,0.3)" />
-            <text x="0" y="24" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="11" fontWeight="600" fill="#FF7B25" textDecoration="line-through">
+          <circle cx="16" cy="0" r="16" fill="#FF7B25" opacity="0.25" />
+          <circle cx="16" cy="0" r="7" fill="#FF7B25" />
+          
+          {/* Strikethrough Myth Card */}
+          <g transform="translate(0, 115)">
+            <rect x="-135" y="0" width="270" height="42" rx="14" fill="#FFFFFF" stroke="rgba(255,123,37,0.35)" filter="drop-shadow(0 6px 16px rgba(21,94,71,0.06))" />
+            <text x="0" y="27" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="12" fontWeight="600" fill="#FF7B25" textDecoration="line-through">
               Myth: Unknown 10-Yr Mutations
             </text>
           </g>
-          <g transform="translate(0, 142)">
-            <rect x="-130" y="0" width="260" height="38" rx="12" fill="#155E47" />
-            <text x="0" y="24" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="11" fontWeight="700" fill="#FFFFFF">
-              Reality: 20 Years of Human Care
+
+          {/* Clean reality text beneath (unboxed per director directive) */}
+          <text x="0" y="180" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="12" fontWeight="700" fill="#155E47">
+            Reality: 20 Years of Human Clinical Care
+          </text>
+        </g>
+      );
+    case 3:
+      // Two Decades of Track Record - Generously spaced timeline with overlapping circle removed
+      return (
+        <g transform="translate(180, 320)">
+          {/* Broad, spaced timeline axis */}
+          <line x1="-125" y1="0" x2="125" y2="0" stroke="#155E47" strokeWidth="4" strokeLinecap="round" />
+          
+          {/* Left Milestone: 2005 */}
+          <g transform="translate(-95, 0)">
+            <circle cx="0" cy="0" r="16" fill="#155E47" />
+            <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
+            
+            <rect x="-42" y="-48" width="84" height="30" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1.5" />
+            <text x="0" y="-28" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="800" fontSize="13" fill="#155E47">2005</text>
+            
+            <text x="0" y="32" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="10.5" fill="#155E47">
+              T2D Approved
+            </text>
+          </g>
+
+          {/* Right Milestone: Today - Generously spaced out, redundant inner circle removed */}
+          <g transform="translate(95, 0)">
+            <circle cx="0" cy="0" r="16" fill="#FF7B25" />
+            <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
+            
+            <rect x="-42" y="-48" width="84" height="30" rx="8" fill="#FF7B25" />
+            <text x="0" y="-28" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="800" fontSize="13" fill="#FFFFFF">TODAY</text>
+            
+            <text x="0" y="32" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="10.5" fill="#FF7B25">
+              20 Years of Proven Use
             </text>
           </g>
         </g>
       );
-    case 3:
-      return (
-        <g transform="translate(180, 310)">
-          <line x1="-120" y1="0" x2="120" y2="0" stroke="#155E47" strokeWidth="4" strokeLinecap="round" />
-          <circle cx="-100" cy="0" r="16" fill="#155E47" />
-          <circle cx="-100" cy="0" r="7" fill="#FFFFFF" />
-          <rect x="-140" y="-48" width="80" height="30" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1.5" />
-          <text x="-100" y="-28" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="800" fontSize="13" fill="#155E47">2005</text>
-          <text x="-100" y="24" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10" fill="#155E47">T2D Approved</text>
-          <circle cx="100" cy="0" r="18" fill="#FF7B25" />
-          <circle cx="100" cy="0" r="8" fill="#FFFFFF" />
-          <rect x="60" y="-48" width="80" height="30" rx="8" fill="#FF7B25" />
-          <text x="100" y="-28" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="800" fontSize="13" fill="#FFFFFF">TODAY</text>
-          <text x="100" y="24" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="10" fill="#FF7B25">20 Years Later</text>
-        </g>
-      );
     case 4:
+      // The Newer Dual Compounds - Side-by-side cards
       return (
-        <g transform="translate(180, 310)">
-          <rect x="-135" y="-50" width="125" height="110" rx="16" fill="#FFFFFF" stroke="rgba(21,94,71,0.18)" />
-          <text x="-72" y="-12" textAnchor="middle" fontSize="18">🏛️</text>
-          <text x="-72" y="16" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#155E47">GLP-1 Base</text>
-          <text x="-72" y="32" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10" fill="rgba(21,94,71,0.7)">2005 - Present</text>
-          <rect x="10" y="-50" width="125" height="110" rx="16" fill="#FFFFFF" stroke="rgba(255,123,37,0.3)" />
-          <text x="72" y="-12" textAnchor="middle" fontSize="18">⚡</text>
-          <text x="72" y="16" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#155E47">Tirzepatide</text>
-          <text x="72" y="32" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10" fill="#FF7B25">Dual Action</text>
+        <g transform="translate(180, 320)">
+          <rect x="-140" y="-55" width="130" height="120" rx="18" fill="#FFFFFF" stroke="rgba(21,94,71,0.18)" filter="drop-shadow(0 8px 18px rgba(21,94,71,0.06))" />
+          <text x="-75" y="-14" textAnchor="middle" fontSize="20">🏛️</text>
+          <text x="-75" y="18" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="13" fill="#155E47">GLP-1 Base</text>
+          <text x="-75" y="36" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10.5" fill="rgba(21,94,71,0.7)">2005 - Present</text>
+          
+          <rect x="10" y="-55" width="130" height="120" rx="18" fill="#FFFFFF" stroke="rgba(255,123,37,0.3)" filter="drop-shadow(0 8px 18px rgba(21,94,71,0.06))" />
+          <text x="75" y="-14" textAnchor="middle" fontSize="20">⚡</text>
+          <text x="75" y="18" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="13" fill="#155E47">Tirzepatide</text>
+          <text x="75" y="36" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10.5" fill="#FF7B25">Dual Action</text>
         </g>
       );
     case 5:
+      // Proven Systemic Benefits - Concentric waves & 4 satellite tags
       return (
-        <g transform="translate(180, 310)">
-          <circle cx="0" cy="-10" r="85" stroke="#155E47" strokeWidth="1.5" strokeDasharray="4 4" fill="none" opacity="0.3" />
-          <circle cx="0" cy="-10" r="60" stroke="#FF7B25" strokeWidth="2" strokeDasharray="3 3" fill="none" opacity="0.4" />
-          <circle cx="0" cy="-55" r="16" fill="#155E47" />
-          <path d="M-28 -25 L28 -25 L20 40 L-20 40 Z" fill="#155E47" />
-          <circle cx="0" cy="-15" r="9" fill="#FF7B25" />
-          <g transform="translate(-105, -50)">
-            <rect width="64" height="24" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1" />
-            <text x="32" y="16" textAnchor="middle" fontSize="10" fontWeight="700" fill="#155E47">❤️ Heart</text>
+        <g transform="translate(180, 320)">
+          <circle cx="0" cy="-10" r="95" stroke="#155E47" strokeWidth="1.5" strokeDasharray="4 4" fill="none" opacity="0.25" />
+          <circle cx="0" cy="-10" r="68" stroke="#FF7B25" strokeWidth="2" strokeDasharray="3 3" fill="none" opacity="0.35" />
+          
+          <circle cx="0" cy="-60" r="18" fill="#155E47" />
+          <path d="M-32 -26 L32 -26 L22 45 L-22 45 Z" fill="#155E47" />
+          <circle cx="0" cy="-15" r="10" fill="#FF7B25" />
+          
+          <g transform="translate(-115, -55)">
+            <rect width="70" height="26" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1" />
+            <text x="35" y="17" textAnchor="middle" fontSize="11" fontWeight="700" fill="#155E47">❤️ Heart</text>
           </g>
-          <g transform="translate(42, -50)">
-            <rect width="64" height="24" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1" />
-            <text x="32" y="16" textAnchor="middle" fontSize="10" fontWeight="700" fill="#155E47">💤 Sleep</text>
+          <g transform="translate(45, -55)">
+            <rect width="70" height="26" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1" />
+            <text x="35" y="17" textAnchor="middle" fontSize="11" fontWeight="700" fill="#155E47">💤 Sleep</text>
           </g>
-          <g transform="translate(-115, 20)">
-            <rect width="76" height="24" rx="8" fill="#FFFFFF" stroke="#FF7B25" strokeWidth="1" />
-            <text x="38" y="16" textAnchor="middle" fontSize="10" fontWeight="700" fill="#FF7B25">🩸 Glucose</text>
+          <g transform="translate(-125, 20)">
+            <rect width="80" height="26" rx="8" fill="#FFFFFF" stroke="#FF7B25" strokeWidth="1" />
+            <text x="40" y="17" textAnchor="middle" fontSize="11" fontWeight="700" fill="#FF7B25">🩸 Glucose</text>
           </g>
-          <g transform="translate(40, 20)">
-            <rect width="70" height="24" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1" />
-            <text x="35" y="16" textAnchor="middle" fontSize="10" fontWeight="700" fill="#155E47">🦵 Joints</text>
+          <g transform="translate(45, 20)">
+            <rect width="76" height="26" rx="8" fill="#FFFFFF" stroke="#155E47" strokeWidth="1" />
+            <text x="38" y="17" textAnchor="middle" fontSize="11" fontWeight="700" fill="#155E47">🦵 Joints</text>
           </g>
         </g>
       );
     case 6:
+      // Cardiovascular Protection - Heart & ECG Waveform
       return (
-        <g transform="translate(180, 310)">
+        <g transform="translate(180, 315)">
           <path
-            d="M0 -30 C-40 -80 -90 -30 -90 10 C-90 60 0 100 0 110 C0 100 90 60 90 10 C90 -30 40 -80 0 -30 Z"
+            d="M0 -35 C-45 -90 -100 -35 -100 12 C-100 68 0 115 0 125 C0 115 100 68 100 12 C100 -35 45 -90 0 -35 Z"
             fill="#FFFFFF"
             stroke="#155E47"
-            strokeWidth="3"
-            filter="drop-shadow(0 12px 24px rgba(21,94,71,0.12))"
+            strokeWidth="3.5"
+            filter="drop-shadow(0 14px 28px rgba(21,94,71,0.12))"
           />
           <path
-            d="M-60 20 L-30 20 L-20 -10 L-10 40 L5 -30 L15 30 L25 20 L60 20"
+            d="M-70 20 L-35 20 L-22 -12 L-10 45 L6 -35 L18 35 L30 20 L70 20"
             stroke="#FF7B25"
-            strokeWidth="4.5"
+            strokeWidth="5"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
           />
-          <rect x="-110" y="125" width="220" height="32" rx="12" fill="#155E47" />
-          <text x="0" y="146" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="10.5" fill="#FFFFFF">
-            20% Event Risk Reduction
-          </text>
         </g>
       );
     case 7:
+      // Restoring Sleep & Blood Sugar - Clean split cards
       return (
-        <g transform="translate(180, 305)">
-          <rect x="-135" y="-55" width="125" height="120" rx="18" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" />
-          <text x="-72" y="-12" textAnchor="middle" fontSize="18">🌙</text>
-          <text x="-72" y="16" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#155E47">Sleep Apnea</text>
-          <text x="-72" y="32" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10" fill="rgba(21,94,71,0.7)">Airway Patency</text>
-          <rect x="10" y="-55" width="125" height="120" rx="18" fill="#FFFFFF" stroke="rgba(255,123,37,0.25)" />
-          <text x="72" y="-12" textAnchor="middle" fontSize="18">🩸</text>
-          <text x="72" y="16" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#155E47">Blood Sugar</text>
-          <text x="72" y="32" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10" fill="#FF7B25">HbA1c Balance</text>
+        <g transform="translate(180, 320)">
+          <rect x="-140" y="-60" width="130" height="130" rx="20" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" filter="drop-shadow(0 8px 18px rgba(21,94,71,0.08))" />
+          <text x="-75" y="-14" textAnchor="middle" fontSize="22">🌙</text>
+          <text x="-75" y="18" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="13" fill="#155E47">Sleep Apnea</text>
+          <text x="-75" y="36" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10.5" fill="rgba(21,94,71,0.7)">Airway Patency</text>
+          
+          <rect x="10" y="-60" width="130" height="130" rx="20" fill="#FFFFFF" stroke="rgba(255,123,37,0.25)" filter="drop-shadow(0 8px 18px rgba(21,94,71,0.08))" />
+          <text x="75" y="-14" textAnchor="middle" fontSize="22">🩸</text>
+          <text x="75" y="18" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="13" fill="#155E47">Blood Sugar</text>
+          <text x="75" y="36" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontSize="10.5" fill="#FF7B25">HbA1c Balance</text>
         </g>
       );
     case 8:
+      // Joint & Mobility Relief - Authentic Anatomical Knee Joint Illustration per Director Note
       return (
         <g transform="translate(180, 310)">
-          <path d="M-35 -50 C-35 -10 -15 0 -15 20 C-15 40 -35 50 -35 90" stroke="#155E47" strokeWidth="6" strokeLinecap="round" fill="none" />
-          <path d="M35 -50 C35 -10 15 0 15 20 C15 40 35 50 35 90" stroke="#155E47" strokeWidth="6" strokeLinecap="round" fill="none" />
-          <circle cx="0" cy="18" r="28" fill="rgba(255,123,37,0.15)" stroke="#FF7B25" strokeWidth="2" strokeDasharray="4 4" />
-          <circle cx="0" cy="18" r="8" fill="#FF7B25" />
+          {/* Femur (Thigh Bone - Top) */}
+          <path
+            d="M-22 -80 L-22 -25 C-22 -15 -38 -5 -38 12 C-38 24 -24 30 -10 30 C-2 30 0 24 0 20 C0 24 2 30 10 30 C24 30 38 24 38 12 C38 -5 22 -15 22 -25 L22 -80 Z"
+            fill="#FFFFFF"
+            stroke="#155E47"
+            strokeWidth="3.5"
+            strokeLinejoin="round"
+            filter="drop-shadow(0 8px 16px rgba(21,94,71,0.1))"
+          />
+          
+          {/* Patella (Kneecap - Center Floating Anteriorly) */}
+          <ellipse
+            cx="0"
+            cy="12"
+            rx="16"
+            ry="18"
+            fill="#FAF8F2"
+            stroke="#FF7B25"
+            strokeWidth="3"
+            filter="drop-shadow(0 4px 10px rgba(255,123,37,0.2))"
+          />
+          <text x="0" y="16" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="9" fill="#FF7B25">
+            PATELLA
+          </text>
+
+          {/* Meniscus / Cartilage Decompression Gap (Glowing Warm Relief) */}
+          <ellipse cx="0" cy="38" rx="36" ry="7" fill="rgba(255,123,37,0.2)" stroke="#FF7B25" strokeWidth="2" strokeDasharray="3 3" />
+
+          {/* Tibia & Fibula (Shin & Calf Bones - Bottom) */}
+          <path
+            d="M-36 46 C-36 40 -20 36 0 36 C20 36 36 40 36 46 L26 100 L-26 100 Z"
+            fill="#FFFFFF"
+            stroke="#155E47"
+            strokeWidth="3.5"
+            strokeLinejoin="round"
+          />
+          {/* Fibula side bone */}
+          <path d="M38 58 L46 68 L42 100" stroke="#155E47" strokeWidth="3" fill="#FFFFFF" />
+
+          {/* Decompression indicators: 4x pressure eased */}
+          <text x="0" y="125" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#155E47">
+            Mechanical Load Relieved
+          </text>
         </g>
       );
     case 9:
+      // Managing Short-Term Effects - 3 Clinical Titration Steps
       return (
-        <g transform="translate(180, 270)">
-          <rect x="-130" y="0" width="260" height="38" rx="10" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" />
-          <text x="-85" y="24" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#155E47">1. Gentle Titration Pacing</text>
-          <rect x="-130" y="48" width="260" height="38" rx="10" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" />
-          <text x="-85" y="72" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#155E47">2. Hydration & Protein Focus</text>
-          <rect x="-130" y="96" width="260" height="38" rx="10" fill="#155E47" />
-          <text x="-85" y="120" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#FFFFFF">3. Transient Adaptation (Weeks)</text>
+        <g transform="translate(180, 290)">
+          <g transform="translate(0, 0)">
+            <rect x="-135" y="0" width="270" height="42" rx="12" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" filter="drop-shadow(0 4px 10px rgba(21,94,71,0.05))" />
+            <circle cx="-108" cy="21" r="11" fill="#155E47" />
+            <text x="-108" y="25" textAnchor="middle" fontSize="11" fontWeight="800" fill="#FFFFFF">1</text>
+            <text x="-85" y="26" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#155E47">Gentle Titration Pacing</text>
+          </g>
+          <g transform="translate(0, 54)">
+            <rect x="-135" y="0" width="270" height="42" rx="12" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" filter="drop-shadow(0 4px 10px rgba(21,94,71,0.05))" />
+            <circle cx="-108" cy="21" r="11" fill="#155E47" />
+            <text x="-108" y="25" textAnchor="middle" fontSize="11" fontWeight="800" fill="#FFFFFF">2</text>
+            <text x="-85" y="26" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#155E47">Adequate Hydration & Protein</text>
+          </g>
+          <g transform="translate(0, 108)">
+            <rect x="-135" y="0" width="270" height="42" rx="12" fill="#155E47" filter="drop-shadow(0 6px 14px rgba(21,94,71,0.18))" />
+            <circle cx="-108" cy="21" r="11" fill="#FF7B25" />
+            <text x="-108" y="25" textAnchor="middle" fontSize="11" fontWeight="800" fill="#FFFFFF">3</text>
+            <text x="-85" y="26" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#FFFFFF">Transient Adaptation (Weeks)</text>
+          </g>
         </g>
       );
     case 10:
+      // Scientific Nuance & Realism - Balanced Scales with Generous Card Width & Fitting Text
       return (
         <g transform="translate(180, 310)">
-          <path d="M0 60 L0 -20" stroke="#155E47" strokeWidth="4" />
-          <polygon points="-25,60 25,60 0,25" fill="#155E47" />
-          <line x1="-100" y1="-20" x2="100" y2="-20" stroke="#155E47" strokeWidth="4" strokeLinecap="round" />
+          {/* Fulcrum base */}
+          <path d="M0 65 L0 -20" stroke="#155E47" strokeWidth="4" />
+          <polygon points="-28,65 28,65 0,25" fill="#155E47" />
+          <line x1="-115" y1="-20" x2="115" y2="-20" stroke="#155E47" strokeWidth="4" strokeLinecap="round" />
           <circle cx="0" cy="-20" r="7" fill="#FF7B25" />
-          <rect x="-130" y="15" width="100" height="42" rx="10" fill="#FFFFFF" stroke="#155E47" strokeWidth="1.5" />
-          <text x="-80" y="34" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="10" fill="#155E47">Rigorous Oversight</text>
-          <rect x="30" y="15" width="100" height="42" rx="10" fill="#FFFFFF" stroke="#FF7B25" strokeWidth="1.5" />
-          <text x="80" y="34" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="10" fill="#155E47">Individual Fit</text>
+
+          {/* Left Plate: Rigorous Standards (widened to 120px so text fits comfortably) */}
+          <line x1="-85" y1="-20" x2="-85" y2="15" stroke="rgba(21,94,71,0.4)" strokeWidth="2" />
+          <rect x="-145" y="15" width="120" height="48" rx="12" fill="#FFFFFF" stroke="#155E47" strokeWidth="1.5" filter="drop-shadow(0 6px 14px rgba(21,94,71,0.08))" />
+          <text x="-85" y="36" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#155E47">
+            Rigorous Oversight
+          </text>
+          <text x="-85" y="52" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="500" fontSize="9.5" fill="rgba(21,94,71,0.7)">
+            FDA & MHRA Trials
+          </text>
+
+          {/* Right Plate: Individual Patient Fit (widened to 120px) */}
+          <line x1="85" y1="-20" x2="85" y2="15" stroke="rgba(21,94,71,0.4)" strokeWidth="2" />
+          <rect x="25" y="15" width="120" height="48" rx="12" fill="#FFFFFF" stroke="#FF7B25" strokeWidth="1.5" filter="drop-shadow(0 6px 14px rgba(21,94,71,0.08))" />
+          <text x="85" y="36" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#155E47">
+            Individual Fit
+          </text>
+          <text x="85" y="52" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="9.5" fill="#FF7B25">
+            Doctor-Guided
+          </text>
         </g>
       );
     case 11:
+      // The Specialist Evidence Base - Journal Stack & Credential Seal
       return (
         <g transform="translate(180, 310)">
-          <rect x="-105" y="-55" width="210" height="32" rx="8" fill="#FFFFFF" stroke="rgba(21,94,71,0.18)" opacity="0.6" />
-          <text x="0" y="-35" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="11" fill="#155E47">New England Journal of Medicine</text>
-          <rect x="-115" y="-25" width="230" height="34" rx="8" fill="#FFFFFF" stroke="rgba(21,94,71,0.22)" opacity="0.85" />
-          <text x="0" y="-4" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="12" fontWeight="600" fill="#155E47">The Lancet Diabetes & Endocrinology</text>
-          <rect x="-125" y="16" width="250" height="56" rx="16" fill="#155E47" />
-          <text x="0" y="40" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="12" fill="#FFFFFF">Obesity Medicine Specialist</text>
-          <text x="0" y="58" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="9.5" fill="#FF7B25">100+ PEER-REVIEWED TRIALS EVALUATED</text>
+          <rect x="-115" y="-60" width="230" height="34" rx="8" fill="#FFFFFF" stroke="rgba(21,94,71,0.18)" opacity="0.6" />
+          <text x="0" y="-38" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="11.5" fill="#155E47">
+            New England Journal of Medicine
+          </text>
+          
+          <rect x="-125" y="-28" width="250" height="36" rx="8" fill="#FFFFFF" stroke="rgba(21,94,71,0.22)" opacity="0.85" />
+          <text x="0" y="-5" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="12.5" fontWeight="600" fill="#155E47">
+            The Lancet Diabetes & Endocrinology
+          </text>
+          
+          <rect x="-135" y="18" width="270" height="60" rx="16" fill="#155E47" filter="drop-shadow(0 12px 28px rgba(21,94,71,0.22))" />
+          <text x="0" y="44" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="13" fill="#FFFFFF">
+            Obesity Medicine Specialist
+          </text>
+          <text x="0" y="62" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="600" fontSize="10" fill="#FF7B25">
+            100+ PEER-REVIEWED TRIALS EVALUATED
+          </text>
         </g>
       );
     case 12:
     default:
+      // Doctor Partnership & Sign-Off - Caduceus emblem & clean quote card
       return (
-        <g transform="translate(180, 290)">
-          <circle cx="0" cy="-40" r="32" fill="#155E47" />
-          <path d="M-10 -40 L0 -52 L10 -40 L0 -28 Z" fill="#FFFFFF" />
-          <circle cx="0" cy="-40" r="4" fill="#FF7B25" />
-          <rect x="-135" y="10" width="270" height="88" rx="18" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" />
-          <text x="0" y="38" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="12.5" fill="#155E47">“Targeted tools work best when guided</text>
-          <text x="0" y="56" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="12.5" fill="#155E47">by personal clinical care.”</text>
-          <text x="0" y="82" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="10.5" fill="#155E47">Dr Kaka · Preventive Medicine</text>
+        <g transform="translate(180, 300)">
+          <circle cx="0" cy="-45" r="32" fill="#155E47" filter="drop-shadow(0 8px 20px rgba(21,94,71,0.2))" />
+          <path d="M-10 -45 L0 -57 L10 -45 L0 -33 Z" fill="#FFFFFF" />
+          <circle cx="0" cy="-45" r="4" fill="#FF7B25" />
+          
+          <rect x="-140" y="5" width="280" height="92" rx="18" fill="#FFFFFF" stroke="rgba(21,94,71,0.15)" filter="drop-shadow(0 12px 28px rgba(21,94,71,0.08))" />
+          <text x="0" y="34" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="13" fill="#155E47">
+            “Targeted tools work best when guided
+          </text>
+          <text x="0" y="52" textAnchor="middle" fontFamily="'Playfair Display', serif" fontStyle="italic" fontSize="13" fill="#155E47">
+            by personal clinical care.”
+          </text>
+          <text x="0" y="78" textAnchor="middle" fontFamily="'Poppins', sans-serif" fontWeight="700" fontSize="11" fill="#155E47">
+            Dr Kaka · Preventive Medicine
+          </text>
         </g>
       );
   }
