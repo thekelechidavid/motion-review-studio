@@ -24,7 +24,7 @@ export default function Navbar() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-white text-base tracking-tight">GROWITHKEDA</span>
+              <span className="font-extrabold text-white text-base tracking-tight">Growithkeda</span>
               <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-[#D4FF00]/10 text-[#D4FF00] border border-[#D4FF00]/30">
                 Motion Studio
               </span>
