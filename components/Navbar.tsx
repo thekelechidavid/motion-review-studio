@@ -33,6 +33,22 @@ export default function Navbar() {
           </div>
 
           <Link
+            href="/captions"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-[#155E47] hover:bg-[#1a7357] transition-all border border-[#D4FF00]/30 shadow-[0_0_15px_rgba(21,94,71,0.3)]"
+          >
+            <span className="text-sm">💬</span>
+            <span>Caption Studio</span>
+          </Link>
+
+          <Link
+            href="/cutting-room"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-black bg-[#D4FF00] hover:bg-[#c2eb00] transition-all shadow-[0_0_15px_rgba(212,255,0,0.3)]"
+          >
+            <span className="text-sm">✂️</span>
+            <span>Cutting Room</span>
+          </Link>
+
+          <Link
             href="/"
             className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-300 hover:text-white hover:bg-white/5 transition-colors"
           >

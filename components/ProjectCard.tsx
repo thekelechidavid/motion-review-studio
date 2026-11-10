@@ -50,18 +50,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Mini Preview Box / Visual Hero */}
         <div className="mt-4 w-full h-36 rounded-xl overflow-hidden relative border border-white/5 bg-[#14171E] flex items-center justify-center">
           {isStoryboard ? (
-            <div className="w-full h-full p-4 bg-[#F6F4EB] text-[#155E47] flex flex-col justify-between relative">
+            <div className="w-full h-full p-3.5 bg-[#F6F4EB] text-[#155E47] flex flex-col justify-between relative overflow-hidden">
               <div className="flex justify-between items-center text-[10px] font-bold">
                 <span className="px-2 py-0.5 rounded-full bg-[#155E47] text-white">9:16 Storyboard</span>
-                <span className="text-[#FF7B25]">Warm Clinic Cream</span>
+                <span className="text-[#FF7B25] uppercase tracking-wide text-[9px] font-bold">
+                  {project.scenes[0]?.badgeDetail || "Clinical Suite"}
+                </span>
               </div>
-              <div className="text-center my-auto">
-                <p className="font-serif italic font-bold text-sm text-[#155E47]">“Are GLP-1s Safe?”</p>
-                <p className="text-[10px] text-[#155E47]/70 mt-0.5">12 Handcrafted Clinical SVG Scenes</p>
+              <div className="text-center my-auto px-2">
+                <p className="font-extrabold text-sm text-[#155E47] line-clamp-1">
+                  {project.scenes[0]?.headlineText || project.title}
+                </p>
+                <p className="font-serif italic text-[11px] text-[#155E47]/75 mt-0.5 line-clamp-1">
+                  “{project.scenes[0]?.spokenAnchor || project.subtitle}”
+                </p>
               </div>
               <div className="flex justify-between items-center text-[9px] text-[#155E47]/80 border-t border-[#155E47]/10 pt-1">
-                <span>Zero Agonist Jargon</span>
-                <span className="font-semibold text-[#FF7B25]">No Bottom Pills</span>
+                <span>{project.scenesCount} Scenes Aligned</span>
+                <span className="font-semibold text-[#FF7B25]">{project.totalDuration}</span>
               </div>
             </div>
           ) : (
@@ -74,7 +80,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </div>
               <div className="text-center my-auto">
                 <Video className="w-6 h-6 text-[#D4FF00] mx-auto mb-1 opacity-80" />
-                <p className="font-bold text-xs text-white">Ozempic, Wegovy & Mounjaro</p>
+                <p className="font-bold text-xs text-white line-clamp-1">{project.title}</p>
               </div>
               <div className="text-[9px] text-zinc-400 flex justify-between">
                 <span>Remotion Programmatic Suite</span>

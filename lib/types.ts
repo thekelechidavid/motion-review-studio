@@ -56,6 +56,7 @@ export interface Scene {
   headlineText: string;
   highlightText: string;
   badgeDetail?: string;
+  svg?: string;
   svgMarkup?: string;
   videoUrl?: string;
   thumbnailUrl?: string;

@@ -29,3 +29,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Heavy raw camera cuts (>100MB, excluded from GitHub tracking)
+public/videos/cut-lab/*.mp4
+public/videos/kaka/*.mp4

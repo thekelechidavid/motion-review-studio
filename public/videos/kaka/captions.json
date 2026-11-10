@@ -1,0 +1,2542 @@
+[
+  {
+    "id": 1,
+    "start": 0.0,
+    "end": 0.72,
+    "startTimecode": "0:00:00.00",
+    "endTimecode": "0:00:00.72",
+    "text": "a geography one",
+    "words": [
+      {
+        "text": "a",
+        "isEmphasis": false
+      },
+      {
+        "text": "geography",
+        "isEmphasis": false
+      },
+      {
+        "text": "one",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "start": 0.72,
+    "end": 1.98,
+    "startTimecode": "0:00:00.72",
+    "endTimecode": "0:00:01.98",
+    "text": "medication safe long",
+    "words": [
+      {
+        "text": "medication",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": false
+      },
+      {
+        "text": "long",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "start": 1.98,
+    "end": 2.24,
+    "startTimecode": "0:00:01.98",
+    "endTimecode": "0:00:02.24",
+    "text": "term.",
+    "words": [
+      {
+        "text": "term.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "start": 2.42,
+    "end": 2.54,
+    "startTimecode": "0:00:02.42",
+    "endTimecode": "0:00:02.54",
+    "text": "yes,",
+    "words": [
+      {
+        "text": "yes,",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "start": 2.74,
+    "end": 4.08,
+    "startTimecode": "0:00:02.74",
+    "endTimecode": "0:00:04.08",
+    "text": "they are at",
+    "words": [
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "are",
+        "isEmphasis": false
+      },
+      {
+        "text": "at",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "start": 4.08,
+    "end": 4.78,
+    "startTimecode": "0:00:04.08",
+    "endTimecode": "0:00:04.78",
+    "text": "least with nuance",
+    "words": [
+      {
+        "text": "least",
+        "isEmphasis": false
+      },
+      {
+        "text": "with",
+        "isEmphasis": false
+      },
+      {
+        "text": "nuance",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "start": 4.78,
+    "end": 5.48,
+    "startTimecode": "0:00:04.78",
+    "endTimecode": "0:00:05.48",
+    "text": "from what we",
+    "words": [
+      {
+        "text": "from",
+        "isEmphasis": false
+      },
+      {
+        "text": "what",
+        "isEmphasis": false
+      },
+      {
+        "text": "we",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "start": 5.48,
+    "end": 6.12,
+    "startTimecode": "0:00:05.48",
+    "endTimecode": "0:00:06.12",
+    "text": "know so far",
+    "words": [
+      {
+        "text": "know",
+        "isEmphasis": false
+      },
+      {
+        "text": "so",
+        "isEmphasis": false
+      },
+      {
+        "text": "far",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "start": 6.12,
+    "end": 7.36,
+    "startTimecode": "0:00:06.12",
+    "endTimecode": "0:00:07.36",
+    "text": "I remember I",
+    "words": [
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "remember",
+        "isEmphasis": true
+      },
+      {
+        "text": "I",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "start": 7.36,
+    "end": 7.74,
+    "startTimecode": "0:00:07.36",
+    "endTimecode": "0:00:07.74",
+    "text": "think this was",
+    "words": [
+      {
+        "text": "think",
+        "isEmphasis": true
+      },
+      {
+        "text": "this",
+        "isEmphasis": false
+      },
+      {
+        "text": "was",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "start": 7.74,
+    "end": 8.16,
+    "startTimecode": "0:00:07.74",
+    "endTimecode": "0:00:08.16",
+    "text": "when they just",
+    "words": [
+      {
+        "text": "when",
+        "isEmphasis": false
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "just",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "start": 8.16,
+    "end": 8.66,
+    "startTimecode": "0:00:08.16",
+    "endTimecode": "0:00:08.66",
+    "text": "came out and",
+    "words": [
+      {
+        "text": "came",
+        "isEmphasis": true
+      },
+      {
+        "text": "out",
+        "isEmphasis": false
+      },
+      {
+        "text": "and",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "start": 8.66,
+    "end": 9.34,
+    "startTimecode": "0:00:08.66",
+    "endTimecode": "0:00:09.34",
+    "text": "somebody told me",
+    "words": [
+      {
+        "text": "somebody",
+        "isEmphasis": false
+      },
+      {
+        "text": "told",
+        "isEmphasis": true
+      },
+      {
+        "text": "me",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "start": 9.34,
+    "end": 9.64,
+    "startTimecode": "0:00:09.34",
+    "endTimecode": "0:00:09.64",
+    "text": "how do you",
+    "words": [
+      {
+        "text": "how",
+        "isEmphasis": false
+      },
+      {
+        "text": "do",
+        "isEmphasis": false
+      },
+      {
+        "text": "you",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "start": 9.64,
+    "end": 9.98,
+    "startTimecode": "0:00:09.64",
+    "endTimecode": "0:00:09.98",
+    "text": "know when you",
+    "words": [
+      {
+        "text": "know",
+        "isEmphasis": true
+      },
+      {
+        "text": "when",
+        "isEmphasis": false
+      },
+      {
+        "text": "you",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "start": 9.98,
+    "end": 10.5,
+    "startTimecode": "0:00:09.98",
+    "endTimecode": "0:00:10.50",
+    "text": "start taking these",
+    "words": [
+      {
+        "text": "start",
+        "isEmphasis": false
+      },
+      {
+        "text": "taking",
+        "isEmphasis": true
+      },
+      {
+        "text": "these",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "start": 10.5,
+    "end": 11.28,
+    "startTimecode": "0:00:10.50",
+    "endTimecode": "0:00:11.28",
+    "text": "medications in 10",
+    "words": [
+      {
+        "text": "medications",
+        "isEmphasis": false
+      },
+      {
+        "text": "in",
+        "isEmphasis": false
+      },
+      {
+        "text": "10",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "start": 11.28,
+    "end": 11.8,
+    "startTimecode": "0:00:11.28",
+    "endTimecode": "0:00:11.80",
+    "text": "years time you",
+    "words": [
+      {
+        "text": "years",
+        "isEmphasis": false
+      },
+      {
+        "text": "time",
+        "isEmphasis": true
+      },
+      {
+        "text": "you",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "start": 11.8,
+    "end": 12.68,
+    "startTimecode": "0:00:11.80",
+    "endTimecode": "0:00:12.68",
+    "text": "not develop horns.",
+    "words": [
+      {
+        "text": "not",
+        "isEmphasis": false
+      },
+      {
+        "text": "develop",
+        "isEmphasis": false
+      },
+      {
+        "text": "horns.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "start": 12.74,
+    "end": 13.62,
+    "startTimecode": "0:00:12.74",
+    "endTimecode": "0:00:13.62",
+    "text": "I'll never forget",
+    "words": [
+      {
+        "text": "I'll",
+        "isEmphasis": false
+      },
+      {
+        "text": "never",
+        "isEmphasis": false
+      },
+      {
+        "text": "forget",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "start": 13.62,
+    "end": 13.82,
+    "startTimecode": "0:00:13.62",
+    "endTimecode": "0:00:13.82",
+    "text": "it.",
+    "words": [
+      {
+        "text": "it.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "start": 13.92,
+    "end": 14.46,
+    "startTimecode": "0:00:13.92",
+    "endTimecode": "0:00:14.46",
+    "text": "I love we've",
+    "words": [
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "love",
+        "isEmphasis": true
+      },
+      {
+        "text": "we've",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "start": 14.46,
+    "end": 15.16,
+    "startTimecode": "0:00:14.46",
+    "endTimecode": "0:00:15.16",
+    "text": "had geography one,",
+    "words": [
+      {
+        "text": "had",
+        "isEmphasis": false
+      },
+      {
+        "text": "geography",
+        "isEmphasis": false
+      },
+      {
+        "text": "one,",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "start": 15.24,
+    "end": 15.78,
+    "startTimecode": "0:00:15.24",
+    "endTimecode": "0:00:15.78",
+    "text": "you know the",
+    "words": [
+      {
+        "text": "you",
+        "isEmphasis": false
+      },
+      {
+        "text": "know",
+        "isEmphasis": true
+      },
+      {
+        "text": "the",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "start": 15.78,
+    "end": 16.76,
+    "startTimecode": "0:00:15.78",
+    "endTimecode": "0:00:16.76",
+    "text": "innit geography one",
+    "words": [
+      {
+        "text": "innit",
+        "isEmphasis": false
+      },
+      {
+        "text": "geography",
+        "isEmphasis": false
+      },
+      {
+        "text": "one",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "start": 16.76,
+    "end": 17.78,
+    "startTimecode": "0:00:16.76",
+    "endTimecode": "0:00:17.78",
+    "text": "since 2005.",
+    "words": [
+      {
+        "text": "since",
+        "isEmphasis": false
+      },
+      {
+        "text": "2005.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "start": 17.84,
+    "end": 18.44,
+    "startTimecode": "0:00:17.84",
+    "endTimecode": "0:00:18.44",
+    "text": "we were using",
+    "words": [
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "were",
+        "isEmphasis": false
+      },
+      {
+        "text": "using",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "start": 18.44,
+    "end": 18.84,
+    "startTimecode": "0:00:18.44",
+    "endTimecode": "0:00:18.84",
+    "text": "it to treat",
+    "words": [
+      {
+        "text": "it",
+        "isEmphasis": false
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      },
+      {
+        "text": "treat",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "start": 18.84,
+    "end": 20.0,
+    "startTimecode": "0:00:18.84",
+    "endTimecode": "0:00:20.00",
+    "text": "diabetic patients yes,",
+    "words": [
+      {
+        "text": "diabetic",
+        "isEmphasis": false
+      },
+      {
+        "text": "patients",
+        "isEmphasis": false
+      },
+      {
+        "text": "yes,",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "start": 20.18,
+    "end": 20.8,
+    "startTimecode": "0:00:20.18",
+    "endTimecode": "0:00:20.80",
+    "text": "I concede that",
+    "words": [
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "concede",
+        "isEmphasis": true
+      },
+      {
+        "text": "that",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "start": 20.8,
+    "end": 21.52,
+    "startTimecode": "0:00:20.80",
+    "endTimecode": "0:00:21.52",
+    "text": "the newer agent",
+    "words": [
+      {
+        "text": "the",
+        "isEmphasis": false
+      },
+      {
+        "text": "newer",
+        "isEmphasis": false
+      },
+      {
+        "text": "agent",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "start": 21.52,
+    "end": 22.24,
+    "startTimecode": "0:00:21.52",
+    "endTimecode": "0:00:22.24",
+    "text": "tears appetite.",
+    "words": [
+      {
+        "text": "tears",
+        "isEmphasis": false
+      },
+      {
+        "text": "appetite.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "start": 22.44,
+    "end": 22.76,
+    "startTimecode": "0:00:22.44",
+    "endTimecode": "0:00:22.76",
+    "text": "we don't have",
+    "words": [
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "don't",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "start": 22.76,
+    "end": 23.64,
+    "startTimecode": "0:00:22.76",
+    "endTimecode": "0:00:23.64",
+    "text": "as much long",
+    "words": [
+      {
+        "text": "as",
+        "isEmphasis": false
+      },
+      {
+        "text": "much",
+        "isEmphasis": false
+      },
+      {
+        "text": "long",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "start": 23.64,
+    "end": 24.38,
+    "startTimecode": "0:00:23.64",
+    "endTimecode": "0:00:24.38",
+    "text": "-term study on",
+    "words": [
+      {
+        "text": "-term",
+        "isEmphasis": false
+      },
+      {
+        "text": "study",
+        "isEmphasis": true
+      },
+      {
+        "text": "on",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "start": 24.38,
+    "end": 25.14,
+    "startTimecode": "0:00:24.38",
+    "endTimecode": "0:00:25.14",
+    "text": "them but from",
+    "words": [
+      {
+        "text": "them",
+        "isEmphasis": false
+      },
+      {
+        "text": "but",
+        "isEmphasis": false
+      },
+      {
+        "text": "from",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "start": 25.14,
+    "end": 25.78,
+    "startTimecode": "0:00:25.14",
+    "endTimecode": "0:00:25.78",
+    "text": "what we know",
+    "words": [
+      {
+        "text": "what",
+        "isEmphasis": false
+      },
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "know",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "start": 25.78,
+    "end": 26.26,
+    "startTimecode": "0:00:25.78",
+    "endTimecode": "0:00:26.26",
+    "text": "we can only",
+    "words": [
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "can",
+        "isEmphasis": false
+      },
+      {
+        "text": "only",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "start": 26.26,
+    "end": 26.76,
+    "startTimecode": "0:00:26.26",
+    "endTimecode": "0:00:26.76",
+    "text": "deal with what",
+    "words": [
+      {
+        "text": "deal",
+        "isEmphasis": true
+      },
+      {
+        "text": "with",
+        "isEmphasis": false
+      },
+      {
+        "text": "what",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "start": 26.76,
+    "end": 27.36,
+    "startTimecode": "0:00:26.76",
+    "endTimecode": "0:00:27.36",
+    "text": "we know now",
+    "words": [
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "know",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "start": 27.36,
+    "end": 28.24,
+    "startTimecode": "0:00:27.36",
+    "endTimecode": "0:00:28.24",
+    "text": "from whatever data",
+    "words": [
+      {
+        "text": "from",
+        "isEmphasis": false
+      },
+      {
+        "text": "whatever",
+        "isEmphasis": false
+      },
+      {
+        "text": "data",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "start": 28.24,
+    "end": 29.12,
+    "startTimecode": "0:00:28.24",
+    "endTimecode": "0:00:29.12",
+    "text": "we have now",
+    "words": [
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "start": 29.12,
+    "end": 30.32,
+    "startTimecode": "0:00:29.12",
+    "endTimecode": "0:00:30.32",
+    "text": "these medications have",
+    "words": [
+      {
+        "text": "these",
+        "isEmphasis": false
+      },
+      {
+        "text": "medications",
+        "isEmphasis": true
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "start": 30.32,
+    "end": 30.98,
+    "startTimecode": "0:00:30.32",
+    "endTimecode": "0:00:30.98",
+    "text": "been proven to",
+    "words": [
+      {
+        "text": "been",
+        "isEmphasis": false
+      },
+      {
+        "text": "proven",
+        "isEmphasis": true
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "start": 30.98,
+    "end": 31.6,
+    "startTimecode": "0:00:30.98",
+    "endTimecode": "0:00:31.60",
+    "text": "be safe and",
+    "words": [
+      {
+        "text": "be",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": true
+      },
+      {
+        "text": "and",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "start": 31.6,
+    "end": 33.08,
+    "startTimecode": "0:00:31.60",
+    "endTimecode": "0:00:33.08",
+    "text": "have had significant",
+    "words": [
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "had",
+        "isEmphasis": false
+      },
+      {
+        "text": "significant",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "start": 33.76,
+    "end": 34.88,
+    "startTimecode": "0:00:33.76",
+    "endTimecode": "0:00:34.88",
+    "text": "positive effects they",
+    "words": [
+      {
+        "text": "positive",
+        "isEmphasis": false
+      },
+      {
+        "text": "effects",
+        "isEmphasis": true
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "start": 34.88,
+    "end": 35.62,
+    "startTimecode": "0:00:34.88",
+    "endTimecode": "0:00:35.62",
+    "text": "have reduced have",
+    "words": [
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "reduced",
+        "isEmphasis": true
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "start": 35.62,
+    "end": 36.54,
+    "startTimecode": "0:00:35.62",
+    "endTimecode": "0:00:36.54",
+    "text": "problems a lot",
+    "words": [
+      {
+        "text": "problems",
+        "isEmphasis": false
+      },
+      {
+        "text": "a",
+        "isEmphasis": false
+      },
+      {
+        "text": "lot",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "start": 36.54,
+    "end": 37.08,
+    "startTimecode": "0:00:36.54",
+    "endTimecode": "0:00:37.08",
+    "text": "of people with",
+    "words": [
+      {
+        "text": "of",
+        "isEmphasis": false
+      },
+      {
+        "text": "people",
+        "isEmphasis": true
+      },
+      {
+        "text": "with",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "start": 37.08,
+    "end": 37.76,
+    "startTimecode": "0:00:37.08",
+    "endTimecode": "0:00:37.76",
+    "text": "sleep apnea.",
+    "words": [
+      {
+        "text": "sleep",
+        "isEmphasis": false
+      },
+      {
+        "text": "apnea.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "start": 37.76,
+    "end": 38.48,
+    "startTimecode": "0:00:37.76",
+    "endTimecode": "0:00:38.48",
+    "text": "they have improved",
+    "words": [
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "improved",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "start": 38.48,
+    "end": 39.5,
+    "startTimecode": "0:00:38.48",
+    "endTimecode": "0:00:39.50",
+    "text": "their beatings they",
+    "words": [
+      {
+        "text": "their",
+        "isEmphasis": false
+      },
+      {
+        "text": "beatings",
+        "isEmphasis": true
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "start": 39.5,
+    "end": 40.12,
+    "startTimecode": "0:00:39.50",
+    "endTimecode": "0:00:40.12",
+    "text": "have improved joint",
+    "words": [
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "improved",
+        "isEmphasis": false
+      },
+      {
+        "text": "joint",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "start": 40.12,
+    "end": 40.92,
+    "startTimecode": "0:00:40.12",
+    "endTimecode": "0:00:40.92",
+    "text": "problems as well.",
+    "words": [
+      {
+        "text": "problems",
+        "isEmphasis": false
+      },
+      {
+        "text": "as",
+        "isEmphasis": false
+      },
+      {
+        "text": "well.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "start": 41.06,
+    "end": 41.46,
+    "startTimecode": "0:00:41.06",
+    "endTimecode": "0:00:41.46",
+    "text": "so they have",
+    "words": [
+      {
+        "text": "so",
+        "isEmphasis": false
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "start": 41.46,
+    "end": 42.04,
+    "startTimecode": "0:00:41.46",
+    "endTimecode": "0:00:42.04",
+    "text": "been proven to",
+    "words": [
+      {
+        "text": "been",
+        "isEmphasis": false
+      },
+      {
+        "text": "proven",
+        "isEmphasis": true
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "start": 42.04,
+    "end": 42.66,
+    "startTimecode": "0:00:42.04",
+    "endTimecode": "0:00:42.66",
+    "text": "be safe now",
+    "words": [
+      {
+        "text": "be",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "start": 42.66,
+    "end": 43.34,
+    "startTimecode": "0:00:42.66",
+    "endTimecode": "0:00:43.34",
+    "text": "we would await",
+    "words": [
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "would",
+        "isEmphasis": false
+      },
+      {
+        "text": "await",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "start": 43.34,
+    "end": 44.24,
+    "startTimecode": "0:00:43.34",
+    "endTimecode": "0:00:44.24",
+    "text": "long -term data",
+    "words": [
+      {
+        "text": "long",
+        "isEmphasis": false
+      },
+      {
+        "text": "-term",
+        "isEmphasis": false
+      },
+      {
+        "text": "data",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "start": 44.24,
+    "end": 45.22,
+    "startTimecode": "0:00:44.24",
+    "endTimecode": "0:00:45.22",
+    "text": "the other side",
+    "words": [
+      {
+        "text": "the",
+        "isEmphasis": false
+      },
+      {
+        "text": "other",
+        "isEmphasis": false
+      },
+      {
+        "text": "side",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "start": 45.22,
+    "end": 46.4,
+    "startTimecode": "0:00:45.22",
+    "endTimecode": "0:00:46.40",
+    "text": "effects do improve",
+    "words": [
+      {
+        "text": "effects",
+        "isEmphasis": false
+      },
+      {
+        "text": "do",
+        "isEmphasis": false
+      },
+      {
+        "text": "improve",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "start": 46.4,
+    "end": 46.94,
+    "startTimecode": "0:00:46.40",
+    "endTimecode": "0:00:46.94",
+    "text": "and we have",
+    "words": [
+      {
+        "text": "and",
+        "isEmphasis": false
+      },
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "start": 46.94,
+    "end": 47.56,
+    "startTimecode": "0:00:46.94",
+    "endTimecode": "0:00:47.56",
+    "text": "ways to deal",
+    "words": [
+      {
+        "text": "ways",
+        "isEmphasis": false
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      },
+      {
+        "text": "deal",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "start": 47.56,
+    "end": 48.14,
+    "startTimecode": "0:00:47.56",
+    "endTimecode": "0:00:48.14",
+    "text": "with them but",
+    "words": [
+      {
+        "text": "with",
+        "isEmphasis": false
+      },
+      {
+        "text": "them",
+        "isEmphasis": false
+      },
+      {
+        "text": "but",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "start": 48.14,
+    "end": 48.6,
+    "startTimecode": "0:00:48.14",
+    "endTimecode": "0:00:48.60",
+    "text": "for the long",
+    "words": [
+      {
+        "text": "for",
+        "isEmphasis": false
+      },
+      {
+        "text": "the",
+        "isEmphasis": false
+      },
+      {
+        "text": "long",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "start": 48.6,
+    "end": 49.32,
+    "startTimecode": "0:00:48.60",
+    "endTimecode": "0:00:49.32",
+    "text": "-term side effects",
+    "words": [
+      {
+        "text": "-term",
+        "isEmphasis": false
+      },
+      {
+        "text": "side",
+        "isEmphasis": false
+      },
+      {
+        "text": "effects",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "start": 49.32,
+    "end": 50.18,
+    "startTimecode": "0:00:49.32",
+    "endTimecode": "0:00:50.18",
+    "text": "nobody can know",
+    "words": [
+      {
+        "text": "nobody",
+        "isEmphasis": false
+      },
+      {
+        "text": "can",
+        "isEmphasis": false
+      },
+      {
+        "text": "know",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "start": 50.18,
+    "end": 50.94,
+    "startTimecode": "0:00:50.18",
+    "endTimecode": "0:00:50.94",
+    "text": "but for now",
+    "words": [
+      {
+        "text": "but",
+        "isEmphasis": false
+      },
+      {
+        "text": "for",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "start": 50.94,
+    "end": 52.38,
+    "startTimecode": "0:00:50.94",
+    "endTimecode": "0:00:52.38",
+    "text": "whatever evidence we",
+    "words": [
+      {
+        "text": "whatever",
+        "isEmphasis": false
+      },
+      {
+        "text": "evidence",
+        "isEmphasis": true
+      },
+      {
+        "text": "we",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "start": 52.38,
+    "end": 53.28,
+    "startTimecode": "0:00:52.38",
+    "endTimecode": "0:00:53.28",
+    "text": "have now instead",
+    "words": [
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": false
+      },
+      {
+        "text": "instead",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "start": 53.28,
+    "end": 53.76,
+    "startTimecode": "0:00:53.28",
+    "endTimecode": "0:00:53.76",
+    "text": "they are safe",
+    "words": [
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "are",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "start": 53.76,
+    "end": 54.18,
+    "startTimecode": "0:00:53.76",
+    "endTimecode": "0:00:54.18",
+    "text": "I might say",
+    "words": [
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "might",
+        "isEmphasis": false
+      },
+      {
+        "text": "say",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "start": 54.18,
+    "end": 55.48,
+    "startTimecode": "0:00:54.18",
+    "endTimecode": "0:00:55.48",
+    "text": "everybody take them",
+    "words": [
+      {
+        "text": "everybody",
+        "isEmphasis": false
+      },
+      {
+        "text": "take",
+        "isEmphasis": true
+      },
+      {
+        "text": "them",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "start": 55.48,
+    "end": 55.84,
+    "startTimecode": "0:00:55.48",
+    "endTimecode": "0:00:55.84",
+    "text": "and I might",
+    "words": [
+      {
+        "text": "and",
+        "isEmphasis": false
+      },
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "might",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "start": 55.84,
+    "end": 56.22,
+    "startTimecode": "0:00:55.84",
+    "endTimecode": "0:00:56.22",
+    "text": "say they are",
+    "words": [
+      {
+        "text": "say",
+        "isEmphasis": true
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "are",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "start": 56.22,
+    "end": 56.84,
+    "startTimecode": "0:00:56.22",
+    "endTimecode": "0:00:56.84",
+    "text": "safe forever and",
+    "words": [
+      {
+        "text": "safe",
+        "isEmphasis": false
+      },
+      {
+        "text": "forever",
+        "isEmphasis": true
+      },
+      {
+        "text": "and",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "start": 56.84,
+    "end": 57.72,
+    "startTimecode": "0:00:56.84",
+    "endTimecode": "0:00:57.72",
+    "text": "everybody can say",
+    "words": [
+      {
+        "text": "everybody",
+        "isEmphasis": false
+      },
+      {
+        "text": "can",
+        "isEmphasis": false
+      },
+      {
+        "text": "say",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "start": 57.72,
+    "end": 58.3,
+    "startTimecode": "0:00:57.72",
+    "endTimecode": "0:00:58.30",
+    "text": "that but from",
+    "words": [
+      {
+        "text": "that",
+        "isEmphasis": false
+      },
+      {
+        "text": "but",
+        "isEmphasis": false
+      },
+      {
+        "text": "from",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "start": 58.3,
+    "end": 58.8,
+    "startTimecode": "0:00:58.30",
+    "endTimecode": "0:00:58.80",
+    "text": "what we know",
+    "words": [
+      {
+        "text": "what",
+        "isEmphasis": false
+      },
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "know",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "start": 58.8,
+    "end": 59.8,
+    "startTimecode": "0:00:58.80",
+    "endTimecode": "0:00:59.80",
+    "text": "today they have",
+    "words": [
+      {
+        "text": "today",
+        "isEmphasis": true
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "start": 59.8,
+    "end": 60.78,
+    "startTimecode": "0:00:59.80",
+    "endTimecode": "0:01:00.78",
+    "text": "been proven to",
+    "words": [
+      {
+        "text": "been",
+        "isEmphasis": false
+      },
+      {
+        "text": "proven",
+        "isEmphasis": true
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "start": 60.78,
+    "end": 61.46,
+    "startTimecode": "0:01:00.78",
+    "endTimecode": "0:01:01.46",
+    "text": "be safe at",
+    "words": [
+      {
+        "text": "be",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": true
+      },
+      {
+        "text": "at",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "start": 61.46,
+    "end": 61.96,
+    "startTimecode": "0:01:01.46",
+    "endTimecode": "0:01:01.96",
+    "text": "least safe enough",
+    "words": [
+      {
+        "text": "least",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": false
+      },
+      {
+        "text": "enough",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "start": 61.96,
+    "end": 62.74,
+    "startTimecode": "0:01:01.96",
+    "endTimecode": "0:01:02.74",
+    "text": "for human use",
+    "words": [
+      {
+        "text": "for",
+        "isEmphasis": false
+      },
+      {
+        "text": "human",
+        "isEmphasis": false
+      },
+      {
+        "text": "use",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "start": 62.74,
+    "end": 63.38,
+    "startTimecode": "0:01:02.74",
+    "endTimecode": "0:01:03.38",
+    "text": "so in case",
+    "words": [
+      {
+        "text": "so",
+        "isEmphasis": false
+      },
+      {
+        "text": "in",
+        "isEmphasis": false
+      },
+      {
+        "text": "case",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "start": 63.38,
+    "end": 63.98,
+    "startTimecode": "0:01:03.38",
+    "endTimecode": "0:01:03.98",
+    "text": "it's something that",
+    "words": [
+      {
+        "text": "it's",
+        "isEmphasis": false
+      },
+      {
+        "text": "something",
+        "isEmphasis": true
+      },
+      {
+        "text": "that",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "start": 63.98,
+    "end": 64.58,
+    "startTimecode": "0:01:03.98",
+    "endTimecode": "0:01:04.58",
+    "text": "you were considered",
+    "words": [
+      {
+        "text": "you",
+        "isEmphasis": false
+      },
+      {
+        "text": "were",
+        "isEmphasis": false
+      },
+      {
+        "text": "considered",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "start": 64.58,
+    "end": 65.02,
+    "startTimecode": "0:01:04.58",
+    "endTimecode": "0:01:05.02",
+    "text": "and in case",
+    "words": [
+      {
+        "text": "and",
+        "isEmphasis": false
+      },
+      {
+        "text": "in",
+        "isEmphasis": false
+      },
+      {
+        "text": "case",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "start": 65.02,
+    "end": 65.54,
+    "startTimecode": "0:01:05.02",
+    "endTimecode": "0:01:05.54",
+    "text": "it's something that",
+    "words": [
+      {
+        "text": "it's",
+        "isEmphasis": false
+      },
+      {
+        "text": "something",
+        "isEmphasis": true
+      },
+      {
+        "text": "that",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "start": 65.54,
+    "end": 66.1,
+    "startTimecode": "0:01:05.54",
+    "endTimecode": "0:01:06.10",
+    "text": "you have you",
+    "words": [
+      {
+        "text": "you",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "you",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "start": 66.1,
+    "end": 66.7,
+    "startTimecode": "0:01:06.10",
+    "endTimecode": "0:01:06.70",
+    "text": "have access to",
+    "words": [
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "access",
+        "isEmphasis": true
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "start": 66.7,
+    "end": 67.42,
+    "startTimecode": "0:01:06.70",
+    "endTimecode": "0:01:07.42",
+    "text": "this medication and",
+    "words": [
+      {
+        "text": "this",
+        "isEmphasis": false
+      },
+      {
+        "text": "medication",
+        "isEmphasis": true
+      },
+      {
+        "text": "and",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "start": 67.42,
+    "end": 68.14,
+    "startTimecode": "0:01:07.42",
+    "endTimecode": "0:01:08.14",
+    "text": "you're worried about",
+    "words": [
+      {
+        "text": "you're",
+        "isEmphasis": false
+      },
+      {
+        "text": "worried",
+        "isEmphasis": true
+      },
+      {
+        "text": "about",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "start": 68.14,
+    "end": 68.92,
+    "startTimecode": "0:01:08.14",
+    "endTimecode": "0:01:08.92",
+    "text": "this I'm on",
+    "words": [
+      {
+        "text": "this",
+        "isEmphasis": false
+      },
+      {
+        "text": "I'm",
+        "isEmphasis": false
+      },
+      {
+        "text": "on",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "start": 68.92,
+    "end": 69.36,
+    "startTimecode": "0:01:08.92",
+    "endTimecode": "0:01:09.36",
+    "text": "the bc medicine",
+    "words": [
+      {
+        "text": "the",
+        "isEmphasis": false
+      },
+      {
+        "text": "bc",
+        "isEmphasis": false
+      },
+      {
+        "text": "medicine",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "start": 69.36,
+    "end": 70.46,
+    "startTimecode": "0:01:09.36",
+    "endTimecode": "0:01:10.46",
+    "text": "specialist I would",
+    "words": [
+      {
+        "text": "specialist",
+        "isEmphasis": true
+      },
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "would",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "start": 70.46,
+    "end": 70.9,
+    "startTimecode": "0:01:10.46",
+    "endTimecode": "0:01:10.90",
+    "text": "tend to read",
+    "words": [
+      {
+        "text": "tend",
+        "isEmphasis": false
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      },
+      {
+        "text": "read",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "start": 70.9,
+    "end": 71.3,
+    "startTimecode": "0:01:10.90",
+    "endTimecode": "0:01:11.30",
+    "text": "a lot of",
+    "words": [
+      {
+        "text": "a",
+        "isEmphasis": false
+      },
+      {
+        "text": "lot",
+        "isEmphasis": true
+      },
+      {
+        "text": "of",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "start": 71.3,
+    "end": 72.42,
+    "startTimecode": "0:01:11.30",
+    "endTimecode": "0:01:12.42",
+    "text": "research on geography",
+    "words": [
+      {
+        "text": "research",
+        "isEmphasis": false
+      },
+      {
+        "text": "on",
+        "isEmphasis": false
+      },
+      {
+        "text": "geography",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "start": 72.42,
+    "end": 73.54,
+    "startTimecode": "0:01:12.42",
+    "endTimecode": "0:01:13.54",
+    "text": "one medications and",
+    "words": [
+      {
+        "text": "one",
+        "isEmphasis": false
+      },
+      {
+        "text": "medications",
+        "isEmphasis": true
+      },
+      {
+        "text": "and",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "start": 73.54,
+    "end": 74.46,
+    "startTimecode": "0:01:13.54",
+    "endTimecode": "0:01:14.46",
+    "text": "for now every",
+    "words": [
+      {
+        "text": "for",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": false
+      },
+      {
+        "text": "every",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "start": 74.46,
+    "end": 75.1,
+    "startTimecode": "0:01:14.46",
+    "endTimecode": "0:01:15.10",
+    "text": "research we have",
+    "words": [
+      {
+        "text": "research",
+        "isEmphasis": true
+      },
+      {
+        "text": "we",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "start": 75.1,
+    "end": 75.86,
+    "startTimecode": "0:01:15.10",
+    "endTimecode": "0:01:15.86",
+    "text": "for now shows",
+    "words": [
+      {
+        "text": "for",
+        "isEmphasis": false
+      },
+      {
+        "text": "now",
+        "isEmphasis": false
+      },
+      {
+        "text": "shows",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "start": 75.86,
+    "end": 76.68,
+    "startTimecode": "0:01:15.86",
+    "endTimecode": "0:01:16.68",
+    "text": "that they are",
+    "words": [
+      {
+        "text": "that",
+        "isEmphasis": false
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      },
+      {
+        "text": "are",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "start": 76.68,
+    "end": 77.88,
+    "startTimecode": "0:01:16.68",
+    "endTimecode": "0:01:17.88",
+    "text": "for most people",
+    "words": [
+      {
+        "text": "for",
+        "isEmphasis": false
+      },
+      {
+        "text": "most",
+        "isEmphasis": false
+      },
+      {
+        "text": "people",
+        "isEmphasis": true
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "start": 77.88,
+    "end": 78.88,
+    "startTimecode": "0:01:17.88",
+    "endTimecode": "0:01:18.88",
+    "text": "in conjunction with",
+    "words": [
+      {
+        "text": "in",
+        "isEmphasis": false
+      },
+      {
+        "text": "conjunction",
+        "isEmphasis": true
+      },
+      {
+        "text": "with",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "start": 78.88,
+    "end": 79.72,
+    "startTimecode": "0:01:18.88",
+    "endTimecode": "0:01:19.72",
+    "text": "a doctor they",
+    "words": [
+      {
+        "text": "a",
+        "isEmphasis": false
+      },
+      {
+        "text": "doctor",
+        "isEmphasis": true
+      },
+      {
+        "text": "they",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "start": 79.72,
+    "end": 80.28,
+    "startTimecode": "0:01:19.72",
+    "endTimecode": "0:01:20.28",
+    "text": "are safe to",
+    "words": [
+      {
+        "text": "are",
+        "isEmphasis": false
+      },
+      {
+        "text": "safe",
+        "isEmphasis": true
+      },
+      {
+        "text": "to",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "start": 80.28,
+    "end": 80.92,
+    "startTimecode": "0:01:20.28",
+    "endTimecode": "0:01:20.92",
+    "text": "take that's all",
+    "words": [
+      {
+        "text": "take",
+        "isEmphasis": true
+      },
+      {
+        "text": "that's",
+        "isEmphasis": false
+      },
+      {
+        "text": "all",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "start": 80.92,
+    "end": 81.26,
+    "startTimecode": "0:01:20.92",
+    "endTimecode": "0:01:21.26",
+    "text": "I have for",
+    "words": [
+      {
+        "text": "I",
+        "isEmphasis": false
+      },
+      {
+        "text": "have",
+        "isEmphasis": false
+      },
+      {
+        "text": "for",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "start": 81.26,
+    "end": 82.0,
+    "startTimecode": "0:01:21.26",
+    "endTimecode": "0:01:22.00",
+    "text": "this video as",
+    "words": [
+      {
+        "text": "this",
+        "isEmphasis": false
+      },
+      {
+        "text": "video",
+        "isEmphasis": true
+      },
+      {
+        "text": "as",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "start": 82.0,
+    "end": 82.18,
+    "startTimecode": "0:01:22.00",
+    "endTimecode": "0:01:22.18",
+    "text": "always.",
+    "words": [
+      {
+        "text": "always.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "start": 82.26,
+    "end": 82.48,
+    "startTimecode": "0:01:22.26",
+    "endTimecode": "0:01:22.48",
+    "text": "I'm dr.",
+    "words": [
+      {
+        "text": "I'm",
+        "isEmphasis": false
+      },
+      {
+        "text": "dr.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "start": 82.64,
+    "end": 82.82,
+    "startTimecode": "0:01:22.64",
+    "endTimecode": "0:01:22.82",
+    "text": "kaka.",
+    "words": [
+      {
+        "text": "kaka.",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "start": 82.96,
+    "end": 83.26,
+    "startTimecode": "0:01:22.96",
+    "endTimecode": "0:01:23.26",
+    "text": "I'm thank you",
+    "words": [
+      {
+        "text": "I'm",
+        "isEmphasis": false
+      },
+      {
+        "text": "thank",
+        "isEmphasis": true
+      },
+      {
+        "text": "you",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "start": 83.26,
+    "end": 83.74,
+    "startTimecode": "0:01:23.26",
+    "endTimecode": "0:01:23.74",
+    "text": "very much for",
+    "words": [
+      {
+        "text": "very",
+        "isEmphasis": false
+      },
+      {
+        "text": "much",
+        "isEmphasis": true
+      },
+      {
+        "text": "for",
+        "isEmphasis": false
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "start": 83.74,
+    "end": 84.48,
+    "startTimecode": "0:01:23.74",
+    "endTimecode": "0:01:24.48",
+    "text": "listening all right",
+    "words": [
+      {
+        "text": "listening",
+        "isEmphasis": false
+      },
+      {
+        "text": "all",
+        "isEmphasis": false
+      },
+      {
+        "text": "right",
+        "isEmphasis": true
+      }
+    ]
+  }
+]

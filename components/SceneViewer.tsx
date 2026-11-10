@@ -444,7 +444,7 @@ export default function SceneViewer({
             ) : project.aspectRatio === "16:9" ? (
               renderLandscapeVisual(scene)
             ) : (
-              renderSceneVisual(scene.id, scene)
+              renderVerticalVisual(scene)
             )}
 
             {/* Interactive Annotation Drawing Layer (SVG Overlay) */}
@@ -663,22 +663,71 @@ function renderLandscapeVisual(scene: Scene) {
           {scene.svgMarkup ? (
             <div
               className="w-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[220px]"
-              dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
+              style={{ maxWidth: "100%", maxHeight: "300px" }}
+            dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
             />
           ) : (
             <div className="text-xs text-zinc-400">Visual Hero Graphic</div>
           )}
         </div>
       </div>
-
-      {/* Bottom Spoken Anchor Quote */}
-      <div className="relative z-10 pt-1.5 border-t border-[rgba(21,94,71,0.12)] text-center">
-        <p className="font-serif italic text-[11px] sm:text-xs text-[rgba(21,94,71,0.7)] max-w-xl mx-auto truncate">
-          “{scene.spokenAnchor}”
-        </p>
-      </div>
     </div>
   );
+}
+
+// Vertical 9:16 Visual Renderer: Renders bespoke SVG markup when present, or falls back to legacy vectors
+function renderVerticalVisual(scene: Scene) {
+  if (scene.svgMarkup) {
+    return (
+      <div className="w-full h-full p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden bg-[#F6F4EB] text-[#155E47] select-none">
+        {/* Subtle Radial Paper Vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(255,255,255,0.85)_0%,rgba(246,244,235,0.4)_60%,rgba(229,223,201,0.7)_100%)] pointer-events-none" />
+
+        {/* Top Meta Scene Bar */}
+        <div className="relative z-10 flex items-center justify-between border-b border-[rgba(21,94,71,0.12)] pb-2">
+          <div className="flex items-center gap-2">
+            <span className="px-2.5 py-0.5 rounded-full bg-[#155E47] text-white font-bold text-[10px] sm:text-xs tracking-wider">
+              SCENE {scene.id.toString().padStart(2, "0")}
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono font-semibold text-[rgba(21,94,71,0.65)]">
+              {scene.startTime} – {scene.endTime}
+            </span>
+          </div>
+          {scene.badgeDetail && (
+            <div className="px-2 py-0.5 rounded-full bg-[rgba(255,123,37,0.12)] border border-[rgba(255,123,37,0.25)] text-[9px] sm:text-[10px] font-bold text-[#FF7B25] tracking-wide uppercase">
+              {scene.badgeDetail}
+            </div>
+          )}
+        </div>
+
+        {/* Header Typography Stack */}
+        <div className="relative z-10 text-center pt-2 pb-1">
+          <div className="text-[10px] sm:text-xs font-semibold text-[#FF7B25] uppercase tracking-widest mb-0.5">
+            {scene.connectiveText}
+          </div>
+          <h2 className="text-lg sm:text-xl font-extrabold text-[#155E47] tracking-tight leading-snug line-clamp-2">
+            {scene.headlineText}
+          </h2>
+          {scene.highlightText && (
+            <p className="text-[11px] sm:text-xs text-[rgba(21,94,71,0.75)] font-medium mt-0.5 line-clamp-1">
+              {scene.highlightText}
+            </p>
+          )}
+        </div>
+
+        {/* Center Hero Visual SVG Card (Expands cleanly into lower-third negative space) */}
+        <div className="relative z-10 flex-1 flex items-center justify-center my-2 px-1 overflow-hidden">
+          <div
+            className="w-full h-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[300px] drop-shadow-sm"
+            dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback for legacy scenes without svgMarkup (renders hardcoded vector graphics)
+  return renderSceneVisual(scene.id, scene);
 }
 
 // Custom SVG Visual Renderers for Dr Kaka's Scenes with Precision Director Revisions

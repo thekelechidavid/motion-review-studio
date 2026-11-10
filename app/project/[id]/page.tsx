@@ -20,6 +20,9 @@ import {
   Layers,
   Check,
   Target,
+  Trash2,
+  RotateCcw,
+  Undo2,
 } from "lucide-react";
 
 export default function ProjectReviewPage() {
@@ -29,6 +32,83 @@ export default function ProjectReviewPage() {
 
   // Find project
   const project = INITIAL_PROJECTS.find((p) => p.id === projectId) || INITIAL_PROJECTS[0];
+
+  const [activeScenes, setActiveScenes] = useState<Scene[]>(project.scenes);
+  const [deletedScenes, setDeletedScenes] = useState<Scene[]>([]);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Load saved custom scenes / deleted scenes from localStorage
+  useEffect(() => {
+    try {
+      const savedScenes = localStorage.getItem(`project_active_scenes_${project.id}`);
+      if (savedScenes) {
+        setActiveScenes(JSON.parse(savedScenes));
+      }
+      const savedDeleted = localStorage.getItem(`project_deleted_scenes_${project.id}`);
+      if (savedDeleted) {
+        setDeletedScenes(JSON.parse(savedDeleted));
+      }
+    } catch (e) {
+      console.warn("Storage access failed", e);
+    }
+  }, [project.id]);
+
+  const handleDeleteCurrentScene = () => {
+    if (activeScenes.length <= 1) {
+      alert("A project must keep at least one active scene.");
+      return;
+    }
+    const target = activeScenes[currentSceneIndex] || activeScenes[0];
+    const nextScenes = activeScenes.filter((s) => s.id !== target.id);
+    const nextDeleted = [...deletedScenes, target];
+
+    setActiveScenes(nextScenes);
+    setDeletedScenes(nextDeleted);
+
+    try {
+      localStorage.setItem(`project_active_scenes_${project.id}`, JSON.stringify(nextScenes));
+      localStorage.setItem(`project_deleted_scenes_${project.id}`, JSON.stringify(nextDeleted));
+    } catch (e) {}
+
+    if (currentSceneIndex >= nextScenes.length) {
+      setCurrentSceneIndex(nextScenes.length - 1);
+    }
+
+    setToastMessage(`Scene ${target.id} discarded from render queue (AI credits saved).`);
+    setTimeout(() => setToastMessage(null), 5000);
+  };
+
+  const handleRestoreLastDeleted = () => {
+    if (deletedScenes.length === 0) return;
+    const restored = deletedScenes[deletedScenes.length - 1];
+    const nextDeleted = deletedScenes.slice(0, -1);
+    const nextScenes = [...activeScenes, restored].sort((a, b) => a.id - b.id);
+
+    setActiveScenes(nextScenes);
+    setDeletedScenes(nextDeleted);
+
+    try {
+      localStorage.setItem(`project_active_scenes_${project.id}`, JSON.stringify(nextScenes));
+      localStorage.setItem(`project_deleted_scenes_${project.id}`, JSON.stringify(nextDeleted));
+    } catch (e) {}
+
+    const newIdx = nextScenes.findIndex((s) => s.id === restored.id);
+    if (newIdx !== -1) setCurrentSceneIndex(newIdx);
+
+    setToastMessage(`Restored Scene ${restored.id} to active render queue.`);
+    setTimeout(() => setToastMessage(null), 4000);
+  };
+
+  const handleRestoreAllScenes = () => {
+    setActiveScenes(project.scenes);
+    setDeletedScenes([]);
+    try {
+      localStorage.removeItem(`project_active_scenes_${project.id}`);
+      localStorage.removeItem(`project_deleted_scenes_${project.id}`);
+    } catch (e) {}
+    setToastMessage("All original animation scenes restored.");
+    setTimeout(() => setToastMessage(null), 4000);
+  };
 
   const [currentSceneIndex, setCurrentSceneIndex] = useState<number>(0);
   const [feedbacks, setFeedbacks] = useState<Record<number, SceneFeedback>>({});
@@ -77,7 +157,7 @@ export default function ProjectReviewPage() {
     });
   };
 
-  const currentScene = project.scenes[currentSceneIndex] || project.scenes[0];
+  const currentScene = activeScenes[currentSceneIndex] || activeScenes[0];
   const currentFeedback: SceneFeedback = feedbacks[currentScene.id] || {
     sceneId: currentScene.id,
     status: "pending",
@@ -92,7 +172,7 @@ export default function ProjectReviewPage() {
   // Stats calculation
   const approvedCount = Object.values(feedbacks).filter((f) => f.status === "approved").length;
   const needsEditsCount = Object.values(feedbacks).filter((f) => f.status === "needs_edits").length;
-  const pendingCount = project.scenes.length - approvedCount - needsEditsCount;
+  const pendingCount = activeScenes.length - approvedCount - needsEditsCount;
   const totalPinsCount = Object.values(feedbacks).reduce(
     (acc, f) => acc + (f.annotations?.length || 0),
     0
@@ -175,8 +255,9 @@ export default function ProjectReviewPage() {
 
         {/* Scene Filmstrip Selector Strip */}
         <div className="bg-[#090A0C] border-b border-white/[0.08] px-4 sm:px-6 lg:px-8 py-3">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
-            {project.scenes.map((scene, idx) => {
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 pb-2">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-thin flex-1">
+            {activeScenes.map((scene, idx) => {
               const fb = feedbacks[scene.id];
               const isSelected = idx === currentSceneIndex;
               const status = fb?.status || "pending";
@@ -214,6 +295,28 @@ export default function ProjectReviewPage() {
                 </button>
               );
             })}
+            </div>
+
+            {/* Excluded Scenes Credit Saver Badge */}
+            {deletedScenes.length > 0 && (
+              <div className="shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-red-500/10 border border-red-500/25 text-red-400 text-xs font-semibold">
+                <Trash2 className="w-3.5 h-3.5 text-red-400" />
+                <span>{deletedScenes.length} Scene{deletedScenes.length > 1 ? "s" : ""} Excluded (Credits Saved)</span>
+                <button
+                  onClick={handleRestoreLastDeleted}
+                  className="underline hover:text-white font-bold ml-1 text-[11px]"
+                >
+                  Undo
+                </button>
+                <span className="text-zinc-600">•</span>
+                <button
+                  onClick={handleRestoreAllScenes}
+                  className="hover:text-white text-[11px]"
+                >
+                  Restore All
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
@@ -237,9 +340,9 @@ export default function ProjectReviewPage() {
                 });
               }}
               onPrev={() => setCurrentSceneIndex((prev) => Math.max(0, prev - 1))}
-              onNext={() => setCurrentSceneIndex((prev) => Math.min(project.scenes.length - 1, prev + 1))}
+              onNext={() => setCurrentSceneIndex((prev) => Math.min(activeScenes.length - 1, prev + 1))}
               hasPrev={currentSceneIndex > 0}
-              hasNext={currentSceneIndex < project.scenes.length - 1}
+              hasNext={currentSceneIndex < activeScenes.length - 1}
             />
 
             {/* Right: Feedback, Voice Directives & Circled Pinpoints Panel */}
@@ -257,7 +360,7 @@ export default function ProjectReviewPage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-4 text-zinc-400">
             <span className="text-white font-semibold">
-              Scene {currentSceneIndex + 1} of {project.scenes.length}
+              Scene {currentSceneIndex + 1} of {activeScenes.length}
             </span>
             <span>•</span>
             <span>Tip: Click <strong>Circle Area</strong> to draw circles around specific elements</span>
@@ -275,9 +378,19 @@ export default function ProjectReviewPage() {
               <span>Previous</span>
             </button>
 
+            {/* Delete / Discard Scene Button to Save AI Credits */}
             <button
-              onClick={() => setCurrentSceneIndex((prev) => Math.min(project.scenes.length - 1, prev + 1))}
-              disabled={currentSceneIndex === project.scenes.length - 1}
+              onClick={handleDeleteCurrentScene}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 hover:text-red-300 border border-red-500/25 text-xs font-semibold transition-all active:scale-95"
+              title="Discard this scene from render queue to save AI generation credits"
+            >
+              <Trash2 className="w-3.5 h-3.5 text-red-400" />
+              <span>Discard Scene</span>
+            </button>
+
+            <button
+              onClick={() => setCurrentSceneIndex((prev) => Math.min(activeScenes.length - 1, prev + 1))}
+              disabled={currentSceneIndex === activeScenes.length - 1}
               className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#14171E] border border-white/5 text-zinc-300 disabled:opacity-40 hover:bg-white/5"
             >
               <span>Next</span>
@@ -302,6 +415,21 @@ export default function ProjectReviewPage() {
         project={project}
         feedbacks={feedbacks}
       />
+      {/* Credit Saver Floating Toast Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-[#14171E] border border-[#D4FF00]/40 text-white shadow-[0_10px_35px_rgba(0,0,0,0.8)] text-xs animate-in fade-in slide-in-from-bottom-4">
+          <Sparkles className="w-4 h-4 text-[#D4FF00]" />
+          <span>{toastMessage}</span>
+          {deletedScenes.length > 0 && (
+            <button
+              onClick={handleRestoreLastDeleted}
+              className="px-2 py-0.5 rounded-md bg-[#D4FF00] text-black font-bold text-[11px] hover:bg-white"
+            >
+              Undo
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

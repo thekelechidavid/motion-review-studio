@@ -1,0 +1,1994 @@
+{
+  "project": "Dr Kaka \u2014 GLP-1 & Resistance Exercises",
+  "raw_file": "C:\\Users\\Windows\\Downloads\\IMG_0370.MOV",
+  "raw_duration_sec": 315.04,
+  "cut_duration_sec": 264.88,
+  "time_trimmed_sec": 50.16,
+  "time_trimmed_percent": "15.9%",
+  "kept_segments_count": 84,
+  "cuts_count": 30,
+  "kept_timeline": [
+    {
+      "id": "scene_001",
+      "type": "SPEECH_APPROVED",
+      "start": 10.01,
+      "end": 15.29,
+      "duration": 5.28,
+      "status": "KEEP",
+      "text": "So, what should you do while you're on gel communications and what happens if you stop",
+      "words_count": 16
+    },
+    {
+      "id": "scene_002",
+      "type": "SPEECH_APPROVED",
+      "start": 15.29,
+      "end": 15.51,
+      "duration": 0.22,
+      "status": "KEEP",
+      "text": "them?",
+      "words_count": 1
+    },
+    {
+      "id": "scene_003",
+      "type": "SPEECH_APPROVED",
+      "start": 15.56,
+      "end": 17.59,
+      "duration": 2.03,
+      "status": "KEEP",
+      "text": "So, this is how my consultations go.",
+      "words_count": 7
+    },
+    {
+      "id": "scene_004",
+      "type": "SPEECH_APPROVED",
+      "start": 17.7,
+      "end": 21.85,
+      "duration": 4.15,
+      "status": "KEEP",
+      "text": "Patient comes in, wants to discuss weight, we discuss everything about their life.",
+      "words_count": 13
+    },
+    {
+      "id": "scene_005",
+      "type": "SPEECH_APPROVED",
+      "start": 22.3,
+      "end": 26.43,
+      "duration": 4.13,
+      "status": "KEEP",
+      "text": "My weight loss consultations are long because to dip dive into your life, I want to see",
+      "words_count": 17
+    },
+    {
+      "id": "scene_006",
+      "type": "SPEECH_APPROVED",
+      "start": 26.54,
+      "end": 28.17,
+      "duration": 1.63,
+      "status": "KEEP",
+      "text": "exactly what's been going on.",
+      "words_count": 5
+    },
+    {
+      "id": "scene_007",
+      "type": "SPEECH_APPROVED",
+      "start": 28.17,
+      "end": 28.51,
+      "duration": 0.34,
+      "status": "KEEP",
+      "text": "All right.",
+      "words_count": 2
+    },
+    {
+      "id": "scene_008",
+      "type": "SPEECH_APPROVED",
+      "start": 28.9,
+      "end": 33.81,
+      "duration": 4.91,
+      "status": "KEEP",
+      "text": "We, and I might go through this in another video, we discuss and we decide that, okay,",
+      "words_count": 17
+    },
+    {
+      "id": "scene_009",
+      "type": "SPEECH_APPROVED",
+      "start": 33.81,
+      "end": 37.29,
+      "duration": 3.48,
+      "status": "KEEP",
+      "text": "the JOP-1 obesity treatment is appropriate at this point.",
+      "words_count": 10
+    },
+    {
+      "id": "scene_010",
+      "type": "SPEECH_APPROVED",
+      "start": 37.29,
+      "end": 42.25,
+      "duration": 4.96,
+      "status": "KEEP",
+      "text": "I discuss the dose, I discuss the side effects with the patients, I tell them it's important,",
+      "words_count": 17
+    },
+    {
+      "id": "scene_011",
+      "type": "SPEECH_APPROVED",
+      "start": 42.66,
+      "end": 47.33,
+      "duration": 4.67,
+      "status": "KEEP",
+      "text": "I tell them it's safe to use and then I come to the most important part of the consultation",
+      "words_count": 19
+    },
+    {
+      "id": "scene_012",
+      "type": "SPEECH_APPROVED",
+      "start": 47.33,
+      "end": 48.03,
+      "duration": 0.7,
+      "status": "KEEP",
+      "text": "for me.",
+      "words_count": 2
+    },
+    {
+      "id": "scene_013",
+      "type": "SPEECH_APPROVED",
+      "start": 48.34,
+      "end": 54.47,
+      "duration": 6.13,
+      "status": "KEEP",
+      "text": "I explain to my patients that's JOP-1 is like a cast holding a broken bone together.",
+      "words_count": 17
+    },
+    {
+      "id": "scene_014",
+      "type": "SPEECH_APPROVED",
+      "start": 54.64,
+      "end": 60.77,
+      "duration": 6.13,
+      "status": "KEEP",
+      "text": "When you break your bone, you go to the hospital, they put a pin, they wrap it in the cast.",
+      "words_count": 20
+    },
+    {
+      "id": "scene_015",
+      "type": "SPEECH_APPROVED",
+      "start": 60.84,
+      "end": 64.19,
+      "duration": 3.35,
+      "status": "KEEP",
+      "text": "The pin, the cast, whatever it is, it's not what heals the bone.",
+      "words_count": 13
+    },
+    {
+      "id": "scene_016",
+      "type": "SPEECH_APPROVED",
+      "start": 64.19,
+      "end": 69.95,
+      "duration": 5.76,
+      "status": "KEEP",
+      "text": "All it does is create an ideal environment so that the work can be done underneath for",
+      "words_count": 17
+    },
+    {
+      "id": "scene_017",
+      "type": "SPEECH_APPROVED",
+      "start": 69.95,
+      "end": 72.19,
+      "duration": 2.24,
+      "status": "KEEP",
+      "text": "the bone to heal and that is what JOP-1's do.",
+      "words_count": 11
+    },
+    {
+      "id": "scene_018",
+      "type": "SPEECH_APPROVED",
+      "start": 73.06,
+      "end": 78.29,
+      "duration": 5.23,
+      "status": "KEEP",
+      "text": "They improve the environment, they make the environment easy enough so that you can actually",
+      "words_count": 15
+    },
+    {
+      "id": "scene_019",
+      "type": "SPEECH_APPROVED",
+      "start": 78.29,
+      "end": 78.81,
+      "duration": 0.52,
+      "status": "KEEP",
+      "text": "do the work.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_020",
+      "type": "SPEECH_APPROVED",
+      "start": 78.81,
+      "end": 79.65,
+      "duration": 0.84,
+      "status": "KEEP",
+      "text": "What is the work?",
+      "words_count": 4
+    },
+    {
+      "id": "scene_021",
+      "type": "SPEECH_APPROVED",
+      "start": 79.96,
+      "end": 86.03,
+      "duration": 6.07,
+      "status": "KEEP",
+      "text": "Lifestyle medicine, lifestyle improvement, lifestyle change remains the foundational bedrock",
+      "words_count": 10
+    },
+    {
+      "id": "scene_022",
+      "type": "SPEECH_APPROVED",
+      "start": 86.03,
+      "end": 88.91,
+      "duration": 2.88,
+      "status": "KEEP",
+      "text": "of treatment for any chronic medical condition, okay?",
+      "words_count": 8
+    },
+    {
+      "id": "scene_023",
+      "type": "SPEECH_APPROVED",
+      "start": 89.14,
+      "end": 93.96,
+      "duration": 4.82,
+      "status": "KEEP",
+      "text": "So, I tell my patients that JOP-1's, they're not the easy way out.",
+      "words_count": 14
+    },
+    {
+      "id": "scene_024",
+      "type": "SPEECH_APPROVED",
+      "start": 93.96,
+      "end": 96.46,
+      "duration": 2.5,
+      "status": "KEEP",
+      "text": "They give you a scaffold so that we can do the work.",
+      "words_count": 12
+    },
+    {
+      "id": "scene_025",
+      "type": "SPEECH_APPROVED",
+      "start": 96.55,
+      "end": 97.94,
+      "duration": 1.39,
+      "status": "KEEP",
+      "text": "I need you to work too.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_026",
+      "type": "SPEECH_APPROVED",
+      "start": 98.95,
+      "end": 103.2,
+      "duration": 4.25,
+      "status": "KEEP",
+      "text": "Be more intentionally your choice of food and I might discuss this in another video because",
+      "words_count": 16
+    },
+    {
+      "id": "scene_027",
+      "type": "SPEECH_APPROVED",
+      "start": 103.2,
+      "end": 105.84,
+      "duration": 2.64,
+      "status": "KEEP",
+      "text": "I think it's very important, it's something I call food agency.",
+      "words_count": 11
+    },
+    {
+      "id": "scene_028",
+      "type": "SPEECH_APPROVED",
+      "start": 106.31,
+      "end": 110.6,
+      "duration": 4.29,
+      "status": "KEEP",
+      "text": "The one thing JOP-1 does for a lot of people, especially people who struggle with food,",
+      "words_count": 17
+    },
+    {
+      "id": "scene_029",
+      "type": "SPEECH_APPROVED",
+      "start": 110.6,
+      "end": 111.96,
+      "duration": 1.36,
+      "status": "KEEP",
+      "text": "it reduces the food noise.",
+      "words_count": 5
+    },
+    {
+      "id": "scene_030",
+      "type": "SPEECH_APPROVED",
+      "start": 113.98,
+      "end": 115.33,
+      "duration": 1.35,
+      "status": "KEEP",
+      "text": "That's for another video.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_031",
+      "type": "SPEECH_APPROVED",
+      "start": 115.84,
+      "end": 119.31,
+      "duration": 3.47,
+      "status": "KEEP",
+      "text": "But when you're on the JOP-1, you have more consciousness to choose, okay?",
+      "words_count": 14
+    },
+    {
+      "id": "scene_032",
+      "type": "SPEECH_APPROVED",
+      "start": 119.31,
+      "end": 124.17,
+      "duration": 4.86,
+      "status": "KEEP",
+      "text": "So I need you eating better, especially because JOP-1, in people who are taking JOP-1's, your",
+      "words_count": 18
+    },
+    {
+      "id": "scene_033",
+      "type": "SPEECH_APPROVED",
+      "start": 124.17,
+      "end": 128.73,
+      "duration": 4.56,
+      "status": "KEEP",
+      "text": "food intake reduces and a lot of time, your protein intake reduces, your nutrient reduces,",
+      "words_count": 15
+    },
+    {
+      "id": "scene_034",
+      "type": "SPEECH_APPROVED",
+      "start": 128.73,
+      "end": 134.13,
+      "duration": 5.4,
+      "status": "KEEP",
+      "text": "especially where I, more particular about your protein because there is muscle loss that happens",
+      "words_count": 15
+    },
+    {
+      "id": "scene_035",
+      "type": "SPEECH_APPROVED",
+      "start": 134.13,
+      "end": 135.27,
+      "duration": 1.14,
+      "status": "KEEP",
+      "text": "while you're on the JOP-1.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_036",
+      "type": "SPEECH_APPROVED",
+      "start": 135.27,
+      "end": 140.19,
+      "duration": 4.92,
+      "status": "KEEP",
+      "text": "So for you to avoid this, you must increase your, you must watch your macros and you must",
+      "words_count": 18
+    },
+    {
+      "id": "scene_037",
+      "type": "SPEECH_APPROVED",
+      "start": 140.19,
+      "end": 141.39,
+      "duration": 1.2,
+      "status": "KEEP",
+      "text": "be taking adequate protein.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_038",
+      "type": "SPEECH_APPROVED",
+      "start": 141.4,
+      "end": 143.37,
+      "duration": 1.97,
+      "status": "KEEP",
+      "text": "That is the one thing I have on my patients.",
+      "words_count": 10
+    },
+    {
+      "id": "scene_039",
+      "type": "SPEECH_APPROVED",
+      "start": 143.37,
+      "end": 144.85,
+      "duration": 1.48,
+      "status": "KEEP",
+      "text": "You must be on adequate protein.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_040",
+      "type": "SPEECH_APPROVED",
+      "start": 145.06,
+      "end": 150.41,
+      "duration": 5.35,
+      "status": "KEEP",
+      "text": "You must start resistance exercises and I'm not saying go to the gym and I'm not saying",
+      "words_count": 17
+    },
+    {
+      "id": "scene_041",
+      "type": "SPEECH_APPROVED",
+      "start": 150.41,
+      "end": 151.05,
+      "duration": 0.64,
+      "status": "KEEP",
+      "text": "go to the gym.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_042",
+      "type": "SPEECH_APPROVED",
+      "start": 151.05,
+      "end": 152.05,
+      "duration": 1.0,
+      "status": "KEEP",
+      "text": "There are resistance exercises.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_043",
+      "type": "SPEECH_APPROVED",
+      "start": 152.05,
+      "end": 156.41,
+      "duration": 4.36,
+      "status": "KEEP",
+      "text": "I think I've shown some of them before that you can do at home, sit to stand on your chair,",
+      "words_count": 20
+    },
+    {
+      "id": "scene_044",
+      "type": "SPEECH_APPROVED",
+      "start": 156.52,
+      "end": 160.31,
+      "duration": 3.79,
+      "status": "KEEP",
+      "text": "push off, you know, of the wall.",
+      "words_count": 7
+    },
+    {
+      "id": "scene_045",
+      "type": "SPEECH_APPROVED",
+      "start": 160.42,
+      "end": 164.03,
+      "duration": 3.61,
+      "status": "KEEP",
+      "text": "When you're sitting and standing, and this is something I started doing recently, where's",
+      "words_count": 14
+    },
+    {
+      "id": "scene_046",
+      "type": "SPEECH_APPROVED",
+      "start": 164.03,
+      "end": 169.13,
+      "duration": 5.1,
+      "status": "KEEP",
+      "text": "my bag of rice, when, because I've been, I've not gone to the gym, I've been busy, but when",
+      "words_count": 19
+    },
+    {
+      "id": "scene_047",
+      "type": "SPEECH_APPROVED",
+      "start": 169.13,
+      "end": 172.81,
+      "duration": 3.68,
+      "status": "KEEP",
+      "text": "I want to now challenge myself and add more weight, I take my school bag, hold on a minute,",
+      "words_count": 19
+    },
+    {
+      "id": "scene_048",
+      "type": "SPEECH_APPROVED",
+      "start": 172.9,
+      "end": 175.93,
+      "duration": 3.03,
+      "status": "KEEP",
+      "text": "I have a bag of rice somewhere, but let me look for it.",
+      "words_count": 13
+    },
+    {
+      "id": "scene_049",
+      "type": "SPEECH_APPROVED",
+      "start": 188.94,
+      "end": 193.31,
+      "duration": 4.37,
+      "status": "KEEP",
+      "text": "I take, I put 2KJ in this now, I have two of it, I put 2KJ's.",
+      "words_count": 16
+    },
+    {
+      "id": "scene_050",
+      "type": "SPEECH_APPROVED",
+      "start": 193.4,
+      "end": 195.09,
+      "duration": 1.69,
+      "status": "KEEP",
+      "text": "It's 2KJ dumbbells.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_051",
+      "type": "SPEECH_APPROVED",
+      "start": 195.09,
+      "end": 199.53,
+      "duration": 4.44,
+      "status": "KEEP",
+      "text": "I put it in my school bag, 2KJ, 3KJ, 5KJ bag of rice like that.",
+      "words_count": 15
+    },
+    {
+      "id": "scene_052",
+      "type": "SPEECH_APPROVED",
+      "start": 199.53,
+      "end": 203.97,
+      "duration": 4.44,
+      "status": "KEEP",
+      "text": "I have a backpack, I put it there, I hold it on my back, I hold it in my front and I just",
+      "words_count": 23
+    },
+    {
+      "id": "scene_053",
+      "type": "SPEECH_APPROVED",
+      "start": 203.97,
+      "end": 204.55,
+      "duration": 0.58,
+      "status": "KEEP",
+      "text": "sit to stand.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_054",
+      "type": "SPEECH_APPROVED",
+      "start": 204.58,
+      "end": 207.05,
+      "duration": 2.47,
+      "status": "KEEP",
+      "text": "Those are resistance exercises you can do at home.",
+      "words_count": 9
+    },
+    {
+      "id": "scene_055",
+      "type": "SPEECH_APPROVED",
+      "start": 207.4,
+      "end": 212.25,
+      "duration": 4.85,
+      "status": "KEEP",
+      "text": "But if you're on a GOP one, if there's nothing you remember from everything I've said, you",
+      "words_count": 17
+    },
+    {
+      "id": "scene_056",
+      "type": "SPEECH_APPROVED",
+      "start": 212.25,
+      "end": 216.17,
+      "duration": 3.92,
+      "status": "KEEP",
+      "text": "must be doing resistance exercises, you must be maximizing your protein.",
+      "words_count": 11
+    },
+    {
+      "id": "scene_057",
+      "type": "SPEECH_APPROVED",
+      "start": 216.4,
+      "end": 219.95,
+      "duration": 3.55,
+      "status": "KEEP",
+      "text": "Remember that you will lose weight and it is not automatically just fat.",
+      "words_count": 13
+    },
+    {
+      "id": "scene_058",
+      "type": "SPEECH_APPROVED",
+      "start": 219.95,
+      "end": 225.05,
+      "duration": 5.1,
+      "status": "KEEP",
+      "text": "You are losing muscle, and what that means is you can be losing weight looking better",
+      "words_count": 16
+    },
+    {
+      "id": "scene_059",
+      "type": "SPEECH_APPROVED",
+      "start": 225.05,
+      "end": 226.29,
+      "duration": 1.24,
+      "status": "KEEP",
+      "text": "but getting weaker.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_060",
+      "type": "SPEECH_APPROVED",
+      "start": 227.24,
+      "end": 232.49,
+      "duration": 5.25,
+      "status": "KEEP",
+      "text": "As always, I would say to you that weight loss for me is a side effect held gain, so it does",
+      "words_count": 21
+    },
+    {
+      "id": "scene_061",
+      "type": "SPEECH_APPROVED",
+      "start": 232.49,
+      "end": 238.23,
+      "duration": 5.74,
+      "status": "KEEP",
+      "text": "not, what does it profit me if I make you lose numbers of the scale, but lose your ability",
+      "words_count": 19
+    },
+    {
+      "id": "scene_062",
+      "type": "SPEECH_APPROVED",
+      "start": 238.23,
+      "end": 238.91,
+      "duration": 0.68,
+      "status": "KEEP",
+      "text": "to stay independent.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_063",
+      "type": "SPEECH_APPROVED",
+      "start": 239.5,
+      "end": 240.73,
+      "duration": 1.23,
+      "status": "KEEP",
+      "text": "That is most important.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_064",
+      "type": "SPEECH_APPROVED",
+      "start": 240.9,
+      "end": 246.54,
+      "duration": 5.64,
+      "status": "KEEP",
+      "text": "So if there's nothing you remember, or ozempic face, that's muscle breakdown.",
+      "words_count": 12
+    },
+    {
+      "id": "scene_065",
+      "type": "SPEECH_APPROVED",
+      "start": 246.54,
+      "end": 251.14,
+      "duration": 4.6,
+      "status": "KEEP",
+      "text": "The way to avoid that is focus on your proteins resistance exercise.",
+      "words_count": 12
+    },
+    {
+      "id": "scene_066",
+      "type": "SPEECH_APPROVED",
+      "start": 251.14,
+      "end": 253.12,
+      "duration": 1.98,
+      "status": "KEEP",
+      "text": "If you don't remember anything, remember those two.",
+      "words_count": 8
+    },
+    {
+      "id": "scene_067",
+      "type": "SPEECH_APPROVED",
+      "start": 253.21,
+      "end": 254.92,
+      "duration": 1.71,
+      "status": "KEEP",
+      "text": "Make sure you're eating enough proteins.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_068",
+      "type": "SPEECH_APPROVED",
+      "start": 254.92,
+      "end": 258.9,
+      "duration": 3.98,
+      "status": "KEEP",
+      "text": "What I do, because I did have obesity treatment, I had surgery a few years ago, I don't know",
+      "words_count": 19
+    },
+    {
+      "id": "scene_069",
+      "type": "SPEECH_APPROVED",
+      "start": 258.9,
+      "end": 259.94,
+      "duration": 1.04,
+      "status": "KEEP",
+      "text": "if I ever talked about that.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_070",
+      "type": "SPEECH_APPROVED",
+      "start": 260.03,
+      "end": 263.42,
+      "duration": 3.39,
+      "status": "KEEP",
+      "text": "I eat eggs every morning, so everyone in my house knows, burn me two eggs in the morning",
+      "words_count": 18
+    },
+    {
+      "id": "scene_071",
+      "type": "SPEECH_APPROVED",
+      "start": 263.42,
+      "end": 264.24,
+      "duration": 0.82,
+      "status": "KEEP",
+      "text": "and I'm a happy camper.",
+      "words_count": 5
+    },
+    {
+      "id": "scene_072",
+      "type": "SPEECH_APPROVED",
+      "start": 264.37,
+      "end": 266.84,
+      "duration": 2.47,
+      "status": "KEEP",
+      "text": "I eat eggs, it's my snack as well.",
+      "words_count": 8
+    },
+    {
+      "id": "scene_073",
+      "type": "SPEECH_APPROVED",
+      "start": 267.69,
+      "end": 272.8,
+      "duration": 5.11,
+      "status": "KEEP",
+      "text": "Okay, protein resistance exercise, protein resistance exercise, a lot of times if you're",
+      "words_count": 13
+    },
+    {
+      "id": "scene_074",
+      "type": "SPEECH_APPROVED",
+      "start": 272.8,
+      "end": 277.26,
+      "duration": 4.46,
+      "status": "KEEP",
+      "text": "able to do that, you avoid that gaunt look that comes with using weight too fast.",
+      "words_count": 16
+    },
+    {
+      "id": "scene_075",
+      "type": "SPEECH_APPROVED",
+      "start": 277.99,
+      "end": 279.6,
+      "duration": 1.61,
+      "status": "KEEP",
+      "text": "I hope I'm not scared to do it.",
+      "words_count": 8
+    },
+    {
+      "id": "scene_076",
+      "type": "SPEECH_APPROVED",
+      "start": 279.63,
+      "end": 285.96,
+      "duration": 6.33,
+      "status": "KEEP",
+      "text": "But I think that there are ways to stay healthy while on GOP ones, and I think it's worth it",
+      "words_count": 20
+    },
+    {
+      "id": "scene_077",
+      "type": "SPEECH_APPROVED",
+      "start": 285.96,
+      "end": 286.68,
+      "duration": 0.72,
+      "status": "KEEP",
+      "text": "for all of us to consider.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_078",
+      "type": "SPEECH_APPROVED",
+      "start": 286.68,
+      "end": 292.57,
+      "duration": 5.89,
+      "status": "KEEP",
+      "text": "And even if you're not on GOP one, protein resistance exercise, everybody has rice at home,",
+      "words_count": 16
+    },
+    {
+      "id": "scene_079",
+      "type": "SPEECH_APPROVED",
+      "start": 292.57,
+      "end": 293.09,
+      "duration": 0.52,
+      "status": "KEEP",
+      "text": "or Gary.",
+      "words_count": 2
+    },
+    {
+      "id": "scene_080",
+      "type": "SPEECH_APPROVED",
+      "start": 293.64,
+      "end": 297.55,
+      "duration": 3.91,
+      "status": "KEEP",
+      "text": "Okay, as always, obesity is no your fault, where your health is your responsibility and I",
+      "words_count": 16
+    },
+    {
+      "id": "scene_081",
+      "type": "SPEECH_APPROVED",
+      "start": 297.55,
+      "end": 299.05,
+      "duration": 1.5,
+      "status": "KEEP",
+      "text": "hope you do everything you can to stay healthy.",
+      "words_count": 9
+    },
+    {
+      "id": "scene_082",
+      "type": "SPEECH_APPROVED",
+      "start": 299.18,
+      "end": 300.41,
+      "duration": 1.23,
+      "status": "KEEP",
+      "text": "I'm Dr. Kaka, thanks.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_083",
+      "type": "SPEECH_APPROVED",
+      "start": 300.5,
+      "end": 300.91,
+      "duration": 0.41,
+      "status": "KEEP",
+      "text": "Bye.",
+      "words_count": 1
+    },
+    {
+      "id": "scene_084",
+      "type": "SPEECH_APPROVED",
+      "start": 300.91,
+      "end": 301.11,
+      "duration": 0.2,
+      "status": "KEEP",
+      "text": "Bye.",
+      "words_count": 1
+    }
+  ],
+  "edl": [
+    {
+      "id": "scene_001",
+      "type": "SPEECH_APPROVED",
+      "start": 10.01,
+      "end": 15.29,
+      "duration": 5.28,
+      "status": "KEEP",
+      "text": "So, what should you do while you're on gel communications and what happens if you stop",
+      "words_count": 16
+    },
+    {
+      "id": "scene_002",
+      "type": "SPEECH_APPROVED",
+      "start": 15.29,
+      "end": 15.51,
+      "duration": 0.22,
+      "status": "KEEP",
+      "text": "them?",
+      "words_count": 1
+    },
+    {
+      "id": "scene_003",
+      "type": "SPEECH_APPROVED",
+      "start": 15.56,
+      "end": 17.59,
+      "duration": 2.03,
+      "status": "KEEP",
+      "text": "So, this is how my consultations go.",
+      "words_count": 7
+    },
+    {
+      "id": "cut_004",
+      "type": "CUT_SILENCE",
+      "start": 17.59,
+      "end": 17.7,
+      "duration": 0.11,
+      "status": "CUT",
+      "reason": "Dead air pause (0.46s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_004",
+      "type": "SPEECH_APPROVED",
+      "start": 17.7,
+      "end": 21.85,
+      "duration": 4.15,
+      "status": "KEEP",
+      "text": "Patient comes in, wants to discuss weight, we discuss everything about their life.",
+      "words_count": 13
+    },
+    {
+      "id": "cut_006",
+      "type": "CUT_SILENCE",
+      "start": 21.85,
+      "end": 22.3,
+      "duration": 0.45,
+      "status": "CUT",
+      "reason": "Dead air pause (0.80s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_005",
+      "type": "SPEECH_APPROVED",
+      "start": 22.3,
+      "end": 26.43,
+      "duration": 4.13,
+      "status": "KEEP",
+      "text": "My weight loss consultations are long because to dip dive into your life, I want to see",
+      "words_count": 17
+    },
+    {
+      "id": "cut_008",
+      "type": "CUT_SILENCE",
+      "start": 26.43,
+      "end": 26.54,
+      "duration": 0.11,
+      "status": "CUT",
+      "reason": "Dead air pause (0.46s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_006",
+      "type": "SPEECH_APPROVED",
+      "start": 26.54,
+      "end": 28.17,
+      "duration": 1.63,
+      "status": "KEEP",
+      "text": "exactly what's been going on.",
+      "words_count": 5
+    },
+    {
+      "id": "scene_007",
+      "type": "SPEECH_APPROVED",
+      "start": 28.17,
+      "end": 28.51,
+      "duration": 0.34,
+      "status": "KEEP",
+      "text": "All right.",
+      "words_count": 2
+    },
+    {
+      "id": "cut_011",
+      "type": "CUT_SILENCE",
+      "start": 28.51,
+      "end": 28.9,
+      "duration": 0.39,
+      "status": "CUT",
+      "reason": "Dead air pause (0.74s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_008",
+      "type": "SPEECH_APPROVED",
+      "start": 28.9,
+      "end": 33.81,
+      "duration": 4.91,
+      "status": "KEEP",
+      "text": "We, and I might go through this in another video, we discuss and we decide that, okay,",
+      "words_count": 17
+    },
+    {
+      "id": "scene_009",
+      "type": "SPEECH_APPROVED",
+      "start": 33.81,
+      "end": 37.29,
+      "duration": 3.48,
+      "status": "KEEP",
+      "text": "the JOP-1 obesity treatment is appropriate at this point.",
+      "words_count": 10
+    },
+    {
+      "id": "scene_010",
+      "type": "SPEECH_APPROVED",
+      "start": 37.29,
+      "end": 42.25,
+      "duration": 4.96,
+      "status": "KEEP",
+      "text": "I discuss the dose, I discuss the side effects with the patients, I tell them it's important,",
+      "words_count": 17
+    },
+    {
+      "id": "cut_015",
+      "type": "CUT_SILENCE",
+      "start": 42.25,
+      "end": 42.66,
+      "duration": 0.41,
+      "status": "CUT",
+      "reason": "Dead air pause (0.76s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_011",
+      "type": "SPEECH_APPROVED",
+      "start": 42.66,
+      "end": 47.33,
+      "duration": 4.67,
+      "status": "KEEP",
+      "text": "I tell them it's safe to use and then I come to the most important part of the consultation",
+      "words_count": 19
+    },
+    {
+      "id": "scene_012",
+      "type": "SPEECH_APPROVED",
+      "start": 47.33,
+      "end": 48.03,
+      "duration": 0.7,
+      "status": "KEEP",
+      "text": "for me.",
+      "words_count": 2
+    },
+    {
+      "id": "cut_018",
+      "type": "CUT_SILENCE",
+      "start": 48.03,
+      "end": 48.34,
+      "duration": 0.31,
+      "status": "CUT",
+      "reason": "Dead air pause (0.66s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_013",
+      "type": "SPEECH_APPROVED",
+      "start": 48.34,
+      "end": 54.47,
+      "duration": 6.13,
+      "status": "KEEP",
+      "text": "I explain to my patients that's JOP-1 is like a cast holding a broken bone together.",
+      "words_count": 17
+    },
+    {
+      "id": "cut_020",
+      "type": "CUT_SILENCE",
+      "start": 54.47,
+      "end": 54.64,
+      "duration": 0.17,
+      "status": "CUT",
+      "reason": "Dead air pause (0.52s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_014",
+      "type": "SPEECH_APPROVED",
+      "start": 54.64,
+      "end": 60.77,
+      "duration": 6.13,
+      "status": "KEEP",
+      "text": "When you break your bone, you go to the hospital, they put a pin, they wrap it in the cast.",
+      "words_count": 20
+    },
+    {
+      "id": "scene_015",
+      "type": "SPEECH_APPROVED",
+      "start": 60.84,
+      "end": 64.19,
+      "duration": 3.35,
+      "status": "KEEP",
+      "text": "The pin, the cast, whatever it is, it's not what heals the bone.",
+      "words_count": 13
+    },
+    {
+      "id": "scene_016",
+      "type": "SPEECH_APPROVED",
+      "start": 64.19,
+      "end": 69.95,
+      "duration": 5.76,
+      "status": "KEEP",
+      "text": "All it does is create an ideal environment so that the work can be done underneath for",
+      "words_count": 17
+    },
+    {
+      "id": "scene_017",
+      "type": "SPEECH_APPROVED",
+      "start": 69.95,
+      "end": 72.19,
+      "duration": 2.24,
+      "status": "KEEP",
+      "text": "the bone to heal and that is what JOP-1's do.",
+      "words_count": 11
+    },
+    {
+      "id": "cut_025",
+      "type": "CUT_SILENCE",
+      "start": 72.19,
+      "end": 73.06,
+      "duration": 0.87,
+      "status": "CUT",
+      "reason": "Dead air pause (1.22s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_018",
+      "type": "SPEECH_APPROVED",
+      "start": 73.06,
+      "end": 78.29,
+      "duration": 5.23,
+      "status": "KEEP",
+      "text": "They improve the environment, they make the environment easy enough so that you can actually",
+      "words_count": 15
+    },
+    {
+      "id": "scene_019",
+      "type": "SPEECH_APPROVED",
+      "start": 78.29,
+      "end": 78.81,
+      "duration": 0.52,
+      "status": "KEEP",
+      "text": "do the work.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_020",
+      "type": "SPEECH_APPROVED",
+      "start": 78.81,
+      "end": 79.65,
+      "duration": 0.84,
+      "status": "KEEP",
+      "text": "What is the work?",
+      "words_count": 4
+    },
+    {
+      "id": "cut_029",
+      "type": "CUT_SILENCE",
+      "start": 79.65,
+      "end": 79.96,
+      "duration": 0.31,
+      "status": "CUT",
+      "reason": "Dead air pause (0.66s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_021",
+      "type": "SPEECH_APPROVED",
+      "start": 79.96,
+      "end": 86.03,
+      "duration": 6.07,
+      "status": "KEEP",
+      "text": "Lifestyle medicine, lifestyle improvement, lifestyle change remains the foundational bedrock",
+      "words_count": 10
+    },
+    {
+      "id": "scene_022",
+      "type": "SPEECH_APPROVED",
+      "start": 86.03,
+      "end": 88.91,
+      "duration": 2.88,
+      "status": "KEEP",
+      "text": "of treatment for any chronic medical condition, okay?",
+      "words_count": 8
+    },
+    {
+      "id": "cut_032",
+      "type": "CUT_SILENCE",
+      "start": 88.91,
+      "end": 89.14,
+      "duration": 0.23,
+      "status": "CUT",
+      "reason": "Dead air pause (0.58s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_023",
+      "type": "SPEECH_APPROVED",
+      "start": 89.14,
+      "end": 93.96,
+      "duration": 4.82,
+      "status": "KEEP",
+      "text": "So, I tell my patients that JOP-1's, they're not the easy way out.",
+      "words_count": 14
+    },
+    {
+      "id": "scene_024",
+      "type": "SPEECH_APPROVED",
+      "start": 93.96,
+      "end": 96.46,
+      "duration": 2.5,
+      "status": "KEEP",
+      "text": "They give you a scaffold so that we can do the work.",
+      "words_count": 12
+    },
+    {
+      "id": "scene_025",
+      "type": "SPEECH_APPROVED",
+      "start": 96.55,
+      "end": 97.94,
+      "duration": 1.39,
+      "status": "KEEP",
+      "text": "I need you to work too.",
+      "words_count": 6
+    },
+    {
+      "id": "cut_036",
+      "type": "CUT_SILENCE",
+      "start": 97.94,
+      "end": 98.95,
+      "duration": 1.01,
+      "status": "CUT",
+      "reason": "Dead air pause (1.36s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_026",
+      "type": "SPEECH_APPROVED",
+      "start": 98.95,
+      "end": 103.2,
+      "duration": 4.25,
+      "status": "KEEP",
+      "text": "Be more intentionally your choice of food and I might discuss this in another video because",
+      "words_count": 16
+    },
+    {
+      "id": "scene_027",
+      "type": "SPEECH_APPROVED",
+      "start": 103.2,
+      "end": 105.84,
+      "duration": 2.64,
+      "status": "KEEP",
+      "text": "I think it's very important, it's something I call food agency.",
+      "words_count": 11
+    },
+    {
+      "id": "cut_039",
+      "type": "CUT_SILENCE",
+      "start": 105.84,
+      "end": 106.31,
+      "duration": 0.47,
+      "status": "CUT",
+      "reason": "Dead air pause (0.82s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_028",
+      "type": "SPEECH_APPROVED",
+      "start": 106.31,
+      "end": 110.6,
+      "duration": 4.29,
+      "status": "KEEP",
+      "text": "The one thing JOP-1 does for a lot of people, especially people who struggle with food,",
+      "words_count": 17
+    },
+    {
+      "id": "scene_029",
+      "type": "SPEECH_APPROVED",
+      "start": 110.6,
+      "end": 111.96,
+      "duration": 1.36,
+      "status": "KEEP",
+      "text": "it reduces the food noise.",
+      "words_count": 5
+    },
+    {
+      "id": "cut_042",
+      "type": "CUT_SILENCE",
+      "start": 111.96,
+      "end": 113.98,
+      "duration": 2.02,
+      "status": "CUT",
+      "reason": "Dead air pause (2.37s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_030",
+      "type": "SPEECH_APPROVED",
+      "start": 113.98,
+      "end": 115.33,
+      "duration": 1.35,
+      "status": "KEEP",
+      "text": "That's for another video.",
+      "words_count": 4
+    },
+    {
+      "id": "cut_044",
+      "type": "CUT_SILENCE",
+      "start": 115.33,
+      "end": 115.84,
+      "duration": 0.51,
+      "status": "CUT",
+      "reason": "Dead air pause (0.86s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_031",
+      "type": "SPEECH_APPROVED",
+      "start": 115.84,
+      "end": 119.31,
+      "duration": 3.47,
+      "status": "KEEP",
+      "text": "But when you're on the JOP-1, you have more consciousness to choose, okay?",
+      "words_count": 14
+    },
+    {
+      "id": "scene_032",
+      "type": "SPEECH_APPROVED",
+      "start": 119.31,
+      "end": 124.17,
+      "duration": 4.86,
+      "status": "KEEP",
+      "text": "So I need you eating better, especially because JOP-1, in people who are taking JOP-1's, your",
+      "words_count": 18
+    },
+    {
+      "id": "scene_033",
+      "type": "SPEECH_APPROVED",
+      "start": 124.17,
+      "end": 128.73,
+      "duration": 4.56,
+      "status": "KEEP",
+      "text": "food intake reduces and a lot of time, your protein intake reduces, your nutrient reduces,",
+      "words_count": 15
+    },
+    {
+      "id": "scene_034",
+      "type": "SPEECH_APPROVED",
+      "start": 128.73,
+      "end": 134.13,
+      "duration": 5.4,
+      "status": "KEEP",
+      "text": "especially where I, more particular about your protein because there is muscle loss that happens",
+      "words_count": 15
+    },
+    {
+      "id": "scene_035",
+      "type": "SPEECH_APPROVED",
+      "start": 134.13,
+      "end": 135.27,
+      "duration": 1.14,
+      "status": "KEEP",
+      "text": "while you're on the JOP-1.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_036",
+      "type": "SPEECH_APPROVED",
+      "start": 135.27,
+      "end": 140.19,
+      "duration": 4.92,
+      "status": "KEEP",
+      "text": "So for you to avoid this, you must increase your, you must watch your macros and you must",
+      "words_count": 18
+    },
+    {
+      "id": "scene_037",
+      "type": "SPEECH_APPROVED",
+      "start": 140.19,
+      "end": 141.39,
+      "duration": 1.2,
+      "status": "KEEP",
+      "text": "be taking adequate protein.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_038",
+      "type": "SPEECH_APPROVED",
+      "start": 141.4,
+      "end": 143.37,
+      "duration": 1.97,
+      "status": "KEEP",
+      "text": "That is the one thing I have on my patients.",
+      "words_count": 10
+    },
+    {
+      "id": "scene_039",
+      "type": "SPEECH_APPROVED",
+      "start": 143.37,
+      "end": 144.85,
+      "duration": 1.48,
+      "status": "KEEP",
+      "text": "You must be on adequate protein.",
+      "words_count": 6
+    },
+    {
+      "id": "cut_054",
+      "type": "CUT_SILENCE",
+      "start": 144.85,
+      "end": 145.06,
+      "duration": 0.21,
+      "status": "CUT",
+      "reason": "Dead air pause (0.56s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_040",
+      "type": "SPEECH_APPROVED",
+      "start": 145.06,
+      "end": 150.41,
+      "duration": 5.35,
+      "status": "KEEP",
+      "text": "You must start resistance exercises and I'm not saying go to the gym and I'm not saying",
+      "words_count": 17
+    },
+    {
+      "id": "scene_041",
+      "type": "SPEECH_APPROVED",
+      "start": 150.41,
+      "end": 151.05,
+      "duration": 0.64,
+      "status": "KEEP",
+      "text": "go to the gym.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_042",
+      "type": "SPEECH_APPROVED",
+      "start": 151.05,
+      "end": 152.05,
+      "duration": 1.0,
+      "status": "KEEP",
+      "text": "There are resistance exercises.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_043",
+      "type": "SPEECH_APPROVED",
+      "start": 152.05,
+      "end": 156.41,
+      "duration": 4.36,
+      "status": "KEEP",
+      "text": "I think I've shown some of them before that you can do at home, sit to stand on your chair,",
+      "words_count": 20
+    },
+    {
+      "id": "cut_059",
+      "type": "CUT_SILENCE",
+      "start": 156.41,
+      "end": 156.52,
+      "duration": 0.11,
+      "status": "CUT",
+      "reason": "Dead air pause (0.46s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_044",
+      "type": "SPEECH_APPROVED",
+      "start": 156.52,
+      "end": 160.31,
+      "duration": 3.79,
+      "status": "KEEP",
+      "text": "push off, you know, of the wall.",
+      "words_count": 7
+    },
+    {
+      "id": "cut_061",
+      "type": "CUT_SILENCE",
+      "start": 160.31,
+      "end": 160.42,
+      "duration": 0.11,
+      "status": "CUT",
+      "reason": "Dead air pause (0.46s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_045",
+      "type": "SPEECH_APPROVED",
+      "start": 160.42,
+      "end": 164.03,
+      "duration": 3.61,
+      "status": "KEEP",
+      "text": "When you're sitting and standing, and this is something I started doing recently, where's",
+      "words_count": 14
+    },
+    {
+      "id": "scene_046",
+      "type": "SPEECH_APPROVED",
+      "start": 164.03,
+      "end": 169.13,
+      "duration": 5.1,
+      "status": "KEEP",
+      "text": "my bag of rice, when, because I've been, I've not gone to the gym, I've been busy, but when",
+      "words_count": 19
+    },
+    {
+      "id": "scene_047",
+      "type": "SPEECH_APPROVED",
+      "start": 169.13,
+      "end": 172.81,
+      "duration": 3.68,
+      "status": "KEEP",
+      "text": "I want to now challenge myself and add more weight, I take my school bag, hold on a minute,",
+      "words_count": 19
+    },
+    {
+      "id": "scene_048",
+      "type": "SPEECH_APPROVED",
+      "start": 172.9,
+      "end": 175.93,
+      "duration": 3.03,
+      "status": "KEEP",
+      "text": "I have a bag of rice somewhere, but let me look for it.",
+      "words_count": 13
+    },
+    {
+      "id": "cut_066",
+      "type": "CUT_SILENCE",
+      "start": 175.93,
+      "end": 188.94,
+      "duration": 13.01,
+      "status": "CUT",
+      "reason": "Dead air pause (13.36s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_049",
+      "type": "SPEECH_APPROVED",
+      "start": 188.94,
+      "end": 193.31,
+      "duration": 4.37,
+      "status": "KEEP",
+      "text": "I take, I put 2KJ in this now, I have two of it, I put 2KJ's.",
+      "words_count": 16
+    },
+    {
+      "id": "scene_050",
+      "type": "SPEECH_APPROVED",
+      "start": 193.4,
+      "end": 195.09,
+      "duration": 1.69,
+      "status": "KEEP",
+      "text": "It's 2KJ dumbbells.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_051",
+      "type": "SPEECH_APPROVED",
+      "start": 195.09,
+      "end": 199.53,
+      "duration": 4.44,
+      "status": "KEEP",
+      "text": "I put it in my school bag, 2KJ, 3KJ, 5KJ bag of rice like that.",
+      "words_count": 15
+    },
+    {
+      "id": "scene_052",
+      "type": "SPEECH_APPROVED",
+      "start": 199.53,
+      "end": 203.97,
+      "duration": 4.44,
+      "status": "KEEP",
+      "text": "I have a backpack, I put it there, I hold it on my back, I hold it in my front and I just",
+      "words_count": 23
+    },
+    {
+      "id": "scene_053",
+      "type": "SPEECH_APPROVED",
+      "start": 203.97,
+      "end": 204.55,
+      "duration": 0.58,
+      "status": "KEEP",
+      "text": "sit to stand.",
+      "words_count": 3
+    },
+    {
+      "id": "scene_054",
+      "type": "SPEECH_APPROVED",
+      "start": 204.58,
+      "end": 207.05,
+      "duration": 2.47,
+      "status": "KEEP",
+      "text": "Those are resistance exercises you can do at home.",
+      "words_count": 9
+    },
+    {
+      "id": "cut_073",
+      "type": "CUT_SILENCE",
+      "start": 207.05,
+      "end": 207.4,
+      "duration": 0.35,
+      "status": "CUT",
+      "reason": "Dead air pause (0.70s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_055",
+      "type": "SPEECH_APPROVED",
+      "start": 207.4,
+      "end": 212.25,
+      "duration": 4.85,
+      "status": "KEEP",
+      "text": "But if you're on a GOP one, if there's nothing you remember from everything I've said, you",
+      "words_count": 17
+    },
+    {
+      "id": "scene_056",
+      "type": "SPEECH_APPROVED",
+      "start": 212.25,
+      "end": 216.17,
+      "duration": 3.92,
+      "status": "KEEP",
+      "text": "must be doing resistance exercises, you must be maximizing your protein.",
+      "words_count": 11
+    },
+    {
+      "id": "cut_076",
+      "type": "CUT_SILENCE",
+      "start": 216.17,
+      "end": 216.4,
+      "duration": 0.23,
+      "status": "CUT",
+      "reason": "Dead air pause (0.58s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_057",
+      "type": "SPEECH_APPROVED",
+      "start": 216.4,
+      "end": 219.95,
+      "duration": 3.55,
+      "status": "KEEP",
+      "text": "Remember that you will lose weight and it is not automatically just fat.",
+      "words_count": 13
+    },
+    {
+      "id": "scene_058",
+      "type": "SPEECH_APPROVED",
+      "start": 219.95,
+      "end": 225.05,
+      "duration": 5.1,
+      "status": "KEEP",
+      "text": "You are losing muscle, and what that means is you can be losing weight looking better",
+      "words_count": 16
+    },
+    {
+      "id": "scene_059",
+      "type": "SPEECH_APPROVED",
+      "start": 225.05,
+      "end": 226.29,
+      "duration": 1.24,
+      "status": "KEEP",
+      "text": "but getting weaker.",
+      "words_count": 3
+    },
+    {
+      "id": "cut_080",
+      "type": "CUT_SILENCE",
+      "start": 226.29,
+      "end": 227.24,
+      "duration": 0.95,
+      "status": "CUT",
+      "reason": "Dead air pause (1.30s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_060",
+      "type": "SPEECH_APPROVED",
+      "start": 227.24,
+      "end": 232.49,
+      "duration": 5.25,
+      "status": "KEEP",
+      "text": "As always, I would say to you that weight loss for me is a side effect held gain, so it does",
+      "words_count": 21
+    },
+    {
+      "id": "scene_061",
+      "type": "SPEECH_APPROVED",
+      "start": 232.49,
+      "end": 238.23,
+      "duration": 5.74,
+      "status": "KEEP",
+      "text": "not, what does it profit me if I make you lose numbers of the scale, but lose your ability",
+      "words_count": 19
+    },
+    {
+      "id": "scene_062",
+      "type": "SPEECH_APPROVED",
+      "start": 238.23,
+      "end": 238.91,
+      "duration": 0.68,
+      "status": "KEEP",
+      "text": "to stay independent.",
+      "words_count": 3
+    },
+    {
+      "id": "cut_084",
+      "type": "CUT_SILENCE",
+      "start": 238.91,
+      "end": 239.5,
+      "duration": 0.59,
+      "status": "CUT",
+      "reason": "Dead air pause (0.94s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_063",
+      "type": "SPEECH_APPROVED",
+      "start": 239.5,
+      "end": 240.73,
+      "duration": 1.23,
+      "status": "KEEP",
+      "text": "That is most important.",
+      "words_count": 4
+    },
+    {
+      "id": "cut_086",
+      "type": "CUT_SILENCE",
+      "start": 240.73,
+      "end": 240.9,
+      "duration": 0.17,
+      "status": "CUT",
+      "reason": "Dead air pause (0.52s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_064",
+      "type": "SPEECH_APPROVED",
+      "start": 240.9,
+      "end": 246.54,
+      "duration": 5.64,
+      "status": "KEEP",
+      "text": "So if there's nothing you remember, or ozempic face, that's muscle breakdown.",
+      "words_count": 12
+    },
+    {
+      "id": "scene_065",
+      "type": "SPEECH_APPROVED",
+      "start": 246.54,
+      "end": 251.14,
+      "duration": 4.6,
+      "status": "KEEP",
+      "text": "The way to avoid that is focus on your proteins resistance exercise.",
+      "words_count": 12
+    },
+    {
+      "id": "scene_066",
+      "type": "SPEECH_APPROVED",
+      "start": 251.14,
+      "end": 253.12,
+      "duration": 1.98,
+      "status": "KEEP",
+      "text": "If you don't remember anything, remember those two.",
+      "words_count": 8
+    },
+    {
+      "id": "scene_067",
+      "type": "SPEECH_APPROVED",
+      "start": 253.21,
+      "end": 254.92,
+      "duration": 1.71,
+      "status": "KEEP",
+      "text": "Make sure you're eating enough proteins.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_068",
+      "type": "SPEECH_APPROVED",
+      "start": 254.92,
+      "end": 258.9,
+      "duration": 3.98,
+      "status": "KEEP",
+      "text": "What I do, because I did have obesity treatment, I had surgery a few years ago, I don't know",
+      "words_count": 19
+    },
+    {
+      "id": "scene_069",
+      "type": "SPEECH_APPROVED",
+      "start": 258.9,
+      "end": 259.94,
+      "duration": 1.04,
+      "status": "KEEP",
+      "text": "if I ever talked about that.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_070",
+      "type": "SPEECH_APPROVED",
+      "start": 260.03,
+      "end": 263.42,
+      "duration": 3.39,
+      "status": "KEEP",
+      "text": "I eat eggs every morning, so everyone in my house knows, burn me two eggs in the morning",
+      "words_count": 18
+    },
+    {
+      "id": "scene_071",
+      "type": "SPEECH_APPROVED",
+      "start": 263.42,
+      "end": 264.24,
+      "duration": 0.82,
+      "status": "KEEP",
+      "text": "and I'm a happy camper.",
+      "words_count": 5
+    },
+    {
+      "id": "cut_095",
+      "type": "CUT_SILENCE",
+      "start": 264.24,
+      "end": 264.37,
+      "duration": 0.13,
+      "status": "CUT",
+      "reason": "Dead air pause (0.48s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_072",
+      "type": "SPEECH_APPROVED",
+      "start": 264.37,
+      "end": 266.84,
+      "duration": 2.47,
+      "status": "KEEP",
+      "text": "I eat eggs, it's my snack as well.",
+      "words_count": 8
+    },
+    {
+      "id": "cut_097",
+      "type": "CUT_SILENCE",
+      "start": 266.84,
+      "end": 267.69,
+      "duration": 0.85,
+      "status": "CUT",
+      "reason": "Dead air pause (1.20s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_073",
+      "type": "SPEECH_APPROVED",
+      "start": 267.69,
+      "end": 272.8,
+      "duration": 5.11,
+      "status": "KEEP",
+      "text": "Okay, protein resistance exercise, protein resistance exercise, a lot of times if you're",
+      "words_count": 13
+    },
+    {
+      "id": "scene_074",
+      "type": "SPEECH_APPROVED",
+      "start": 272.8,
+      "end": 277.26,
+      "duration": 4.46,
+      "status": "KEEP",
+      "text": "able to do that, you avoid that gaunt look that comes with using weight too fast.",
+      "words_count": 16
+    },
+    {
+      "id": "cut_100",
+      "type": "CUT_SILENCE",
+      "start": 277.26,
+      "end": 277.99,
+      "duration": 0.73,
+      "status": "CUT",
+      "reason": "Dead air pause (1.08s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_075",
+      "type": "SPEECH_APPROVED",
+      "start": 277.99,
+      "end": 279.6,
+      "duration": 1.61,
+      "status": "KEEP",
+      "text": "I hope I'm not scared to do it.",
+      "words_count": 8
+    },
+    {
+      "id": "scene_076",
+      "type": "SPEECH_APPROVED",
+      "start": 279.63,
+      "end": 285.96,
+      "duration": 6.33,
+      "status": "KEEP",
+      "text": "But I think that there are ways to stay healthy while on GOP ones, and I think it's worth it",
+      "words_count": 20
+    },
+    {
+      "id": "scene_077",
+      "type": "SPEECH_APPROVED",
+      "start": 285.96,
+      "end": 286.68,
+      "duration": 0.72,
+      "status": "KEEP",
+      "text": "for all of us to consider.",
+      "words_count": 6
+    },
+    {
+      "id": "scene_078",
+      "type": "SPEECH_APPROVED",
+      "start": 286.68,
+      "end": 292.57,
+      "duration": 5.89,
+      "status": "KEEP",
+      "text": "And even if you're not on GOP one, protein resistance exercise, everybody has rice at home,",
+      "words_count": 16
+    },
+    {
+      "id": "scene_079",
+      "type": "SPEECH_APPROVED",
+      "start": 292.57,
+      "end": 293.09,
+      "duration": 0.52,
+      "status": "KEEP",
+      "text": "or Gary.",
+      "words_count": 2
+    },
+    {
+      "id": "cut_106",
+      "type": "CUT_SILENCE",
+      "start": 293.09,
+      "end": 293.64,
+      "duration": 0.55,
+      "status": "CUT",
+      "reason": "Dead air pause (0.90s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_080",
+      "type": "SPEECH_APPROVED",
+      "start": 293.64,
+      "end": 297.55,
+      "duration": 3.91,
+      "status": "KEEP",
+      "text": "Okay, as always, obesity is no your fault, where your health is your responsibility and I",
+      "words_count": 16
+    },
+    {
+      "id": "scene_081",
+      "type": "SPEECH_APPROVED",
+      "start": 297.55,
+      "end": 299.05,
+      "duration": 1.5,
+      "status": "KEEP",
+      "text": "hope you do everything you can to stay healthy.",
+      "words_count": 9
+    },
+    {
+      "id": "cut_109",
+      "type": "CUT_SILENCE",
+      "start": 299.05,
+      "end": 299.18,
+      "duration": 0.13,
+      "status": "CUT",
+      "reason": "Dead air pause (0.48s) tightened to natural cadence",
+      "text": ""
+    },
+    {
+      "id": "scene_082",
+      "type": "SPEECH_APPROVED",
+      "start": 299.18,
+      "end": 300.41,
+      "duration": 1.23,
+      "status": "KEEP",
+      "text": "I'm Dr. Kaka, thanks.",
+      "words_count": 4
+    },
+    {
+      "id": "scene_083",
+      "type": "SPEECH_APPROVED",
+      "start": 300.5,
+      "end": 300.91,
+      "duration": 0.41,
+      "status": "KEEP",
+      "text": "Bye.",
+      "words_count": 1
+    },
+    {
+      "id": "scene_084",
+      "type": "SPEECH_APPROVED",
+      "start": 300.91,
+      "end": 301.11,
+      "duration": 0.2,
+      "status": "KEEP",
+      "text": "Bye.",
+      "words_count": 1
+    },
+    {
+      "id": "cut_113",
+      "type": "CUT_OUTTAKE",
+      "start": 306.43,
+      "end": 310.85,
+      "duration": 4.42,
+      "status": "CUT",
+      "reason": "Behind-the-scenes outtake ('Isaac and David continue later')",
+      "text": "Gotta go now, Isaac and David, continue later."
+    },
+    {
+      "id": "cut_114",
+      "type": "CUT_OUTTAKE",
+      "start": 300.91,
+      "end": 315.04,
+      "duration": 14.13,
+      "status": "CUT",
+      "reason": "Trailing silence & outtake after sign-off",
+      "text": ""
+    }
+  ]
+}
