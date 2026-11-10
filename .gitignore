@@ -30,6 +30,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Heavy raw camera cuts (>100MB, excluded from GitHub tracking)
+# Heavy media & rendered animations (excluded from GitHub tracking to prevent HTTP timeouts & repository bloat)
 public/videos/cut-lab/*.mp4
 public/videos/kaka/*.mp4
+public/videos/glp1resistance/*.mp4
