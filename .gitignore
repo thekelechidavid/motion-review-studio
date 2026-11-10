@@ -34,3 +34,6 @@ next-env.d.ts
 public/videos/cut-lab/*.mp4
 public/videos/kaka/*.mp4
 public/videos/glp1resistance/*.mp4
+
+public/videos/growithkeda/**/*.mp4
+

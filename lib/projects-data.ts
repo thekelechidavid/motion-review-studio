@@ -12,6 +12,213 @@ export const FEEDBACK_TAGS: FeedbackTag[] = [
 
 export const INITIAL_PROJECTS: Project[] = [
 {
+  "id": "growithkeda-openai-downsizes",
+  "client": "Growithkeda",
+  "title": "OpenAI Downsizes  Round",
+  "subtitle": "11-Scene Rendered Vertical Suite & Kinetic Typography",
+  "type": "rendered_video",
+  "status": "completed",
+  "format": "9:16 Vertical",
+  "aspectRatio": "9:16",
+  "dimensions": "1080x1920",
+  "scenesCount": 11,
+  "totalDuration": "00:45 (45.65s)",
+  "lastUpdated": "2026-11-10 (Published to Instagram)",
+  "brandColors": [
+    {
+      "name": "Dark Charcoal",
+      "hex": "#1B161A"
+    },
+    {
+      "name": "Deep Panel",
+      "hex": "#27222A"
+    },
+    {
+      "name": "Electric Lime",
+      "hex": "#BFD244"
+    },
+    {
+      "name": "Pure White",
+      "hex": "#FFFFFF"
+    }
+  ],
+  "guidelines": [
+    "Growithkeda dark theme default (#1B161A page with #27222A panels)",
+    "Kinetic typography locked to voiceover phonemes with Poppins Bold and Playfair Display accents",
+    "Electric Lime (#BFD244) highlights on core numbers and metrics",
+    "Strict lower-third safe zone enforcement for Instagram Reels UI",
+    "Zero em dashes across on-screen text and copy",
+    "Live published on Instagram (@growithkeda): https://www.instagram.com/reel/DfkS2yOD7Wb/"
+  ],
+  "scenes": [
+    {
+      "id": 1,
+      "title": "Hook: Corporate Math",
+      "startTime": "00:00",
+      "endTime": "00:04",
+      "duration": 3.8,
+      "spokenAnchor": "Even the king of the AI revolution has to face basic corporate math.",
+      "visualAnchor": "Floating crown with subtle glow & gentle drift over dark slate canvas.",
+      "connectiveText": "The Reality Check",
+      "headlineText": "Corporate Math",
+      "highlightText": "Even The King",
+      "badgeDetail": "OpenAI Valuation",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_01_hook.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 2,
+      "title": "The  Valuation Target",
+      "startTime": "00:04",
+      "endTime": "00:08",
+      "duration": 4.3,
+      "spokenAnchor": "OpenAI was reportedly gunning for a historic one hundred billion dollar valuation.",
+      "visualAnchor": "Massive green balloon glowing with ' Target' label expanding.",
+      "connectiveText": "Historical Expectations",
+      "headlineText": "Target: ",
+      "highlightText": "Historic Ambition",
+      "badgeDetail": "Wall Street Speculation",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_02_balloon.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 3,
+      "title": "The Valuation Needle &  Reality",
+      "startTime": "00:08",
+      "endTime": "00:13",
+      "duration": 4.5,
+      "spokenAnchor": "Instead, Wall Street forced them to downsize the target to twenty billion.",
+      "visualAnchor": "Sharp needle pops balloon, shrinking down to compact '' badge.",
+      "connectiveText": "The Valuation Haircut",
+      "headlineText": "Forced Downsize",
+      "highlightText": "Down To ",
+      "badgeDetail": "Reality Check",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_03_downsize.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 4,
+      "title": "The 80% Capital Haircut",
+      "startTime": "00:13",
+      "endTime": "00:17",
+      "duration": 4.3,
+      "spokenAnchor": "That is an eighty percent haircut on their capital trajectory.",
+      "visualAnchor": "Sleek speedometer dashboard needle slamming down from max to red zone.",
+      "connectiveText": "Capital Trajectory",
+      "headlineText": "80% Valuation Cut",
+      "highlightText": "Capital Trajectory",
+      "badgeDetail": "Trajectory Shock",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_04_brakes.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 5,
+      "title": "The  Compute Furnace",
+      "startTime": "00:17",
+      "endTime": "00:22",
+      "duration": 4.9,
+      "spokenAnchor": "Their compute bills alone are projected to cross thirty-five billion by 2027.",
+      "visualAnchor": "Glowing server rack engulfed in soft flame particles, counter ticking to .",
+      "connectiveText": "Infrastructure Cost",
+      "headlineText": " Compute Bill",
+      "highlightText": "Furnace By 2027",
+      "badgeDetail": "GPU Infrastructure",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_05_compute_furnace.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 6,
+      "title": "The Race to Zero & Collapsing Margins",
+      "startTime": "00:22",
+      "endTime": "00:26",
+      "duration": 4.7,
+      "spokenAnchor": "Meanwhile, open source models and rival labs are driving token prices to near zero.",
+      "visualAnchor": "Line graph plunging downward with competitors Llama and Claude gaining share.",
+      "connectiveText": "Market Competition",
+      "headlineText": "Race To Zero",
+      "highlightText": "Margins Collapsing",
+      "badgeDetail": "Token Economics",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_06_race_to_zero.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 7,
+      "title": "Death of the Blank Check",
+      "startTime": "00:26",
+      "endTime": "00:31",
+      "duration": 4.5,
+      "spokenAnchor": "Investors are no longer handing out blank checks for raw model capability.",
+      "visualAnchor": "Blank VC check with signature torn cleanly down the middle.",
+      "connectiveText": "Investor Sentiment",
+      "headlineText": "No Blank Checks",
+      "highlightText": "Capability Isn't Enough",
+      "badgeDetail": "VC Discipline",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_07_shredded_check.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 8,
+      "title": "Retention & Enterprise Moats",
+      "startTime": "00:31",
+      "endTime": "00:36",
+      "duration": 4.5,
+      "spokenAnchor": "They want path to profitability, real revenue retention, and defensible moats.",
+      "visualAnchor": "Funnel diagram converting tokens into sticky enterprise revenue retention.",
+      "connectiveText": "Enterprise Retention",
+      "headlineText": "Path To Profit",
+      "highlightText": "Defensible Moats",
+      "badgeDetail": "Business Fundamentals",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_08_profit_funnel.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 9,
+      "title": "Compute Burn vs Cash Flow",
+      "startTime": "00:36",
+      "endTime": "00:40",
+      "duration": 4.3,
+      "spokenAnchor": "When compute burns faster than enterprise cash flow, reality always wins.",
+      "visualAnchor": "Classic corporate scale balancing compute burn on left against cash flow on right.",
+      "connectiveText": "The Bottom Line",
+      "headlineText": "Reality Always Wins",
+      "highlightText": "Burn vs Cash Flow",
+      "badgeDetail": "Financial Balance",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_09_corporate_scale.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 10,
+      "title": "Is the Crown Slipping?",
+      "startTime": "00:40",
+      "endTime": "00:43",
+      "duration": 3.0,
+      "spokenAnchor": "Is OpenAI's crown slipping, or is this just a smart tactical reset?",
+      "visualAnchor": "Golden crown tilting sideways with subtle questioning particles.",
+      "connectiveText": "Strategic Outlook",
+      "headlineText": "Crown Slipping?",
+      "highlightText": "Tactical Reset",
+      "badgeDetail": "Leadership Debate",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_10_slipping_crown.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    },
+    {
+      "id": 11,
+      "title": "Outro & Community CTA",
+      "startTime": "00:43",
+      "endTime": "00:46",
+      "duration": 2.85,
+      "spokenAnchor": "Drop your take below, and follow for daily high-signal AI breakdowns.",
+      "visualAnchor": "Sleek Growithkeda lockup with pulsing comment icon and Electric Lime halo.",
+      "connectiveText": "Join The Discussion",
+      "headlineText": "Drop Your Take",
+      "highlightText": "Follow @growithkeda",
+      "badgeDetail": "Daily High-Signal AI",
+      "thumbnailUrl": "/videos/growithkeda/openai-downsizes/scene_11_outro.jpg",
+      "videoUrl": "/videos/growithkeda/openai-downsizes/master.mp4"
+    }
+  ]
+},
+{
   "id": "dr-kaka-glp1-lifestyle-resistance",
   "client": "Dr Kaka",
   "title": "Lifestyle Changes & GLP-1 Resistance",
