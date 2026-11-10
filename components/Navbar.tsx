@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Film, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function Navbar() {
@@ -10,9 +11,16 @@ export default function Navbar() {
         
         {/* Brand & Studio Title */}
         <Link href="/" className="flex items-center gap-3 group">
-          {/* Growithkeda Origami Icon Badge */}
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#155E47] to-[#0A3326] border border-[#155E47]/50 flex items-center justify-center shadow-[0_0_15px_rgba(21,94,71,0.3)] group-hover:shadow-[0_0_20px_rgba(212,255,0,0.4)] transition-all">
-            <span className="text-[#D4FF00] font-black text-sm tracking-tighter">GK</span>
+          {/* Growithkeda Agency Logo Badge */}
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#155E47] to-[#0A3326] border border-[#155E47]/60 flex items-center justify-center p-1.5 shadow-[0_0_18px_rgba(21,94,71,0.35)] group-hover:shadow-[0_0_22px_rgba(212,255,0,0.5)] group-hover:border-[#D4FF00]/40 transition-all overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt="Growithkeda Logo"
+              width={40}
+              height={40}
+              className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(212,255,0,0.6)] group-hover:scale-105 transition-transform"
+              priority
+            />
           </div>
           <div>
             <div className="flex items-center gap-2">

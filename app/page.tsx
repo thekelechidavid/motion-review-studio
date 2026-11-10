@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import { INITIAL_PROJECTS } from "@/lib/projects-data";
@@ -189,9 +190,13 @@ export default function DashboardPage() {
       <footer className="mt-12 border-t border-white/[0.08] py-6 px-4 bg-[#090A0C] text-center text-xs text-zinc-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded-full bg-[#D4FF00] flex items-center justify-center text-[8px] font-black text-black">
-              GK
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Growithkeda Logo"
+              width={16}
+              height={16}
+              className="w-4 h-4 object-contain drop-shadow-[0_0_5px_rgba(212,255,0,0.5)]"
+            />
             <span>Growithkeda Motion Review Studio • Built for David Asoya</span>
           </div>
           <div className="flex items-center gap-4 text-zinc-400">
