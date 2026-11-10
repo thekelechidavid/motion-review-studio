@@ -57,7 +57,7 @@ export default function Navbar() {
           </Link>
 
           <a
-            href="https://motionprojects.growithkeda.com"
+            href="https://motionstudio.growithkeda.com"
             target="_blank"
             rel="noreferrer"
             className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors"

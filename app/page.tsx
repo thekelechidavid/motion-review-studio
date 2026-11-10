@@ -197,7 +197,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-4 text-zinc-400">
             <span>Production Standard: Medical Graphics 1</span>
             <span>•</span>
-            <span className="text-[#D4FF00]">Custom Domain: motionprojects.growithkeda.com</span>
+            <span className="text-[#D4FF00]">Custom Domain: motionstudio.growithkeda.com</span>
           </div>
         </div>
       </footer>
