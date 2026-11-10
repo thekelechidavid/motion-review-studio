@@ -8,7 +8,7 @@ import SceneViewer from "@/components/SceneViewer";
 import FeedbackPanel from "@/components/FeedbackPanel";
 import SyncModal from "@/components/SyncModal";
 import { INITIAL_PROJECTS } from "@/lib/projects-data";
-import { Project, SceneFeedback, ReviewStatus, VisualAnnotation } from "@/lib/types";
+import { Project, Scene, SceneFeedback, ReviewStatus, VisualAnnotation } from "@/lib/types";
 import {
   ArrowLeft,
   CheckCircle2,
