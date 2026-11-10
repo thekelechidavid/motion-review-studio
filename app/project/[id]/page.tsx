@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import SceneViewer from "@/components/SceneViewer";
 import FeedbackPanel from "@/components/FeedbackPanel";
 import SyncModal from "@/components/SyncModal";
+import CapCutExportModal from "@/components/CapCutExportModal";
 import { INITIAL_PROJECTS } from "@/lib/projects-data";
 import { Project, Scene, SceneFeedback, ReviewStatus, VisualAnnotation } from "@/lib/types";
 import {
@@ -23,6 +24,7 @@ import {
   Trash2,
   RotateCcw,
   Undo2,
+  Film,
 } from "lucide-react";
 
 export default function ProjectReviewPage() {
@@ -113,6 +115,7 @@ export default function ProjectReviewPage() {
   const [currentSceneIndex, setCurrentSceneIndex] = useState<number>(0);
   const [feedbacks, setFeedbacks] = useState<Record<number, SceneFeedback>>({});
   const [isSyncModalOpen, setIsSyncModalOpen] = useState<boolean>(false);
+  const [isCapCutModalOpen, setIsCapCutModalOpen] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   // Load saved feedbacks from localStorage on mount
@@ -240,6 +243,16 @@ export default function ProjectReviewPage() {
                   </>
                 )}
               </div>
+
+                            {/* CapCut Desktop Compiler Trigger */}
+              <button
+                onClick={() => setIsCapCutModalOpen(true)}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#14171E] hover:bg-[#1E232E] border border-white/10 hover:border-emerald-500/50 text-white font-semibold text-xs transition-all active:scale-95"
+                title="Compile native CapCut Desktop project"
+              >
+                <Film className="w-4 h-4 text-emerald-400" />
+                <span className="hidden sm:inline">Open in CapCut</span>
+              </button>
 
               {/* 1-Click Sync Button */}
               <button
@@ -407,6 +420,13 @@ export default function ProjectReviewPage() {
           </div>
         </div>
       </div>
+
+            {/* CapCut Desktop Compiler Modal */}
+      <CapCutExportModal
+        isOpen={isCapCutModalOpen}
+        onClose={() => setIsCapCutModalOpen(false)}
+        project={project}
+      />
 
       {/* Sync Matrix Modal */}
       <SyncModal
