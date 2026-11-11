@@ -628,8 +628,11 @@ function renderLandscapeVisual(scene: Scene) {
       {/* Subtle Radial Paper Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.85)_0%,rgba(246,244,235,0.4)_60%,rgba(229,223,201,0.7)_100%)] pointer-events-none" />
 
+      {/* Top Header Divider Line (Clean, Pristine, Zero Text) */}
+      <div className="relative z-10 w-full border-b border-[rgba(21,94,71,0.15)] pb-1" />
+
       {/* Center 16:9 Split: Left 45% Typography Stack | Right 55% Visual Hero (Clean, Unboxed, Zero Clutter) */}
-      <div className="relative z-10 flex-1 grid grid-cols-12 gap-6 lg:gap-8 items-center py-2">
+      <div className="relative z-10 flex-1 grid grid-cols-12 gap-6 lg:gap-8 items-center py-4">
         {/* Left Column: Unboxed Typography */}
         <div className="col-span-5 flex flex-col justify-center">
           {scene.connectiveText && (
@@ -646,10 +649,10 @@ function renderLandscapeVisual(scene: Scene) {
         </div>
 
         {/* Right Column: Hero Visual SVG */}
-        <div className="col-span-7 flex items-center justify-center relative min-h-[220px] sm:min-h-[280px]">
+        <div className="col-span-7 flex items-center justify-center relative min-h-[240px] sm:min-h-[300px]">
           {scene.svgMarkup ? (
             <div
-              className="w-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[320px]"
+              className="w-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[340px]"
               dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
             />
           ) : (
@@ -657,15 +660,6 @@ function renderLandscapeVisual(scene: Scene) {
           )}
         </div>
       </div>
-
-      {/* Bottom Spoken Anchor Quote */}
-      {scene.spokenAnchor && (
-        <div className="relative z-10 pt-3 border-t border-[rgba(21,94,71,0.12)] text-center">
-          <p className="font-serif italic text-xs sm:text-sm text-[rgba(21,94,71,0.7)] max-w-2xl mx-auto truncate">
-            “{scene.spokenAnchor}”
-          </p>
-        </div>
-      )}
     </div>
   );
 }
