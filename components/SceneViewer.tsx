@@ -624,53 +624,48 @@ export default function SceneViewer({
 // 16:9 Landscape Visual Renderer for Dr Kaka's African Food Storyboard
 function renderLandscapeVisual(scene: Scene) {
   return (
-    <div className="w-full h-full p-4 sm:p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden bg-[#F6F4EB] text-[#155E47]">
+    <div className="w-full h-full p-6 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden bg-[#F6F4EB] text-[#155E47]">
       {/* Subtle Radial Paper Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.85)_0%,rgba(246,244,235,0.4)_60%,rgba(229,223,201,0.7)_100%)] pointer-events-none" />
 
-      {/* Top Meta Scene Bar */}
-      <div className="relative z-10 flex items-center justify-between border-b border-[rgba(21,94,71,0.12)] pb-2">
-        <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-full bg-[#155E47] text-white font-bold text-[10px] sm:text-xs tracking-wider">
-            SCENE {scene.id.toString().padStart(2, "0")}
-          </span>
-          <span className="text-[10px] sm:text-xs font-mono font-semibold text-[rgba(21,94,71,0.65)]">
-            {scene.startTime} — {scene.endTime}
-          </span>
-        </div>
-        <div className="text-[10px] sm:text-xs font-bold text-[#FF7B25] tracking-wide uppercase">
-          {scene.badgeDetail || "Clinical Masterclass"}
-        </div>
-      </div>
-
-      {/* Center 16:9 Split: Left 45% Typography Stack | Right 55% Visual Hero */}
-      <div className="relative z-10 flex-1 grid grid-cols-12 gap-4 items-center py-2">
+      {/* Center 16:9 Split: Left 45% Typography Stack | Right 55% Visual Hero (Clean, Unboxed, Zero Clutter) */}
+      <div className="relative z-10 flex-1 grid grid-cols-12 gap-6 lg:gap-8 items-center py-2">
         {/* Left Column: Unboxed Typography */}
         <div className="col-span-5 flex flex-col justify-center">
-          <div className="font-serif italic text-sm sm:text-base lg:text-lg text-[#FF7B25] mb-1 leading-tight">
-            {scene.connectiveText}
-          </div>
-          <h2 className="font-extrabold text-lg sm:text-xl lg:text-2xl text-[#155E47] leading-[1.15] tracking-tight mb-2">
+          {scene.connectiveText && (
+            <div className="font-serif italic text-base sm:text-lg lg:text-xl text-[#FF7B25] mb-2 leading-tight">
+              {scene.connectiveText}
+            </div>
+          )}
+          <h2 className="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#155E47] leading-[1.12] tracking-tight mb-3">
             {scene.headlineText}
           </h2>
-          <p className="font-medium text-[11px] sm:text-xs text-[rgba(21,94,71,0.8)] leading-relaxed">
+          <p className="font-medium text-xs sm:text-sm lg:text-base text-[rgba(21,94,71,0.8)] leading-relaxed">
             {scene.highlightText}
           </p>
         </div>
 
         {/* Right Column: Hero Visual SVG */}
-        <div className="col-span-7 flex items-center justify-center relative min-h-[160px] sm:min-h-[200px]">
+        <div className="col-span-7 flex items-center justify-center relative min-h-[220px] sm:min-h-[280px]">
           {scene.svgMarkup ? (
             <div
-              className="w-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[220px]"
-              style={{ maxWidth: "100%", maxHeight: "300px" }}
-            dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
+              className="w-full flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[320px]"
+              dangerouslySetInnerHTML={{ __html: scene.svgMarkup }}
             />
           ) : (
             <div className="text-xs text-zinc-400">Visual Hero Graphic</div>
           )}
         </div>
       </div>
+
+      {/* Bottom Spoken Anchor Quote */}
+      {scene.spokenAnchor && (
+        <div className="relative z-10 pt-3 border-t border-[rgba(21,94,71,0.12)] text-center">
+          <p className="font-serif italic text-xs sm:text-sm text-[rgba(21,94,71,0.7)] max-w-2xl mx-auto truncate">
+            “{scene.spokenAnchor}”
+          </p>
+        </div>
+      )}
     </div>
   );
 }
