@@ -587,8 +587,10 @@ export default function SceneViewer({
             </div>
 
             {/* Bottom Third Safe Zone Indicator */}
-            <div className="absolute bottom-2 left-4 right-16 py-1 px-2.5 rounded-lg bg-black/10 backdrop-blur-xs border border-black/5 text-[9px] text-[#155E47]/80 flex items-center justify-between pointer-events-none">
-              <span className="font-semibold">@drkaka • Longevity</span>
+            <div className="absolute bottom-2 left-4 right-16 py-1 px-2.5 rounded-lg bg-black/25 backdrop-blur-sm border border-white/10 text-[9px] text-white/90 flex items-center justify-between pointer-events-none z-20">
+              <span className="font-semibold">
+                {project.client.toLowerCase().includes("dr kaka") ? "@drkaka • Longevity" : project.client}
+              </span>
               <span className="text-[#FF7B25] font-bold">Sound: Original</span>
             </div>
           </div>
@@ -664,8 +666,55 @@ function renderLandscapeVisual(scene: Scene) {
   );
 }
 
-// Vertical 9:16 Visual Renderer: Renders bespoke SVG markup when present, or falls back to legacy vectors
+// Vertical 9:16 Visual Renderer: Renders 3D storyboard image when present, bespoke SVG markup, or legacy vectors
 function renderVerticalVisual(scene: Scene) {
+  if (scene.thumbnailUrl && !scene.svgMarkup) {
+    return (
+      <div className="w-full h-full relative overflow-hidden bg-[#0369A1] select-none flex flex-col justify-between">
+        {/* Full-bleed 9:16 3D Storyboard Keyframe */}
+        <img
+          src={scene.thumbnailUrl}
+          alt={scene.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 pointer-events-none" />
+
+        {/* Top Meta Scene Bar */}
+        <div className="relative z-10 p-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="px-2.5 py-0.5 rounded-full bg-[#38BDF8] text-black font-extrabold text-[10px] tracking-wider shadow-md">
+              SCENE {scene.id.toString().padStart(2, "0")}
+            </span>
+            <span className="text-[10px] font-mono font-semibold text-white/90 drop-shadow">
+              {scene.startTime} – {scene.endTime}
+            </span>
+          </div>
+          {scene.badgeDetail && (
+            <div className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-[#38BDF8]/40 text-[9px] font-bold text-[#38BDF8] tracking-wide uppercase">
+              {scene.badgeDetail}
+            </div>
+          )}
+        </div>
+
+        {/* Zack D Style Lower-Third Kinetic Subtitle Preview (Safely above MarginV=440 zone) */}
+        <div className="relative z-10 px-4 pb-20 text-center pointer-events-none">
+          <div className="inline-block mb-1.5 px-2 py-0.5 rounded bg-black/50 text-[9px] font-bold uppercase tracking-widest text-[#38BDF8]">
+            {scene.connectiveText}
+          </div>
+          <p
+            className="text-base sm:text-lg font-black text-white leading-tight tracking-tight"
+            style={{
+              textShadow:
+                "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 4px 10px rgba(0,0,0,0.8)",
+            }}
+          >
+            {scene.headlineText}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   if (scene.svgMarkup) {
     return (
       <div className="w-full h-full p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden bg-[#F6F4EB] text-[#155E47] select-none">

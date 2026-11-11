@@ -49,7 +49,34 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Mini Preview Box / Visual Hero */}
         <div className="mt-4 w-full h-36 rounded-xl overflow-hidden relative border border-white/5 bg-[#14171E] flex items-center justify-center">
-          {isStoryboard ? (
+          {isStoryboard && project.scenes[0]?.thumbnailUrl && !project.scenes[0]?.svgMarkup ? (
+            <div className="w-full h-full relative overflow-hidden bg-[#0369A1] text-white flex flex-col justify-between p-3.5">
+              <img
+                src={project.scenes[0].thumbnailUrl}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
+              <div className="relative z-10 flex justify-between items-center text-[10px] font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-[#38BDF8] text-black">3D Storyboard</span>
+                <span className="text-[#38BDF8] uppercase tracking-wide text-[9px] font-bold">
+                  {project.scenes[0]?.badgeDetail || "Zack D Engine"}
+                </span>
+              </div>
+              <div className="relative z-10 text-center my-auto px-2">
+                <p className="font-extrabold text-sm text-white line-clamp-1 drop-shadow">
+                  {project.scenes[0]?.headlineText || project.title}
+                </p>
+                <p className="font-serif italic text-[11px] text-zinc-200 mt-0.5 line-clamp-1">
+                  “{project.scenes[0]?.spokenAnchor || project.subtitle}”
+                </p>
+              </div>
+              <div className="relative z-10 flex justify-between items-center text-[9px] text-zinc-300 border-t border-white/15 pt-1">
+                <span>{project.scenesCount} 3D Keyframes Ready</span>
+                <span className="font-semibold text-[#38BDF8]">{project.totalDuration}</span>
+              </div>
+            </div>
+          ) : isStoryboard ? (
             <div className="w-full h-full p-3.5 bg-[#F6F4EB] text-[#155E47] flex flex-col justify-between relative overflow-hidden">
               <div className="flex justify-between items-center text-[10px] font-bold">
                 <span className="px-2 py-0.5 rounded-full bg-[#155E47] text-white">9:16 Storyboard</span>
